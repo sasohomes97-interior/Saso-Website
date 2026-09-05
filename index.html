@@ -843,86 +843,322 @@
     height: 75px;
   }
 
-  /* Panoramic Project Showcase (from reference) */
-  .projects-panoramic-list {
+  /* ==========================================================================
+     OUR PROJECTS: PARALLAX SCROLL SHOWCASE (Seamless Image Morph on Scroll)
+     ========================================================================== */
+  .projects-section {
+    padding: var(--section-pad) 0 0;
+    background: var(--bg-base);
+    position: relative;
+  }
+  .projects-section .section-header {
+    margin-bottom: 1.8rem;
+  }
+  .project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.2rem;
+  }
+  .filter-btn {
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-medium);
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-body);
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .filter-btn:hover {
+    border-color: var(--teal-primary);
+    color: var(--teal-primary);
+    transform: translateY(-2px);
+  }
+  .filter-btn.active {
+    background: var(--teal-primary);
+    border-color: var(--teal-primary);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(13, 110, 119, 0.25);
+  }
+
+  /* Parallax Track & Sticky Stage */
+  .projects-parallax-track {
+    position: relative;
+    height: 380vh;
+  }
+  .projects-sticky-stage {
+    position: sticky;
+    top: 76px;
+    height: calc(100vh - 84px);
+    min-height: 560px;
+    max-height: 820px;
     display: flex;
     flex-direction: column;
-    gap: 3.2rem;
+    justify-content: center;
+    z-index: 10;
+    padding: 0.4rem 0 1.2rem;
+    box-sizing: border-box;
   }
-  .panoramic-project-item {
+  .parallax-project-card {
     background: #FFFFFF;
     border-radius: var(--radius-xl);
-    border: 1px solid var(--border-light);
+    border: 1.5px solid var(--border-medium);
+    box-shadow: 0 16px 45px rgba(10, 60, 68, 0.08);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
   }
-  .panoramic-project-item:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--teal-primary);
-  }
-  .panoramic-project-header {
+
+  /* Top Bar */
+  .parallax-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2.2rem;
-    border-bottom: 1px solid var(--border-light);
+    padding: 1.15rem 2.2rem;
+    border-bottom: 1.5px solid var(--border-light);
     background: #FFFFFF;
+    gap: 1rem;
     flex-wrap: wrap;
-    gap: 0.8rem;
   }
-  .panoramic-project-info h3 {
+  .parallax-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .project-step-indicator {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--teal-primary);
+    background: var(--teal-light);
+    padding: 0.35rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid rgba(13, 110, 119, 0.15);
+    letter-spacing: 0.04em;
+    min-width: 65px;
+    text-align: center;
+  }
+  .parallax-titles h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
     font-weight: 700;
     color: var(--text-heading);
     line-height: 1.2;
     margin-bottom: 0.15rem;
+    transition: opacity 0.2s ease;
   }
-  .panoramic-project-info span {
+  .parallax-titles span {
     font-size: 0.88rem;
-    color: var(--teal-primary);
-    font-weight: 600;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+    display: block;
   }
-  .panoramic-view-btn {
-    font-size: 0.9rem;
+  .btn-parallax-action {
+    background: var(--teal-primary);
+    color: #FFFFFF;
     font-weight: 700;
-    color: var(--teal-primary);
+    font-size: 0.88rem;
+    padding: 0.65rem 1.35rem;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    transition: gap 0.2s ease;
+    gap: 0.5rem;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-sm);
   }
-  .panoramic-project-item:hover .panoramic-view-btn {
-    gap: 0.75rem;
-    color: var(--cyan-accent);
+  .btn-parallax-action:hover {
+    background: var(--teal-deep);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
   }
-  .panoramic-media {
-    height: 480px;
-    overflow: hidden;
+
+  /* Cinematic Viewport & Image Layers */
+  .parallax-viewport {
     position: relative;
-    background: var(--bg-surface);
+    flex: 1;
+    min-height: 320px;
+    overflow: hidden;
+    background: #0D2226;
+    cursor: pointer;
   }
-  .panoramic-media img {
+  .parallax-image-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform, opacity;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate3d(0, 35px, 0) scale(0.96);
+    pointer-events: none;
+    transition: opacity 0.35s ease-out, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .parallax-image-layer.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    pointer-events: auto;
+  }
+  .parallax-image-layer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
   }
-  .panoramic-project-item:hover .panoramic-media img {
-    transform: scale(1.03);
+  .parallax-image-badge {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.5rem;
+    background: rgba(10, 27, 30, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    padding: 0.45rem 0.95rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 5;
+    pointer-events: none;
+  }
+  .parallax-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.35) 100%);
+    z-index: 4;
+  }
+  .parallax-scroll-cue {
+    position: absolute;
+    bottom: 1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--teal-darkest);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    transition: opacity 0.35s ease;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .cue-mouse {
+    width: 15px;
+    height: 22px;
+    border: 2px solid var(--teal-primary);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+  }
+  .cue-wheel {
+    width: 3px;
+    height: 4px;
+    background: var(--teal-primary);
+    border-radius: 2px;
+    animation: mouseWheel 1.5s infinite;
+  }
+  @keyframes mouseWheel {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(7px); }
+  }
+
+  /* Footer Scrubber & Progress */
+  .parallax-card-footer {
+    background: #FFFFFF;
+    border-top: 1.5px solid var(--border-light);
+    padding: 0.85rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .parallax-progress-bar-track {
+    width: 100%;
+    height: 4px;
+    background: var(--border-light);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .parallax-progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--teal-primary) 0%, var(--cyan-accent) 100%);
+    transition: width 0.08s ease-out;
+  }
+  .parallax-scrubber-tabs {
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .parallax-scrubber-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .scrubber-tab {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    padding: 0.45rem 0.95rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  .scrubber-tab:hover {
+    border-color: var(--teal-primary);
+    color: var(--teal-primary);
+    background: #FFFFFF;
+  }
+  .scrubber-tab.active {
+    background: var(--teal-light);
+    border-color: var(--teal-primary);
+    color: var(--teal-primary);
+    font-weight: 700;
   }
 
   @media (max-width: 768px) {
-    .panoramic-media { height: 260px; }
-    .panoramic-project-header { padding: 1.2rem 1.4rem; }
-    .panoramic-project-info h3 { font-size: 1.25rem; }
-    .panoramic-project-info span { font-size: 0.8rem; }
-    .hero-main-img-card.arch-frame { border-radius: 120px 120px var(--radius-xl) var(--radius-xl); }
+    .projects-parallax-track { height: 280vh; }
+    .projects-sticky-stage {
+      top: 64px;
+      height: calc(100svh - 68px);
+      min-height: 480px;
+      padding: 0.35rem 0 0.8rem;
+    }
+    .parallax-card-header { padding: 0.9rem 1.2rem; }
+    .parallax-meta-left { gap: 0.75rem; }
+    .project-step-indicator { font-size: 0.95rem; padding: 0.25rem 0.6rem; min-width: 52px; }
+    .parallax-titles h3 { font-size: 1.15rem; }
+    .parallax-titles span { font-size: 0.75rem; }
+    .btn-parallax-action { padding: 0.5rem 0.9rem; font-size: 0.78rem; }
+    .parallax-card-footer { padding: 0.65rem 1.2rem; }
+    .scrubber-tab { padding: 0.35rem 0.7rem; font-size: 0.75rem; }
+    .parallax-image-badge { top: 0.8rem; left: 0.8rem; font-size: 0.72rem; padding: 0.35rem 0.7rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-image-layer {
+      transform: none !important;
+      transition: opacity 0.4s ease !important;
+    }
+    .cue-wheel { animation: none; }
   }
 
   /* ==========================================================================
@@ -1745,7 +1981,7 @@
 </section>
 
 <!-- ==========================================================================
-     OUR PROJECTS (Modeled directly after mybeautifulhome.co.in)
+     OUR PROJECTS: PARALLAX SCROLL SHOWCASE (Seamless Image Morph on Scroll)
      ========================================================================== -->
 <section class="projects-section" id="projects">
   <div class="wrap">
@@ -1755,97 +1991,96 @@
     </div>
 
     <!-- Category Filters -->
-    <div class="project-filters">
+    <div class="project-filters" id="projectFilters">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="villa">Villas</button>
       <button class="filter-btn" data-filter="apartment">Penthouses &amp; Apartments</button>
       <button class="filter-btn" data-filter="turnkey">Turnkey Residences</button>
       <button class="filter-btn" data-filter="commercial">Commercial</button>
     </div>
+  </div>
 
-    <!-- Projects Grid -->
-    <div class="projects-panoramic-list">
-      <!-- Project 1: Exquisite Grandeur -->
-      <div class="panoramic-project-item" data-category="villa" onclick="openProjectModal('Exquisite Grandeur', 'Phoenix Bangalore One West', '4,800 Sq.Ft Luxury Modern Villa', 'hero_modern_villa.jpg', 'A masterclass in contemporary villa design featuring double-height living areas, Italian marble flooring, reflection courtyards, and bespoke warm brass accents.')">
-        <div class="panoramic-project-header">
-          <div class="panoramic-project-info">
-            <h3>Exquisite Grandeur</h3>
-            <span>Phoenix Bangalore One West • 4,800 Sq.Ft Luxury Villa</span>
+  <!-- Parallax Scroll Track (Drives continuous scroll progress) -->
+  <div class="projects-parallax-track" id="projectsParallaxTrack">
+    <!-- Pinned Sticky Stage -->
+    <div class="projects-sticky-stage" id="projectsStickyStage">
+      <div class="wrap" style="height:100%;">
+        <div class="parallax-project-card" id="parallaxProjectCard">
+          
+          <!-- Top Bar: Dynamic Project Info & Direct Action -->
+          <div class="parallax-card-header">
+            <div class="parallax-meta-left">
+              <div class="project-step-indicator" id="projectCounter" aria-live="polite">01 / 06</div>
+              <div class="parallax-titles">
+                <h3 id="parallaxProjectTitle">Exquisite Grandeur</h3>
+                <span id="parallaxProjectSubtitle">Phoenix Bangalore One West • 4,800 Sq.Ft Luxury Villa</span>
+              </div>
+            </div>
+            <button class="btn-parallax-action" id="parallaxViewBtn" onclick="openCurrentProjectModal()">
+              <span>View Project Details →</span>
+            </button>
           </div>
-          <span class="panoramic-view-btn">View Project →</span>
-        </div>
-        <div class="panoramic-media">
-          <img src="hero_modern_villa.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" loading="lazy" />
-        </div>
-      </div>
 
-      <!-- Project 2: Luxe Aura -->
-      <div class="panoramic-project-item" data-category="apartment" onclick="openProjectModal('Luxe Aura', 'Phoenix Kessaku, Bangalore', '3,600 Sq.Ft Contemporary Penthouse', 'interiors_luxury_living.jpg', 'Custom designed with minimalist curves, travertine accents, bespoke boucle lounge seating, and smart home automation.')">
-        <div class="panoramic-project-header">
-          <div class="panoramic-project-info">
-            <h3>Luxe Aura</h3>
-            <span>Phoenix Kessaku • 3,600 Sq.Ft Contemporary Penthouse</span>
-          </div>
-          <span class="panoramic-view-btn">View Project →</span>
-        </div>
-        <div class="panoramic-media">
-          <img src="interiors_luxury_living.jpg" alt="Luxe Aura - Phoenix Kessaku" loading="lazy" />
-        </div>
-      </div>
+          <!-- Cinematic Panoramic Viewport with Parallax Image Stack -->
+          <div class="parallax-viewport" id="parallaxViewport" onclick="openCurrentProjectModal()">
+            <!-- Image Layer 0 -->
+            <div class="parallax-image-layer active" data-index="0">
+              <img src="hero_modern_villa.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" loading="eager" />
+              <div class="parallax-image-badge">Turnkey Villa • Completed 2024</div>
+            </div>
+            <!-- Image Layer 1 -->
+            <div class="parallax-image-layer" data-index="1">
+              <img src="interiors_luxury_living.jpg" alt="Luxe Aura - Phoenix Kessaku" loading="lazy" />
+              <div class="parallax-image-badge">Luxury Penthouse • Bespoke Joinery</div>
+            </div>
+            <!-- Image Layer 2 -->
+            <div class="parallax-image-layer" data-index="2">
+              <img src="turnkey_luxury_kitchen.jpg" alt="Walnut Whisper - Sadashivanagar" loading="lazy" />
+              <div class="parallax-image-badge">Turnkey Modular • Italian Calacatta</div>
+            </div>
+            <!-- Image Layer 3 -->
+            <div class="parallax-image-layer" data-index="3">
+              <img src="architecture_planning.jpg" alt="Majestic Muse - Indiranagar" loading="lazy" />
+              <div class="parallax-image-badge">Modernist Estate • Architecture &amp; Build</div>
+            </div>
+            <!-- Image Layer 4 -->
+            <div class="parallax-image-layer" data-index="4">
+              <img src="interiors_luxury_living.jpg" alt="Pastel Haven - Koramangala" loading="lazy" />
+              <div class="parallax-image-badge">Nordic Contemporary • Acoustic Design</div>
+            </div>
+            <!-- Image Layer 5 -->
+            <div class="parallax-image-layer" data-index="5">
+              <img src="construction_execution.jpg" alt="NovaVista - Commercial Build" loading="lazy" />
+              <div class="parallax-image-badge">Commercial Studio • Structural RCC</div>
+            </div>
 
-      <!-- Project 3: Walnut Whisper -->
-      <div class="panoramic-project-item" data-category="turnkey" onclick="openProjectModal('Walnut Whisper', 'Sadashivanagar, Bangalore', '5,200 Sq.Ft Bespoke Residence', 'turnkey_luxury_kitchen.jpg', 'An opulent Italian marble kitchen with fluted oak cabinetry, hidden pantry, and bookmatched stone island.')">
-        <div class="panoramic-project-header">
-          <div class="panoramic-project-info">
-            <h3>Walnut Whisper</h3>
-            <span>Sadashivanagar • 5,200 Sq.Ft Bespoke Turnkey Residence</span>
-          </div>
-          <span class="panoramic-view-btn">View Project →</span>
-        </div>
-        <div class="panoramic-media">
-          <img src="turnkey_luxury_kitchen.jpg" alt="Walnut Whisper - Sadashivanagar" loading="lazy" />
-        </div>
-      </div>
+            <!-- Parallax Depth Vignette Overlay -->
+            <div class="parallax-vignette"></div>
 
-      <!-- Project 4: Majestic Muse -->
-      <div class="panoramic-project-item" data-category="villa" onclick="openProjectModal('Majestic Muse', 'Indiranagar Villa, Bangalore', '6,500 Sq.Ft Modernist Estate', 'architecture_planning.jpg', 'Conceived from the ground up: structural elevation, daylight orientation, and custom handcrafted timber ceilings.')">
-        <div class="panoramic-project-header">
-          <div class="panoramic-project-info">
-            <h3>Majestic Muse</h3>
-            <span>Indiranagar Villa • 6,500 Sq.Ft Modernist Estate</span>
+            <!-- Floating Scroll Hint -->
+            <div class="parallax-scroll-cue" id="parallaxScrollCue">
+              <span class="cue-mouse">
+                <span class="cue-wheel"></span>
+              </span>
+              <span>Scroll to explore projects</span>
+            </div>
           </div>
-          <span class="panoramic-view-btn">View Project →</span>
-        </div>
-        <div class="panoramic-media">
-          <img src="architecture_planning.jpg" alt="Majestic Muse - Indiranagar" loading="lazy" />
-        </div>
-      </div>
 
-      <!-- Project 5: Pastel Haven -->
-      <div class="panoramic-project-item" data-category="apartment" onclick="openProjectModal('Pastel Haven', 'Koramangala 4th Block', '2,900 Sq.Ft Nordic Elegance', 'interiors_luxury_living.jpg', 'A soothing sanctuary of soft earth tones, fluted glass partitions, and bespoke Scandinavian modular fittings.')">
-        <div class="panoramic-project-header">
-          <div class="panoramic-project-info">
-            <h3>Pastel Haven</h3>
-            <span>Koramangala 4th Block • 2,900 Sq.Ft Nordic Contemporary</span>
+          <!-- Bottom Scrubber & Progress Bar -->
+          <div class="parallax-card-footer">
+            <div class="parallax-progress-bar-track">
+              <div class="parallax-progress-bar-fill" id="parallaxProgressBar"></div>
+            </div>
+            <div class="parallax-scrubber-tabs" id="parallaxScrubberTabs">
+              <button class="scrubber-tab active" data-index="0" onclick="event.stopPropagation(); scrollToProject(0)">01 Phoenix One West</button>
+              <button class="scrubber-tab" data-index="1" onclick="event.stopPropagation(); scrollToProject(1)">02 Phoenix Kessaku</button>
+              <button class="scrubber-tab" data-index="2" onclick="event.stopPropagation(); scrollToProject(2)">03 Sadashivanagar</button>
+              <button class="scrubber-tab" data-index="3" onclick="event.stopPropagation(); scrollToProject(3)">04 Indiranagar Villa</button>
+              <button class="scrubber-tab" data-index="4" onclick="event.stopPropagation(); scrollToProject(4)">05 Koramangala 4th</button>
+              <button class="scrubber-tab" data-index="5" onclick="event.stopPropagation(); scrollToProject(5)">06 Outer Ring Road</button>
+            </div>
           </div>
-          <span class="panoramic-view-btn">View Project →</span>
-        </div>
-        <div class="panoramic-media">
-          <img src="interiors_luxury_living.jpg" alt="Pastel Haven - Koramangala" loading="lazy" />
-        </div>
-      </div>
 
-      <!-- Project 6: NovaVista -->
-      <div class="panoramic-project-item" data-category="commercial" onclick="openProjectModal('NovaVista', 'Outer Ring Road, Bangalore', '8,200 Sq.Ft Tech Studio & Lounge', 'construction_execution.jpg', 'An avant-garde commercial development blending structural steel columns with open biophilic collaboration lounges.')">
-        <div class="panoramic-project-header">
-          <div class="panoramic-project-info">
-            <h3>NovaVista</h3>
-            <span>Outer Ring Road • 8,200 Sq.Ft Commercial &amp; Civil</span>
-          </div>
-          <span class="panoramic-view-btn">View Project →</span>
-        </div>
-        <div class="panoramic-media">
-          <img src="construction_execution.jpg" alt="NovaVista - Commercial Build" loading="lazy" />
         </div>
       </div>
     </div>
@@ -2232,26 +2467,223 @@
     });
   });
 
-  // Project Category Filtering
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.panoramic-project-item');
+  // ==========================================================================
+  // PARALLAX PROJECT SHOWCASE CONTROLLER (Seamless Image Morph on Scroll)
+  // ==========================================================================
+  const projectsData = [
+    {
+      title: 'Exquisite Grandeur',
+      subtitle: 'Phoenix Bangalore One West • 4,800 Sq.Ft Luxury Villa',
+      category: 'villa',
+      image: 'hero_modern_villa.jpg',
+      desc: 'A masterclass in contemporary villa design featuring double-height living areas, Italian marble flooring, reflection courtyards, and bespoke warm brass accents.'
+    },
+    {
+      title: 'Luxe Aura',
+      subtitle: 'Phoenix Kessaku • 3,600 Sq.Ft Contemporary Penthouse',
+      category: 'apartment',
+      image: 'interiors_luxury_living.jpg',
+      desc: 'Custom designed with minimalist curves, travertine accents, bespoke boucle lounge seating, and smart home automation.'
+    },
+    {
+      title: 'Walnut Whisper',
+      subtitle: 'Sadashivanagar • 5,200 Sq.Ft Bespoke Turnkey Residence',
+      category: 'turnkey',
+      image: 'turnkey_luxury_kitchen.jpg',
+      desc: 'An opulent Italian marble kitchen with fluted oak cabinetry, hidden pantry, and bookmatched stone island.'
+    },
+    {
+      title: 'Majestic Muse',
+      subtitle: 'Indiranagar Villa • 6,500 Sq.Ft Modernist Estate',
+      category: 'villa',
+      image: 'architecture_planning.jpg',
+      desc: 'Conceived from the ground up: structural elevation, daylight orientation, and custom handcrafted timber ceilings.'
+    },
+    {
+      title: 'Pastel Haven',
+      subtitle: 'Koramangala 4th Block • 2,900 Sq.Ft Nordic Contemporary',
+      category: 'apartment',
+      image: 'interiors_luxury_living.jpg',
+      desc: 'A soothing sanctuary of soft earth tones, fluted glass partitions, and bespoke Scandinavian modular fittings.'
+    },
+    {
+      title: 'NovaVista',
+      subtitle: 'Outer Ring Road • 8,200 Sq.Ft Commercial & Civil Hub',
+      category: 'commercial',
+      image: 'construction_execution.jpg',
+      desc: 'An avant-garde commercial development blending structural steel columns with open biophilic collaboration lounges.'
+    }
+  ];
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
+  let currentProjectIndex = 0;
+  const pTrack = document.getElementById('projectsParallaxTrack');
+  const pLayers = document.querySelectorAll('.parallax-image-layer');
+  const pTitle = document.getElementById('parallaxProjectTitle');
+  const pSubtitle = document.getElementById('parallaxProjectSubtitle');
+  const pCounter = document.getElementById('projectCounter');
+  const pProgressBar = document.getElementById('parallaxProgressBar');
+  const pTabs = document.querySelectorAll('.scrubber-tab');
+  const pCue = document.getElementById('parallaxScrollCue');
+  const pFilterBtns = document.querySelectorAll('.project-filters .filter-btn');
 
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'flex';
+  let pTicking = false;
+
+  function updateParallaxShowcase() {
+    if (!pTrack) return;
+    const rect = pTrack.getBoundingClientRect();
+    const trackHeight = pTrack.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const scrollDistance = trackHeight - viewportHeight;
+    
+    if (scrollDistance <= 0) return;
+
+    // Calculate normalized progress within the track (0.0 to 1.0)
+    const scrolled = -rect.top;
+    const progress = Math.min(Math.max(scrolled / scrollDistance, 0), 1);
+    
+    if (pProgressBar) {
+      pProgressBar.style.width = `${(progress * 100).toFixed(1)}%`;
+    }
+
+    if (pCue) {
+      pCue.style.opacity = progress > 0.04 ? '0' : '1';
+    }
+
+    const total = projectsData.length;
+    const exactIndex = progress * (total - 1);
+    const activeIndex = Math.min(Math.round(exactIndex), total - 1);
+
+    // Continuous GPU-accelerated opacity crossfade and parallax translation
+    pLayers.forEach((layer, i) => {
+      const diff = i - exactIndex;
+      const absDiff = Math.abs(diff);
+
+      if (absDiff < 1.0) {
+        const opacity = 1.0 - absDiff;
+        const translateY = diff * 32; // Seamless parallax drift in px
+        const scale = 1.0 + (1.0 - absDiff) * 0.04; // Subtle depth zoom
+        layer.style.opacity = opacity.toFixed(3);
+        layer.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0) scale(${scale.toFixed(3)})`;
+        layer.style.visibility = 'visible';
+        layer.style.zIndex = Math.round(opacity * 10) + 1;
+        layer.classList.add('active');
+      } else {
+        layer.style.opacity = '0';
+        layer.style.transform = `translate3d(0, ${diff > 0 ? 32 : -32}px, 0) scale(0.96)`;
+        layer.style.visibility = 'hidden';
+        layer.style.zIndex = '0';
+        layer.classList.remove('active');
+      }
+    });
+
+    // When the primary discrete project shifts, update editorial metadata smoothly
+    if (activeIndex !== currentProjectIndex) {
+      currentProjectIndex = activeIndex;
+      const item = projectsData[activeIndex];
+
+      if (pTitle && pSubtitle && pCounter) {
+        pTitle.style.opacity = '0';
+        pSubtitle.style.opacity = '0';
+        setTimeout(() => {
+          pCounter.textContent = `0${activeIndex + 1} / 0${total}`;
+          pTitle.textContent = item.title;
+          pSubtitle.textContent = item.subtitle;
+          pTitle.style.opacity = '1';
+          pSubtitle.style.opacity = '1';
+        }, 140);
+      }
+
+      // Update scrubber tabs
+      pTabs.forEach((tab, idx) => {
+        if (idx === activeIndex) {
+          tab.classList.add('active');
+          tab.setAttribute('aria-current', 'true');
         } else {
-          card.style.display = 'none';
+          tab.classList.remove('active');
+          tab.removeAttribute('aria-current');
         }
       });
+
+      // Synchronize category filter pills
+      pFilterBtns.forEach(btn => {
+        const f = btn.getAttribute('data-filter');
+        if (f === 'all' || f === item.category) {
+          btn.classList.toggle('active', f === item.category);
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      // If none matched (e.g. at start), leave 'all' active
+      const hasActive = Array.from(pFilterBtns).some(b => b.classList.contains('active') && b.getAttribute('data-filter') !== 'all');
+      if (!hasActive) {
+        const allBtn = document.querySelector('.project-filters .filter-btn[data-filter="all"]');
+        if (allBtn) allBtn.classList.add('active');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!pTicking) {
+      window.requestAnimationFrame(() => {
+        updateParallaxShowcase();
+        pTicking = false;
+      });
+      pTicking = true;
+    }
+  }, { passive: true });
+
+  // Initial call on load
+  window.addEventListener('DOMContentLoaded', () => {
+    updateParallaxShowcase();
+  });
+
+  // Jump to project position on track
+  function scrollToProject(index) {
+    if (!pTrack) return;
+    const rect = pTrack.getBoundingClientRect();
+    const trackTop = window.pageYOffset + rect.top;
+    const trackHeight = pTrack.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const scrollDistance = trackHeight - viewportHeight;
+    
+    const targetProgress = index / (projectsData.length - 1);
+    const targetScrollY = trackTop + targetProgress * scrollDistance + 5;
+    
+    window.scrollTo({
+      top: targetScrollY,
+      behavior: 'smooth'
+    });
+  }
+
+  // Filter Buttons Click Handlers
+  const categoryToProjectIndex = {
+    'all': 0,
+    'villa': 0,       // Exquisite Grandeur
+    'apartment': 1,   // Luxe Aura
+    'turnkey': 2,     // Walnut Whisper
+    'commercial': 5   // NovaVista
+  };
+
+  pFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-filter');
+      const targetIdx = categoryToProjectIndex[cat] !== undefined ? categoryToProjectIndex[cat] : 0;
+      scrollToProject(targetIdx);
     });
   });
 
+  // Open modal lightbox for currently active project
+  function openCurrentProjectModal() {
+    const p = projectsData[currentProjectIndex];
+    if (p) {
+      const parts = p.subtitle.split('•');
+      const loc = parts[0] ? parts[0].trim() : 'Bangalore';
+      const scale = parts[1] ? parts[1].trim() : 'Luxury Residence';
+      openProjectModal(p.title, loc, scale, p.image, p.desc);
+    }
+  }
 
   // Consultation Form Handler
   function handleFormSubmit(e) {

@@ -28,3 +28,8 @@ found_*.png
 after_*.png
 materials_to_*.png
 check_no_*.png
+
+crop_*.png
+scroll_*.png
+test_*.png
+temp_*.html
