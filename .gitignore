@@ -21,3 +21,6 @@ verified_*.png
 *.backup*.html
 .claude/
 
+
+check_*.png
+found_*.png
