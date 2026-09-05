@@ -95,6 +95,57 @@
     padding-right: var(--pad);
   }
 
+  
+  /* --- UI/UX Pro Max: Accessibility & Interaction Layer --- */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--teal-primary);
+    color: #FFFFFF;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+    z-index: 9999;
+    font-weight: 700;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 20px;
+    outline: 3px solid var(--gold-primary);
+  }
+
+  :focus-visible {
+    outline: 2.5px solid var(--teal-primary);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  button, a, .btn, .option-btn, .filter-btn {
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  /* Safe Area Support */
+  .top-bar { padding-top: max(0.45rem, env(safe-area-inset-top)); }
+  .wa-fab {
+    bottom: max(24px, calc(24px + env(safe-area-inset-bottom)));
+    right: max(24px, calc(24px + env(safe-area-inset-right)));
+  }
+
+  /* Minimum 44px touch targets */
+  .filter-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .option-btn { min-height: 72px; }
+  .form-control { min-height: 48px; font-size: 1rem; }
+
   /* Typography Utilities */
   .font-serif { font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.02em; }
   .font-heading { font-family: var(--font-heading); }
@@ -1368,6 +1419,8 @@
 </style>
 </head>
 <body>
+<a href="#hero" class="skip-link">Skip to main content</a>
+
 
 <!-- Top Info Bar -->
 <div class="top-bar">
@@ -1378,9 +1431,9 @@
       <span>Bangalore's Premier Architecture &amp; Turnkey Interior Studio</span>
     </div>
     <div class="top-bar-right">
-      <a href="tel:+919886398431">📞 +91 98863 98431</a>
+      <a href="tel:+919886398431"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 98863 98431</a>
       <span>|</span>
-      <a href="mailto:writeto@sasohomes.com">✉️ writeto@sasohomes.com</a>
+      <a href="mailto:writeto@sasohomes.com"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>writeto@sasohomes.com</a>
     </div>
   </div>
 </div>
@@ -1887,12 +1940,12 @@
       <div class="estimator-result-box">
         <div class="result-details">
           <h4>Estimated Investment Range</h4>
-          <div class="result-price" id="estimatedPrice">₹ 32 - ₹ 38 Lakhs</div>
+          <div class="result-price" id="estimatedPrice" aria-live="polite">₹ 32 - ₹ 38 Lakhs</div>
           <p class="result-note">*Includes 3D VR design, modular manufacturing, installation, and 10-year warranty certificate.</p>
         </div>
         <div>
           <button class="btn btn-gold" onclick="sendWhatsAppEstimate()">
-            <span>Send Estimate to WhatsApp 💬</span>
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:6px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.678.077-1.161-.077-.456-.145-1.042-.355-1.794-.969-.974-.795-1.608-1.785-1.752-1.99-.144-.205-.386-.513-.386-.98 0-.466.244-.694.331-.791.087-.097.19-.122.253-.122.064 0 .127.001.182.004.058.003.136-.022.213.162.079.19.271.662.294.71.023.048.038.105.008.167-.031.062-.047.1-.093.155-.047.054-.099.121-.141.163-.047.046-.096.096-.041.191.054.095.241.398.518.644.356.317.656.416.749.462.093.046.148.039.203-.024.054-.062.233-.27.295-.364.062-.093.125-.078.209-.047.085.031.539.254.632.3.093.047.155.07.178.11.023.039.023.228-.121.633z"/></svg>Send Estimate to WhatsApp</span>
           </button>
         </div>
       </div>
@@ -1959,7 +2012,7 @@
       <p>Visit our design experience center in Koramangala or schedule an on-site consultation with our principal architects.</p>
 
       <div class="contact-detail-row">
-        <div class="contact-icon">📍</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="contact-detail-text">
           <strong>Studio Address</strong>
           <span>No. 883, 6th Cross, 6th Block, Koramangala, Bangalore – 560095</span>
@@ -1967,7 +2020,7 @@
       </div>
 
       <div class="contact-detail-row">
-        <div class="contact-icon">📞</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <div class="contact-detail-text">
           <strong>Helpline</strong>
           <span><a href="tel:+919886398431">+91 98863 98431</a> / <a href="tel:+919886748980">+91 98867 48980</a></span>
@@ -1975,7 +2028,7 @@
       </div>
 
       <div class="contact-detail-row">
-        <div class="contact-icon">✉️</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
         <div class="contact-detail-text">
           <strong>Direct Email</strong>
           <span><a href="mailto:writeto@sasohomes.com">writeto@sasohomes.com</a></span>
@@ -1983,7 +2036,7 @@
       </div>
 
       <div class="contact-detail-row">
-        <div class="contact-icon">⏰</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="contact-detail-text">
           <strong>Working Hours</strong>
           <span>Monday – Saturday: 10:00 AM – 7:30 PM (Sunday by Appointment)</span>
@@ -1998,22 +2051,22 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name">Your Name *</label>
-            <input type="text" id="name" class="form-control" placeholder="e.g. Aditi Sharma" required />
+            <input type="text" id="name" class="form-control" placeholder="e.g. Aditi Sharma" required autocomplete="name" aria-required="true" />
           </div>
           <div class="form-group">
             <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210" required />
+            <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210" required autocomplete="tel" inputmode="tel" aria-required="true" />
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" class="form-control" placeholder="aditi@example.com" />
+            <input type="email" id="email" class="form-control" placeholder="aditi@example.com" autocomplete="email" inputmode="email" />
           </div>
           <div class="form-group">
             <label for="location">Property Location in Bangalore</label>
-            <input type="text" id="location" class="form-control" placeholder="e.g. Whitefield, Koramangala" />
+            <input type="text" id="location" class="form-control" placeholder="e.g. Whitefield, Koramangala" autocomplete="address-level2" />
           </div>
         </div>
 
@@ -2121,9 +2174,9 @@
 </a>
 
 <!-- Project Detail Lightbox Modal -->
-<div class="project-modal" id="projectModal" onclick="closeProjectModal(event)">
+<div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="closeProjectModal(event)">
   <div class="modal-content-card" onclick="event.stopPropagation()">
-    <button class="modal-close-btn" onclick="closeModalDirect()">✕</button>
+    <button class="modal-close-btn" aria-label="Close project details" onclick="closeModalDirect()">✕</button>
     <div style="height:320px; overflow:hidden; background:#E8F2F3;">
       <img id="modalImg" src="" alt="Project Preview" style="width:100%; height:100%; object-fit:cover;" />
     </div>
@@ -2280,6 +2333,32 @@
     document.getElementById('projectModal').classList.remove('open');
     document.body.style.overflow = 'auto';
   }
+
+  // UI/UX Pro Max: Escape key listener for modals
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('projectModal');
+      if (modal && modal.classList.contains('open')) {
+        closeModalDirect();
+      }
+      const navMenu = document.getElementById('navMenu');
+      if (navMenu && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        document.getElementById('mobileToggle').setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+
+  // Toggle aria-expanded on mobile navigation button
+  const toggleBtn = document.getElementById('mobileToggle');
+  if (toggleBtn) {
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = navMenu.classList.contains('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
 </script>
 
 </body>
