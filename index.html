@@ -539,6 +539,35 @@
     line-height: 1.3;
   }
 
+
+  /* Reference Layout: "LIVING REDEFINED" Display Header */
+  .hero-title-redefined {
+    font-family: var(--font-heading);
+    font-size: clamp(3.2rem, 6.8vw, 5.2rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+  }
+  .title-living {
+    display: block;
+    color: var(--teal-darkest);
+  }
+  .title-redefined {
+    display: block;
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--cyan-accent) 55%, var(--gold-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Reference Layout: Arch frame for hero photo */
+  .hero-main-img-card.arch-frame {
+    border-radius: 180px 180px var(--radius-xl) var(--radius-xl);
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 25px 65px rgba(10, 60, 68, 0.16);
+  }
+
   /* Hero Visual Card */
   .hero-visual-wrapper {
     position: relative;
@@ -791,6 +820,110 @@
   }
   @media (max-width: 600px) {
     .services-grid { grid-template-columns: 1fr; }
+  }
+
+
+  /* Services Golden Wave Divider (from reference) */
+  .services-section {
+    position: relative;
+    padding-bottom: clamp(6rem, 10vw, 8.5rem);
+  }
+  .services-wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    pointer-events: none;
+  }
+  .services-wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 75px;
+  }
+
+  /* Panoramic Project Showcase (from reference) */
+  .projects-panoramic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+  .panoramic-project-item {
+    background: #FFFFFF;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  .panoramic-project-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--teal-primary);
+  }
+  .panoramic-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.2rem;
+    border-bottom: 1px solid var(--border-light);
+    background: #FFFFFF;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .panoramic-project-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin-bottom: 0.15rem;
+  }
+  .panoramic-project-info span {
+    font-size: 0.88rem;
+    color: var(--teal-primary);
+    font-weight: 600;
+  }
+  .panoramic-view-btn {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--teal-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.2s ease;
+  }
+  .panoramic-project-item:hover .panoramic-view-btn {
+    gap: 0.75rem;
+    color: var(--cyan-accent);
+  }
+  .panoramic-media {
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-surface);
+  }
+  .panoramic-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .panoramic-project-item:hover .panoramic-media img {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    .panoramic-media { height: 260px; }
+    .panoramic-project-header { padding: 1.2rem 1.4rem; }
+    .panoramic-project-info h3 { font-size: 1.25rem; }
+    .panoramic-project-info span { font-size: 0.8rem; }
+    .hero-main-img-card.arch-frame { border-radius: 120px 120px var(--radius-xl) var(--radius-xl); }
   }
 
   /* ==========================================================================
@@ -1547,9 +1680,9 @@
 <section class="hero-section" id="hero">
   <div class="wrap hero-grid">
     <div class="hero-content">
-      <h1>
-        Crafting Homes <br />
-        <span class="gradient-text">That Inspire &amp; Endure.</span>
+      <h1 class="hero-title-redefined">
+        <span class="title-living">LIVING</span>
+        <span class="title-redefined">REDEFINED</span>
       </h1>
       
       <p class="hero-desc">
@@ -1564,7 +1697,7 @@
 
     <!-- Visual Presentation -->
     <div class="hero-visual-wrapper">
-      <div class="hero-main-img-card">
+      <div class="hero-main-img-card arch-frame">
         <img src="hero_modern_villa.jpg" alt="SaSo Homes Luxury Villa Architecture" loading="eager" />
       </div>
 
@@ -1624,7 +1757,8 @@
 <section class="services-section" id="services">
   <div class="wrap">
     <div class="section-header">
-      <h2>Four Core Disciplines.<br />One Integrated Handover.</h2>
+      <h2>OUR SERVICES</h2>
+      <p style="text-transform:uppercase; letter-spacing:0.08em; font-weight:700; font-size:0.85rem; color:var(--gold-dark); margin-bottom:0.8rem;">Contemporary, Classic or Modern, We Do It All, and Do It Well.</p>
       <p>Whether crafting a bespoke villa from bare earth or designing high-end modular interiors, our end-to-end studio ensures perfection at every scale.</p>
     </div>
 
@@ -1710,6 +1844,11 @@
       </div>
     </div>
   </div>
+  <div class="services-wave-divider">
+    <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+      <path d="M0,40 C320,100 480,110 720,60 C960,10 1180,90 1440,30 L1440,120 L0,120 Z" fill="#F6FAFA"></path>
+    </svg>
+  </div>
 </section>
 
 <!-- ==========================================================================
@@ -1718,7 +1857,7 @@
 <section class="projects-section" id="projects">
   <div class="wrap">
     <div class="section-header">
-      <h2>Selected Residential &amp; Commercial Commissions</h2>
+      <h2>OUR PROJECTS</h2>
       <p>Discover our bespoke residential and commercial triumphs across Bangalore. From Phoenix One West to bespoke private villas.</p>
     </div>
 
@@ -1732,118 +1871,88 @@
     </div>
 
     <!-- Projects Grid -->
-    <div class="projects-grid">
+    <div class="projects-panoramic-list">
       <!-- Project 1: Exquisite Grandeur -->
-      <div class="project-card" data-category="villa" onclick="openProjectModal('Exquisite Grandeur', 'Phoenix Bangalore One West', '4,800 Sq.Ft Luxury Modern Villa', 'hero_modern_villa.jpg', 'A masterclass in contemporary villa design featuring harmonious indoor-outdoor courtyard transitions, double-height living areas, Italian marble flooring, and customized warm brass accents.')">
-        <div class="project-card-media">
-          <img src="hero_modern_villa.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" loading="lazy" />
+      <div class="panoramic-project-item" data-category="villa" onclick="openProjectModal('Exquisite Grandeur', 'Phoenix Bangalore One West', '4,800 Sq.Ft Luxury Modern Villa', 'hero_modern_villa.jpg', 'A masterclass in contemporary villa design featuring double-height living areas, Italian marble flooring, reflection courtyards, and bespoke warm brass accents.')">
+        <div class="panoramic-project-header">
+          <div class="panoramic-project-info">
+            <h3>Exquisite Grandeur</h3>
+            <span>Phoenix Bangalore One West • 4,800 Sq.Ft Luxury Villa</span>
+          </div>
+          <span class="panoramic-view-btn">View Project →</span>
         </div>
-        <div class="project-card-body">
-          <div class="project-meta-row">
-            <span class="project-category">Luxury Modern Villa</span>
-            <span class="project-location-text">Phoenix One West</span>
-          </div>
-          <h3 class="project-title">Exquisite Grandeur</h3>
-          <p class="project-desc">Double-height glass facade with warm evening illuminations, reflection pool, and bespoke furnishings.</p>
-          <div class="project-footer">
-            <span>4,800 Sq.Ft • Complete Turnkey</span>
-            <span class="project-view-btn">View Project →</span>
-          </div>
+        <div class="panoramic-media">
+          <img src="hero_modern_villa.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" loading="lazy" />
         </div>
       </div>
 
       <!-- Project 2: Luxe Aura -->
-      <div class="project-card" data-category="apartment" onclick="openProjectModal('Luxe Aura', 'Phoenix Kessaku, Bangalore', '3,600 Sq.Ft Contemporary Penthouse', 'interiors_luxury_living.jpg', 'Custom designed with minimalist curves, travertine accents, bespoke boucle lounge seating, and smart home automation.')">
-        <div class="project-card-media">
-          <img src="interiors_luxury_living.jpg" alt="Luxe Aura - Phoenix Kessaku" loading="lazy" />
+      <div class="panoramic-project-item" data-category="apartment" onclick="openProjectModal('Luxe Aura', 'Phoenix Kessaku, Bangalore', '3,600 Sq.Ft Contemporary Penthouse', 'interiors_luxury_living.jpg', 'Custom designed with minimalist curves, travertine accents, bespoke boucle lounge seating, and smart home automation.')">
+        <div class="panoramic-project-header">
+          <div class="panoramic-project-info">
+            <h3>Luxe Aura</h3>
+            <span>Phoenix Kessaku • 3,600 Sq.Ft Contemporary Penthouse</span>
+          </div>
+          <span class="panoramic-view-btn">View Project →</span>
         </div>
-        <div class="project-card-body">
-          <div class="project-meta-row">
-            <span class="project-category">Contemporary Penthouse</span>
-            <span class="project-location-text">Phoenix Kessaku</span>
-          </div>
-          <h3 class="project-title">Luxe Aura</h3>
-          <p class="project-desc">Minimalist curved upholstery, dark walnut accents, and travertine stone fireplace with lush garden views.</p>
-          <div class="project-footer">
-            <span>3,600 Sq.Ft • Interiors &amp; Modular</span>
-            <span class="project-view-btn">View Project →</span>
-          </div>
+        <div class="panoramic-media">
+          <img src="interiors_luxury_living.jpg" alt="Luxe Aura - Phoenix Kessaku" loading="lazy" />
         </div>
       </div>
 
       <!-- Project 3: Walnut Whisper -->
-      <div class="project-card" data-category="turnkey" onclick="openProjectModal('Walnut Whisper', 'Sadashivanagar, Bangalore', '5,200 Sq.Ft Bespoke Residence', 'turnkey_luxury_kitchen.jpg', 'An opulent Italian marble kitchen with fluted oak cabinetry, hidden pantry, and bookmatched stone island.')">
-        <div class="project-card-media">
-          <img src="turnkey_luxury_kitchen.jpg" alt="Walnut Whisper - Sadashivanagar" loading="lazy" />
+      <div class="panoramic-project-item" data-category="turnkey" onclick="openProjectModal('Walnut Whisper', 'Sadashivanagar, Bangalore', '5,200 Sq.Ft Bespoke Residence', 'turnkey_luxury_kitchen.jpg', 'An opulent Italian marble kitchen with fluted oak cabinetry, hidden pantry, and bookmatched stone island.')">
+        <div class="panoramic-project-header">
+          <div class="panoramic-project-info">
+            <h3>Walnut Whisper</h3>
+            <span>Sadashivanagar • 5,200 Sq.Ft Bespoke Turnkey Residence</span>
+          </div>
+          <span class="panoramic-view-btn">View Project →</span>
         </div>
-        <div class="project-card-body">
-          <div class="project-meta-row">
-            <span class="project-category">Turnkey Luxury Living</span>
-            <span class="project-location-text">Sadashivanagar</span>
-          </div>
-          <h3 class="project-title">Walnut Whisper</h3>
-          <p class="project-desc">Bookmatched Calacatta gold marble island, fluted oak millwork, and custom brushed brass fixtures.</p>
-          <div class="project-footer">
-            <span>5,200 Sq.Ft • Full Architecture &amp; Build</span>
-            <span class="project-view-btn">View Project →</span>
-          </div>
+        <div class="panoramic-media">
+          <img src="turnkey_luxury_kitchen.jpg" alt="Walnut Whisper - Sadashivanagar" loading="lazy" />
         </div>
       </div>
 
       <!-- Project 4: Majestic Muse -->
-      <div class="project-card" data-category="villa" onclick="openProjectModal('Majestic Muse', 'Indiranagar Villa, Bangalore', '6,500 Sq.Ft Modernist Estate', 'architecture_planning.jpg', 'Conceived from the ground up: structural elevation, daylight orientation, and custom handcrafted timber ceilings.')">
-        <div class="project-card-media">
-          <img src="architecture_planning.jpg" alt="Majestic Muse - Indiranagar" loading="lazy" />
+      <div class="panoramic-project-item" data-category="villa" onclick="openProjectModal('Majestic Muse', 'Indiranagar Villa, Bangalore', '6,500 Sq.Ft Modernist Estate', 'architecture_planning.jpg', 'Conceived from the ground up: structural elevation, daylight orientation, and custom handcrafted timber ceilings.')">
+        <div class="panoramic-project-header">
+          <div class="panoramic-project-info">
+            <h3>Majestic Muse</h3>
+            <span>Indiranagar Villa • 6,500 Sq.Ft Modernist Estate</span>
+          </div>
+          <span class="panoramic-view-btn">View Project →</span>
         </div>
-        <div class="project-card-body">
-          <div class="project-meta-row">
-            <span class="project-category">Architectural Landmark</span>
-            <span class="project-location-text">Indiranagar</span>
-          </div>
-          <h3 class="project-title">Majestic Muse</h3>
-          <p class="project-desc">Complete spatial masterplan, passive cooling design, cantilevered balconies, and organic courtyard integration.</p>
-          <div class="project-footer">
-            <span>6,500 Sq.Ft • Architecture &amp; Execution</span>
-            <span class="project-view-btn">View Project →</span>
-          </div>
+        <div class="panoramic-media">
+          <img src="architecture_planning.jpg" alt="Majestic Muse - Indiranagar" loading="lazy" />
         </div>
       </div>
 
       <!-- Project 5: Pastel Haven -->
-      <div class="project-card" data-category="apartment" onclick="openProjectModal('Pastel Haven', 'Koramangala 4th Block', '2,900 Sq.Ft Nordic Elegance', 'interiors_luxury_living.jpg', 'A soothing sanctuary of soft earth tones, fluted glass partitions, and bespoke Scandinavian modular fittings.')">
-        <div class="project-card-media">
-          <img src="interiors_luxury_living.jpg" alt="Pastel Haven - Koramangala" loading="lazy" />
+      <div class="panoramic-project-item" data-category="apartment" onclick="openProjectModal('Pastel Haven', 'Koramangala 4th Block', '2,900 Sq.Ft Nordic Elegance', 'interiors_luxury_living.jpg', 'A soothing sanctuary of soft earth tones, fluted glass partitions, and bespoke Scandinavian modular fittings.')">
+        <div class="panoramic-project-header">
+          <div class="panoramic-project-info">
+            <h3>Pastel Haven</h3>
+            <span>Koramangala 4th Block • 2,900 Sq.Ft Nordic Contemporary</span>
+          </div>
+          <span class="panoramic-view-btn">View Project →</span>
         </div>
-        <div class="project-card-body">
-          <div class="project-meta-row">
-            <span class="project-category">Nordic Contemporary</span>
-            <span class="project-location-text">Koramangala</span>
-          </div>
-          <h3 class="project-title">Pastel Haven</h3>
-          <p class="project-desc">Subtle sage and blush undertones, acoustic slatted paneling, and custom micro-cement accent walls.</p>
-          <div class="project-footer">
-            <span>2,900 Sq.Ft • Modular Interiors</span>
-            <span class="project-view-btn">View Project →</span>
-          </div>
+        <div class="panoramic-media">
+          <img src="interiors_luxury_living.jpg" alt="Pastel Haven - Koramangala" loading="lazy" />
         </div>
       </div>
 
       <!-- Project 6: NovaVista -->
-      <div class="project-card" data-category="commercial" onclick="openProjectModal('NovaVista', 'Outer Ring Road, Bangalore', '8,200 Sq.Ft Tech Studio & Lounge', 'construction_execution.jpg', 'An avant-garde commercial development blending structural steel columns with open biophilic collaboration lounges.')">
-        <div class="project-card-media">
-          <img src="construction_execution.jpg" alt="NovaVista - Commercial Build" loading="lazy" />
+      <div class="panoramic-project-item" data-category="commercial" onclick="openProjectModal('NovaVista', 'Outer Ring Road, Bangalore', '8,200 Sq.Ft Tech Studio & Lounge', 'construction_execution.jpg', 'An avant-garde commercial development blending structural steel columns with open biophilic collaboration lounges.')">
+        <div class="panoramic-project-header">
+          <div class="panoramic-project-info">
+            <h3>NovaVista</h3>
+            <span>Outer Ring Road • 8,200 Sq.Ft Commercial &amp; Civil</span>
+          </div>
+          <span class="panoramic-view-btn">View Project →</span>
         </div>
-        <div class="project-card-body">
-          <div class="project-meta-row">
-            <span class="project-category">Commercial &amp; Civil</span>
-            <span class="project-location-text">Outer Ring Road</span>
-          </div>
-          <h3 class="project-title">NovaVista</h3>
-          <p class="project-desc">Precision structural engineering, soundproof acoustic envelopes, and LEED-certified sustainable build materials.</p>
-          <div class="project-footer">
-            <span>8,200 Sq.Ft • Commercial Turnkey</span>
-            <span class="project-view-btn">View Project →</span>
-          </div>
+        <div class="panoramic-media">
+          <img src="construction_execution.jpg" alt="NovaVista - Commercial Build" loading="lazy" />
         </div>
       </div>
     </div>
@@ -2222,16 +2331,25 @@
         </ul>
       </div>
 
-      <!-- Col 4: Contact & Social -->
-      <div class="footer-col">
-        <h5>Bangalore Studio</h5>
-        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:0.75rem;">
+      <!-- Col 4: Studio Location & Live Google Map (from reference) -->
+      <div class="footer-col footer-map-col">
+        <h5>Bangalore Studio Location</h5>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.85rem;">
           No. 883, 6th Cross, 6th Block, Koramangala, Bangalore 560095
         </p>
-        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.2rem;">
-          Direct: <a href="tel:+919886398431" style="color:var(--teal-primary); font-weight:600;">+91 98863 98431</a>
-        </p>
-        <div style="display:flex; gap:0.85rem;">
+        <div class="footer-map-frame" style="border-radius:var(--radius-md); overflow:hidden; border:1.5px solid var(--border-medium); box-shadow:var(--shadow-sm); height:160px;">
+          <iframe 
+            title="SaSo Homes Bangalore Studio Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.598583480838!2d77.6200!3d12.9345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144e392652b3%3A0x280e5509b5522e84!2s6th%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div style="display:flex; gap:0.85rem; margin-top:0.85rem;">
           <a href="https://www.instagram.com/sasohomes" target="_blank" class="social-btn">Instagram</a>
           <a href="https://www.facebook.com/sasohomes" target="_blank" class="social-btn">Facebook</a>
         </div>
@@ -2316,7 +2434,7 @@
 
   // Project Category Filtering
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = document.querySelectorAll('.panoramic-project-item');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
