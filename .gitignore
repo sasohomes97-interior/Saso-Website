@@ -1,0 +1,11 @@
+# Temporary files & screenshots
+desktop_*.png
+mobile_*.png
+preview_*.png
+sans_serif_*.png
+poster_*.png
+logo_*.png
+saso_logo_badge.png
+saso_logo_clean.png
+*.backup*.html
+.claude/
