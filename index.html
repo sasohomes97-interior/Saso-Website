@@ -181,6 +181,24 @@
     color: var(--gold-dark);
   }
 
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.95rem;
+    background: var(--teal-light);
+    border: 1px solid var(--border-medium);
+    border-radius: 100px;
+    color: var(--teal-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  .social-btn:hover {
+    background: var(--teal-primary);
+    color: #FFFFFF;
+    border-color: var(--teal-primary);
+  }
+
   /* Section Header Styling */
   .section-header {
     text-align: center;
@@ -1529,11 +1547,6 @@
 <section class="hero-section" id="hero">
   <div class="wrap hero-grid">
     <div class="hero-content">
-      <div class="pill-badge">
-        
-        <span>Living Redefined</span>
-      </div>
-      
       <h1>
         Crafting Homes <br />
         <span class="gradient-text">That Inspire &amp; Endure.</span>
@@ -1625,7 +1638,6 @@
           </div>
         </div>
         <div class="service-card-body">
-          <span class="pill-tag">Complete Handover</span>
           <h3>Turnkey Projects</h3>
           <p>We handle everything: design, civil execution, procurement, and handover. Zero client stress, just a stunning space delivered on time.</p>
           <ul class="service-features-list">
@@ -1646,7 +1658,6 @@
           </div>
         </div>
         <div class="service-card-body">
-          <span class="pill-tag">Bespoke Furnishings</span>
           <h3>Interiors &amp; Modular</h3>
           <p>Precision-built with Italian &amp; German high-tech machinery. Flawless modular kitchens, walk-in wardrobes, and custom statement pieces.</p>
           <ul class="service-features-list">
@@ -1667,7 +1678,6 @@
           </div>
         </div>
         <div class="service-card-body">
-          <span class="pill-tag">Spatial Mastery</span>
           <h3>Architecture &amp; Planning</h3>
           <p>Custom-crafted architectural blueprints, 3D photorealistic elevations, daylight engineering, and structural aesthetics tailored to your lifestyle.</p>
           <ul class="service-features-list">
@@ -1688,7 +1698,6 @@
           </div>
         </div>
         <div class="service-card-body">
-          <span class="pill-tag">Built to Last</span>
           <h3>Construction &amp; Build</h3>
           <p>From foundation excavations to RCC structural framing and pristine exterior cladding. Built with uncompromising structural integrity.</p>
           <ul class="service-features-list">
@@ -1893,8 +1902,7 @@
     </div>
     
     <div class="materials-content">
-      <span class="pill-badge gold">Material Selection</span>
-      <h2 style="margin-top:1rem;">Selected for Longevity. Finished with Mastery.</h2>
+      <h2>Selected for Longevity. Finished with Mastery.</h2>
       <p style="color:var(--text-muted); line-height:1.75;">
         Every surface we install undergoes rigorous humidity, thermal, and scratch testing. We source directly from European quarries and certified sustainable timber mills to create environments that age with grace.
       </p>
@@ -1927,7 +1935,6 @@
 <section class="estimator-section" id="estimator">
   <div class="wrap">
     <div class="section-header">
-      <span class="pill-badge">Project Investment Planner</span>
       <h2>Calculate Your Dream Home Investment</h2>
       <p>Select your home configuration, scope, and style below for a real-time transparent budget projection.</p>
     </div>
@@ -2225,8 +2232,8 @@
           Direct: <a href="tel:+919886398431" style="color:var(--teal-primary); font-weight:600;">+91 98863 98431</a>
         </p>
         <div style="display:flex; gap:0.85rem;">
-          <a href="https://www.instagram.com/sasohomes" target="_blank" class="pill-badge" style="padding:0.4rem 0.85rem;">Instagram</a>
-          <a href="https://www.facebook.com/sasohomes" target="_blank" class="pill-badge" style="padding:0.4rem 0.85rem;">Facebook</a>
+          <a href="https://www.instagram.com/sasohomes" target="_blank" class="social-btn">Instagram</a>
+          <a href="https://www.facebook.com/sasohomes" target="_blank" class="social-btn">Facebook</a>
         </div>
       </div>
     </div>
@@ -2258,9 +2265,11 @@
       <img id="modalImg" src="" alt="Project Preview" style="width:100%; height:100%; object-fit:cover;" />
     </div>
     <div class="modal-body">
-      <span class="pill-badge" id="modalSub"></span>
-      <h2 id="modalTitle" style="font-family:var(--font-heading); font-weight:700; letter-spacing:-0.02em; font-size:2rem; color:var(--text-heading); margin:0.8rem 0 0.4rem;"></h2>
-      <p id="modalLoc" style="color:var(--teal-primary); font-weight:600; font-size:0.95rem; margin-bottom:1.2rem;"></p>
+      <h2 id="modalTitle" style="font-family:var(--font-heading); font-weight:700; letter-spacing:-0.02em; font-size:2rem; color:var(--text-heading); margin-bottom:0.4rem;"></h2>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:0.5rem;">
+        <span id="modalSub" style="color:var(--gold-dark); font-weight:700; font-size:0.9rem;"></span>
+        <span id="modalLoc" style="color:var(--teal-primary); font-weight:600; font-size:0.9rem;"></span>
+      </div>
       <p id="modalDesc" style="color:var(--text-body); line-height:1.75; margin-bottom:1.8rem;"></p>
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-top:1px solid var(--border-light); padding-top:1.5rem;">
         <span style="font-size:0.85rem; color:var(--text-muted);">Interested in a similar turnkey design?</span>
