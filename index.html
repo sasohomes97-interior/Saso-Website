@@ -887,7 +887,7 @@
   /* Parallax Track & Sticky Stage */
   .projects-parallax-track {
     position: relative;
-    height: 380vh;
+    height: 500vh;
   }
   .projects-sticky-stage {
     position: sticky;
@@ -1135,7 +1135,7 @@
   }
 
   @media (max-width: 768px) {
-    .projects-parallax-track { height: 280vh; }
+    .projects-parallax-track { height: 380vh; }
     .projects-sticky-stage {
       top: 64px;
       height: calc(100svh - 68px);
@@ -1685,8 +1685,8 @@
     .brand-name { font-size: 1.12rem; }
     .brand-kannada { font-size: 0.64rem; }
     .brand-tagline { font-size: 0.52rem; }
-    .hero-section { padding: 2.5rem 0 3.5rem; }
-    .hero-content h1 { font-size: clamp(1.85rem, 7vw, 2.35rem); line-height: 1.18; word-break: break-word; }
+    .hero-section { padding: 3rem 0 3.5rem; }
+    .hero-content h1, .hero-title-redefined { font-size: clamp(2.1rem, 8.5vw, 2.9rem); line-height: 1.05; margin-top: 0.4rem; word-break: break-word; }
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .hero-main-img-card img { height: 320px; }
     .floating-badge { position: static; margin: 0.8rem auto 0; width: 90%; justify-content: center; }
@@ -1815,7 +1815,7 @@
       </h1>
       
       <p class="hero-desc">
-        Architectural planning, structural civil build, and factory-calibrated luxury interiors for private residences across Bangalore.
+        SaSo Homes deciphers the subtle intricacies of stylish sophistication while weaving in simplicity to create the most elegant spaces.
       </p>
 
       <div class="hero-btns">
@@ -1827,7 +1827,7 @@
     <!-- Visual Presentation -->
     <div class="hero-visual-wrapper">
       <div class="hero-main-img-card arch-frame">
-        <img src="hero_modern_villa.jpg" alt="SaSo Homes Luxury Villa Architecture" loading="eager" />
+        <img src="reference_hero_arch.png" alt="SaSo Homes Living Redefined Architecture" loading="eager" />
       </div>
 
       <!-- Floating Badge 1 -->
@@ -2010,10 +2010,10 @@
           <!-- Top Bar: Dynamic Project Info & Direct Action -->
           <div class="parallax-card-header">
             <div class="parallax-meta-left">
-              <div class="project-step-indicator" id="projectCounter" aria-live="polite">01 / 06</div>
+              <div class="project-step-indicator" id="projectCounter" aria-live="polite">01 / 08</div>
               <div class="parallax-titles">
                 <h3 id="parallaxProjectTitle">Exquisite Grandeur</h3>
-                <span id="parallaxProjectSubtitle">Phoenix Bangalore One West • 4,800 Sq.Ft Luxury Villa</span>
+                <span id="parallaxProjectSubtitle">Phoenix Bangalore One West • Luxury Villa</span>
               </div>
             </div>
             <button class="btn-parallax-action" id="parallaxViewBtn" onclick="openCurrentProjectModal()">
@@ -2025,33 +2025,43 @@
           <div class="parallax-viewport" id="parallaxViewport" onclick="openCurrentProjectModal()">
             <!-- Image Layer 0 -->
             <div class="parallax-image-layer active" data-index="0">
-              <img src="hero_modern_villa.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" loading="eager" />
-              <div class="parallax-image-badge">Turnkey Villa • Completed 2024</div>
+              <img src="project_exquisite_grandeur.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" loading="eager" />
+              <div class="parallax-image-badge">Turnkey Villa • Phoenix One West</div>
             </div>
             <!-- Image Layer 1 -->
             <div class="parallax-image-layer" data-index="1">
-              <img src="interiors_luxury_living.jpg" alt="Luxe Aura - Phoenix Kessaku" loading="lazy" />
-              <div class="parallax-image-badge">Luxury Penthouse • Bespoke Joinery</div>
+              <img src="project_luxe_aura.jpg" alt="Luxe Aura - Phoenix Kessaku" loading="lazy" />
+              <div class="parallax-image-badge">Luxury Penthouse • Phoenix Kessaku</div>
             </div>
             <!-- Image Layer 2 -->
             <div class="parallax-image-layer" data-index="2">
-              <img src="turnkey_luxury_kitchen.jpg" alt="Walnut Whisper - Sadashivanagar" loading="lazy" />
+              <img src="project_walnut_whisper.jpg" alt="Walnut Whisper - Phoenix One West" loading="lazy" />
               <div class="parallax-image-badge">Turnkey Modular • Italian Calacatta</div>
             </div>
             <!-- Image Layer 3 -->
             <div class="parallax-image-layer" data-index="3">
-              <img src="architecture_planning.jpg" alt="Majestic Muse - Indiranagar" loading="lazy" />
+              <img src="project_majestic_muse.jpg" alt="Majestic Muse - Phoenix One West" loading="lazy" />
               <div class="parallax-image-badge">Modernist Estate • Architecture &amp; Build</div>
             </div>
             <!-- Image Layer 4 -->
             <div class="parallax-image-layer" data-index="4">
-              <img src="interiors_luxury_living.jpg" alt="Pastel Haven - Koramangala" loading="lazy" />
-              <div class="parallax-image-badge">Nordic Contemporary • Acoustic Design</div>
+              <img src="project_pastel_haven.jpg" alt="Pastel Haven - Wood Song Around The Mangoes" loading="lazy" />
+              <div class="parallax-image-badge">Nordic Contemporary • Around The Mangoes</div>
             </div>
             <!-- Image Layer 5 -->
             <div class="parallax-image-layer" data-index="5">
-              <img src="construction_execution.jpg" alt="NovaVista - Commercial Build" loading="lazy" />
-              <div class="parallax-image-badge">Commercial Studio • Structural RCC</div>
+              <img src="project_novavista.jpg" alt="NovaVista - Azven Realty Breathe" loading="lazy" />
+              <div class="parallax-image-badge">Eco-Luxury Turnkey • Azven Breathe</div>
+            </div>
+            <!-- Image Layer 6 -->
+            <div class="parallax-image-layer" data-index="6">
+              <img src="project_punjab_bistro.jpg" alt="Punjab Bistro Marthahalli - Outer Ring Road" loading="lazy" />
+              <div class="parallax-image-badge">Commercial Hospitality • Outer Ring Road</div>
+            </div>
+            <!-- Image Layer 7 -->
+            <div class="parallax-image-layer" data-index="7">
+              <img src="project_masala_martini.jpg" alt="Masala Martini - New Bel Road" loading="lazy" />
+              <div class="parallax-image-badge">Commercial Hospitality • New Bel Road</div>
             </div>
 
             <!-- Parallax Depth Vignette Overlay -->
@@ -2074,10 +2084,12 @@
             <div class="parallax-scrubber-tabs" id="parallaxScrubberTabs">
               <button class="scrubber-tab active" data-index="0" onclick="event.stopPropagation(); scrollToProject(0)">01 Phoenix One West</button>
               <button class="scrubber-tab" data-index="1" onclick="event.stopPropagation(); scrollToProject(1)">02 Phoenix Kessaku</button>
-              <button class="scrubber-tab" data-index="2" onclick="event.stopPropagation(); scrollToProject(2)">03 Sadashivanagar</button>
-              <button class="scrubber-tab" data-index="3" onclick="event.stopPropagation(); scrollToProject(3)">04 Indiranagar Villa</button>
-              <button class="scrubber-tab" data-index="4" onclick="event.stopPropagation(); scrollToProject(4)">05 Koramangala 4th</button>
-              <button class="scrubber-tab" data-index="5" onclick="event.stopPropagation(); scrollToProject(5)">06 Outer Ring Road</button>
+              <button class="scrubber-tab" data-index="2" onclick="event.stopPropagation(); scrollToProject(2)">03 Walnut Whisper</button>
+              <button class="scrubber-tab" data-index="3" onclick="event.stopPropagation(); scrollToProject(3)">04 Majestic Muse</button>
+              <button class="scrubber-tab" data-index="4" onclick="event.stopPropagation(); scrollToProject(4)">05 Pastel Haven</button>
+              <button class="scrubber-tab" data-index="5" onclick="event.stopPropagation(); scrollToProject(5)">06 NovaVista</button>
+              <button class="scrubber-tab" data-index="6" onclick="event.stopPropagation(); scrollToProject(6)">07 Punjab Bistro</button>
+              <button class="scrubber-tab" data-index="7" onclick="event.stopPropagation(); scrollToProject(7)">08 Masala Martini</button>
             </div>
           </div>
 
@@ -2473,45 +2485,59 @@
   const projectsData = [
     {
       title: 'Exquisite Grandeur',
-      subtitle: 'Phoenix Bangalore One West • 4,800 Sq.Ft Luxury Villa',
+      subtitle: 'Phoenix Bangalore One West • Luxury Villa',
       category: 'villa',
-      image: 'hero_modern_villa.jpg',
-      desc: 'A masterclass in contemporary villa design featuring double-height living areas, Italian marble flooring, reflection courtyards, and bespoke warm brass accents.'
+      image: 'project_exquisite_grandeur.jpg',
+      desc: 'A masterclass in contemporary luxury at Phoenix Bangalore One West, weaving refined marble elements, soaring double-height ceilings, and warm bronze detailing into an extraordinary family sanctuary.'
     },
     {
       title: 'Luxe Aura',
-      subtitle: 'Phoenix Kessaku • 3,600 Sq.Ft Contemporary Penthouse',
+      subtitle: 'Phoenix Kessaku • Contemporary Penthouse',
       category: 'apartment',
-      image: 'interiors_luxury_living.jpg',
-      desc: 'Custom designed with minimalist curves, travertine accents, bespoke boucle lounge seating, and smart home automation.'
+      image: 'project_luxe_aura.jpg',
+      desc: 'Custom-designed penthouse residence at Phoenix Kessaku with organic architectural curves, travertine fireplace feature wall, bespoke bouclé lounge seating, and subtle ambient lighting.'
     },
     {
       title: 'Walnut Whisper',
-      subtitle: 'Sadashivanagar • 5,200 Sq.Ft Bespoke Turnkey Residence',
+      subtitle: 'Phoenix Bangalore One West • Bespoke Turnkey Residence',
       category: 'turnkey',
-      image: 'turnkey_luxury_kitchen.jpg',
-      desc: 'An opulent Italian marble kitchen with fluted oak cabinetry, hidden pantry, and bookmatched stone island.'
+      image: 'project_walnut_whisper.jpg',
+      desc: 'An opulent culinary and entertaining haven featuring bookmatched Calacatta stone island, fluted American walnut cabinetry, and Italian-engineered precision hardware.'
     },
     {
       title: 'Majestic Muse',
-      subtitle: 'Indiranagar Villa • 6,500 Sq.Ft Modernist Estate',
+      subtitle: 'Phoenix Bangalore One West • Modernist Luxury Estate',
       category: 'villa',
-      image: 'architecture_planning.jpg',
-      desc: 'Conceived from the ground up: structural elevation, daylight orientation, and custom handcrafted timber ceilings.'
+      image: 'project_majestic_muse.jpg',
+      desc: 'An elevated residential triumph conceived with acoustic spatial zoning, handcrafted timber slatted ceilings, and seamless indoor-outdoor courtyards.'
     },
     {
       title: 'Pastel Haven',
-      subtitle: 'Koramangala 4th Block • 2,900 Sq.Ft Nordic Contemporary',
-      category: 'apartment',
-      image: 'interiors_luxury_living.jpg',
-      desc: 'A soothing sanctuary of soft earth tones, fluted glass partitions, and bespoke Scandinavian modular fittings.'
+      subtitle: 'Wood Song - Around The Mangoes • Nordic Villa',
+      category: 'villa',
+      image: 'project_pastel_haven.jpg',
+      desc: 'An airy sanctuary enveloped in gentle earth and pastel palettes, ribbed glass architectural partitions, and bespoke Scandinavian-inspired modular cabinetry.'
     },
     {
       title: 'NovaVista',
-      subtitle: 'Outer Ring Road • 8,200 Sq.Ft Commercial & Civil Hub',
+      subtitle: 'Azven Realty, Breathe • Eco-Luxury Residence',
+      category: 'turnkey',
+      image: 'project_novavista.jpg',
+      desc: 'Biophilic luxury living designed around sustainable natural ventilation, raw microcement finishes, bespoke timber casework, and expansive panoramic views.'
+    },
+    {
+      title: 'Punjab Bistro, Marthahalli',
+      subtitle: 'Outer Ring Road • Fine Dining Hospitality',
       category: 'commercial',
-      image: 'construction_execution.jpg',
-      desc: 'An avant-garde commercial development blending structural steel columns with open biophilic collaboration lounges.'
+      image: 'project_punjab_bistro.jpg',
+      desc: 'A grand commercial hospitality interior blending artisanal brass latticework, ambient velvet booth seating, and acoustic ceiling baffles for an immersive dining atmosphere.'
+    },
+    {
+      title: 'Masala Martini',
+      subtitle: 'New Bel Road • High-Energy Lounge & Bar',
+      category: 'commercial',
+      image: 'project_masala_martini.jpg',
+      desc: 'A striking hospitality showcase featuring sculpted fluted bar counters, dramatic mood-shifting illumination, and customized industrial-luxe metallic details.'
     }
   ];
 
@@ -2661,7 +2687,7 @@
     'villa': 0,       // Exquisite Grandeur
     'apartment': 1,   // Luxe Aura
     'turnkey': 2,     // Walnut Whisper
-    'commercial': 5   // NovaVista
+    'commercial': 6   // Punjab Bistro, Marthahalli
   };
 
   pFilterBtns.forEach(btn => {
