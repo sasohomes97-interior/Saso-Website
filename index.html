@@ -561,24 +561,24 @@
     height: 100px;
   }
 
-  /* ==========================================================================
-     OUR PROJECTS: CONTINUOUS PARALLAX SCROLL SHOWCASE (All 8 Projects)
+    /* ==========================================================================
+     OUR PROJECTS: STACKED PANORAMIC PARALLAX SHOWCASE (Matching Reference Site)
      ========================================================================== */
   .projects-section {
-    padding: clamp(4rem, 6vw, 6rem) 0 0;
+    padding: clamp(5rem, 8vw, 7.5rem) 0 clamp(4rem, 6vw, 6rem);
     background: #FFFFFF;
     position: relative;
   }
   .projects-section .section-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
   }
   .project-filters {
     display: flex;
     justify-content: center;
     gap: 0.75rem;
     flex-wrap: wrap;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
   }
   .filter-btn {
     background: #FFFFFF;
@@ -603,94 +603,80 @@
     box-shadow: 0 4px 14px rgba(13, 110, 119, 0.25);
   }
 
-  /* Parallax Track & Sticky Stage */
-  .projects-parallax-track {
-    position: relative;
-    height: 500vh;
-  }
-  .projects-sticky-stage {
-    position: sticky;
-    top: 76px;
-    height: calc(100vh - 84px);
-    min-height: 560px;
-    max-height: 820px;
+  /* Stacked Projects List */
+  .projects-stacked-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    z-index: 10;
-    padding: 0.4rem 0 1.2rem;
-    box-sizing: border-box;
+    gap: clamp(3.5rem, 6vw, 5.5rem);
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  .parallax-project-card {
-    background: #FFFFFF;
-    border-radius: var(--radius-xl);
-    border: 1.5px solid var(--border-medium);
-    box-shadow: 0 16px 45px rgba(10, 60, 68, 0.08);
-    overflow: hidden;
+  .project-item {
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
-    position: relative;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .project-item.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.98);
   }
 
-  /* Top Bar (Matching Reference Site: Title ↘ and View Project) */
-  .parallax-card-header {
+  /* Project Meta Row (Matching Reference Site) */
+  .project-meta-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.15rem 2.2rem;
-    border-bottom: 1.5px solid var(--border-light);
-    background: #FFFFFF;
+    align-items: flex-end;
+    margin-bottom: 1.2rem;
+    padding: 0 0.5rem;
+    flex-wrap: wrap;
     gap: 1rem;
+  }
+  .project-meta-left {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
     flex-wrap: wrap;
   }
-  .parallax-meta-left {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-  }
-  .project-step-indicator {
+  .project-num {
     font-family: var(--font-heading);
-    font-weight: 800;
     font-size: 1.1rem;
+    font-weight: 800;
     color: var(--teal-primary);
-    background: var(--teal-light);
-    padding: 0.35rem 0.85rem;
-    border-radius: 8px;
-    border: 1px solid rgba(13, 110, 119, 0.15);
-    letter-spacing: 0.04em;
-    min-width: 65px;
-    text-align: center;
+    letter-spacing: 0.05em;
   }
-  .parallax-titles h3 {
+  .project-title-group h3 {
     font-family: var(--font-heading);
-    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+    font-size: clamp(1.4rem, 2.5vw, 1.95rem);
     font-weight: 700;
     color: #111827;
     line-height: 1.2;
-    margin-bottom: 0.15rem;
-    transition: opacity 0.2s ease;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
-  .parallax-titles h3 .arrow-accent {
+  .project-title-group h3 .arrow-accent {
     font-size: 1.1em;
-    color: var(--gold-dark);
+    color: #5B461A;
+    transition: transform 0.25s ease;
   }
-  .parallax-titles span {
-    font-size: 0.88rem;
-    color: var(--text-muted);
+  .project-item:hover .arrow-accent {
+    transform: translate(2px, 2px);
+    color: var(--teal-primary);
+  }
+  .project-title-group p {
+    font-size: 0.95rem;
+    color: #6B7280;
+    margin-top: 0.2rem;
     font-weight: 500;
-    transition: opacity 0.2s ease;
-    display: block;
   }
-  .btn-parallax-link {
+
+  .btn-view-project {
     background: transparent;
     border: none;
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 700;
     color: #111827;
     text-decoration: underline;
@@ -699,166 +685,110 @@
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
+    padding: 0.4rem 0;
   }
-  .btn-parallax-link:hover {
+  .btn-view-project:hover {
     color: var(--teal-primary);
-    text-underline-offset: 8px;
+    text-underline-offset: 9px;
   }
 
-  /* Cinematic Viewport & Image Layers */
-  .parallax-viewport {
+  /* Panoramic Parallax Viewport Card */
+  .project-panoramic-card {
     position: relative;
-    flex: 1;
-    min-height: 320px;
+    width: 100%;
+    height: clamp(380px, 56vh, 640px);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    background: #0D2226;
+    background: #0B2428;
+    box-shadow: 0 16px 45px rgba(10, 60, 68, 0.08);
+    border: 1px solid var(--border-light);
     cursor: pointer;
   }
-  .parallax-image-layer {
+  .project-parallax-img {
     position: absolute;
-    inset: 0;
+    top: -15%;
+    left: 0;
     width: 100%;
-    height: 100%;
-    will-change: transform, opacity;
-    overflow: hidden;
-    opacity: 0;
-    transform: translate3d(0, 32px, 0) scale(0.96);
-    pointer-events: none;
-    transition: opacity 0.35s ease-out, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .parallax-image-layer.active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    pointer-events: auto;
-  }
-  .parallax-image-layer img {
-    width: 100%;
-    height: 100%;
+    height: 130%;
     object-fit: cover;
-    display: block;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    transition: filter 0.4s ease;
   }
-  .parallax-image-badge {
+  .project-panoramic-card:hover .project-parallax-img {
+    filter: brightness(1.03);
+  }
+  .project-overlay-badge {
     position: absolute;
-    top: 1.2rem;
+    top: 1.4rem;
     left: 1.5rem;
     background: rgba(10, 27, 30, 0.75);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: #FFFFFF;
-    padding: 0.45rem 0.95rem;
+    padding: 0.45rem 1rem;
     border-radius: 6px;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 5;
+    z-index: 3;
     pointer-events: none;
   }
-  .parallax-vignette {
+  .project-vignette {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.3) 100%);
-    z-index: 4;
+    background: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.25) 100%);
+    z-index: 2;
   }
-  .parallax-scroll-cue {
+  .project-click-hint {
     position: absolute;
-    bottom: 1.4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    bottom: 1.2rem;
+    right: 1.5rem;
     background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 0.45rem 1.1rem;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: var(--teal-darkest);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-    transition: opacity 0.35s ease;
-    z-index: 6;
+    padding: 0.45rem 0.95rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.25s ease;
+    z-index: 4;
     pointer-events: none;
   }
-  .cue-mouse {
-    width: 15px;
-    height: 22px;
-    border: 2px solid var(--teal-primary);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    padding-top: 2px;
-  }
-  .cue-wheel {
-    width: 3px;
-    height: 4px;
-    background: var(--teal-primary);
-    border-radius: 2px;
-    animation: mouseWheel 1.5s infinite;
-  }
-  @keyframes mouseWheel {
-    0% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(7px); }
+  .project-panoramic-card:hover .project-click-hint {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  /* Scrubber & Progress Bar */
-  .parallax-card-footer {
-    background: #FFFFFF;
-    border-top: 1.5px solid var(--border-light);
-    padding: 0.85rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .parallax-progress-bar-track {
-    width: 100%;
-    height: 4px;
-    background: var(--border-light);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .parallax-progress-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, var(--teal-primary) 0%, var(--cyan-accent) 100%);
-    transition: width 0.08s ease-out;
-  }
-  .parallax-scrubber-tabs {
-    display: flex;
-    gap: 0.6rem;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    scrollbar-width: none;
-  }
-  .parallax-scrubber-tabs::-webkit-scrollbar {
-    display: none;
-  }
-  .scrubber-tab {
-    background: var(--bg-subtle);
-    border: 1px solid var(--border-light);
-    padding: 0.45rem 0.95rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.2s ease;
-  }
-  .scrubber-tab:hover {
-    border-color: var(--teal-primary);
-    color: var(--teal-primary);
-    background: #FFFFFF;
-  }
-  .scrubber-tab.active {
-    background: var(--teal-light);
-    border-color: var(--teal-primary);
-    color: var(--teal-primary);
-    font-weight: 700;
+  @media (max-width: 768px) {
+    .project-panoramic-card {
+      height: 320px;
+    }
+    .project-meta-row {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .btn-view-project {
+      align-self: flex-start;
+    }
   }
 
-  /* ==========================================================================
+  @media (prefers-reduced-motion: reduce) {
+    .project-parallax-img {
+      transform: none !important;
+    }
+  }
+
+/* ==========================================================================
      FOOTER: 2-Column Luxury Split (Matching Reference Screenshot)
      ========================================================================== */
   .site-footer {
@@ -1306,8 +1236,8 @@
       </div>
     </section>
 
-    <!-- ==========================================================================
-         OUR PROJECTS: CONTINUOUS PARALLAX SCROLL SHOWCASE (All 8 Projects)
+        <!-- ==========================================================================
+         OUR PROJECTS: STACKED PANORAMIC PARALLAX SHOWCASE (All 8 Authentic Projects)
          ========================================================================== -->
     <section class="projects-section" id="projects">
       <div class="wrap">
@@ -1319,109 +1249,176 @@
 
         <!-- Category Filters -->
         <div class="project-filters" id="projectFilters">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="villa">Villas</button>
-          <button class="filter-btn" data-filter="apartment">Penthouses</button>
-          <button class="filter-btn" data-filter="turnkey">Turnkey Residences</button>
-          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+          <button class="filter-btn" data-filter="villa">Villas (3)</button>
+          <button class="filter-btn" data-filter="apartment">Penthouses (1)</button>
+          <button class="filter-btn" data-filter="turnkey">Turnkey Residences (2)</button>
+          <button class="filter-btn" data-filter="commercial">Commercial (2)</button>
         </div>
-      </div>
 
-      <!-- Parallax Scroll Track (Drives continuous scroll progress) -->
-      <div class="projects-parallax-track" id="projectsParallaxTrack">
-        <!-- Pinned Sticky Stage -->
-        <div class="projects-sticky-stage" id="projectsStickyStage">
-          <div class="wrap" style="height:100%;">
-            <div class="parallax-project-card" id="parallaxProjectCard">
-              
-              <!-- Top Bar: Dynamic Project Info & Direct Action (Matching Reference: Title ↘ and View Project) -->
-              <div class="parallax-card-header">
-                <div class="parallax-meta-left">
-                  <div class="project-step-indicator" id="projectCounter" aria-live="polite">01 / 08</div>
-                  <div class="parallax-titles">
-                    <h3 id="parallaxProjectTitle">Exquisite Grandeur <span class="arrow-accent">↘</span></h3>
-                    <span id="parallaxProjectSubtitle">Phoenix Bangalore One West</span>
-                  </div>
-                </div>
-                <button class="btn-parallax-link" id="parallaxViewBtn" onclick="openCurrentProjectModal()">
-                  <span>View Project</span>
-                </button>
-              </div>
+        <!-- Stacked Panoramic Projects List (Matching Reference Website Layout) -->
+        <div class="projects-stacked-list" id="projectsList">
 
-              <!-- Cinematic Panoramic Viewport with Parallax Image Stack -->
-              <div class="parallax-viewport" id="parallaxViewport" onclick="openCurrentProjectModal()">
-                <!-- Image Layer 0 -->
-                <div class="parallax-image-layer active" data-index="0">
-                  <img src="project_exquisite_grandeur.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" loading="eager" />
-                  <div class="parallax-image-badge">Turnkey Villa • Phoenix One West</div>
-                </div>
-                <!-- Image Layer 1 -->
-                <div class="parallax-image-layer" data-index="1">
-                  <img src="project_luxe_aura.jpg" alt="Luxe Aura - Phoenix Kessaku" loading="lazy" />
-                  <div class="parallax-image-badge">Luxury Penthouse • Phoenix Kessaku</div>
-                </div>
-                <!-- Image Layer 2 -->
-                <div class="parallax-image-layer" data-index="2">
-                  <img src="project_walnut_whisper.jpg" alt="Walnut Whisper - Phoenix One West" loading="lazy" />
-                  <div class="parallax-image-badge">Turnkey Modular • Italian Calacatta</div>
-                </div>
-                <!-- Image Layer 3 -->
-                <div class="parallax-image-layer" data-index="3">
-                  <img src="project_majestic_muse.jpg" alt="Majestic Muse - Phoenix One West" loading="lazy" />
-                  <div class="parallax-image-badge">Modernist Estate • Architecture &amp; Build</div>
-                </div>
-                <!-- Image Layer 4 -->
-                <div class="parallax-image-layer" data-index="4">
-                  <img src="project_pastel_haven.jpg" alt="Pastel Haven - Wood Song Around The Mangoes" loading="lazy" />
-                  <div class="parallax-image-badge">Nordic Contemporary • Around The Mangoes</div>
-                </div>
-                <!-- Image Layer 5 -->
-                <div class="parallax-image-layer" data-index="5">
-                  <img src="project_novavista.jpg" alt="NovaVista - Azven Realty Breathe" loading="lazy" />
-                  <div class="parallax-image-badge">Eco-Luxury Turnkey • Azven Breathe</div>
-                </div>
-                <!-- Image Layer 6 -->
-                <div class="parallax-image-layer" data-index="6">
-                  <img src="project_punjab_bistro.jpg" alt="Punjab Bistro Marthahalli - Outer Ring Road" loading="lazy" />
-                  <div class="parallax-image-badge">Commercial Hospitality • Outer Ring Road</div>
-                </div>
-                <!-- Image Layer 7 -->
-                <div class="parallax-image-layer" data-index="7">
-                  <img src="project_masala_martini.jpg" alt="Masala Martini - New Bel Road" loading="lazy" />
-                  <div class="parallax-image-badge">Commercial Hospitality • New Bel Road</div>
-                </div>
-
-                <!-- Parallax Depth Vignette Overlay -->
-                <div class="parallax-vignette"></div>
-
-                <!-- Floating Scroll Hint -->
-                <div class="parallax-scroll-cue" id="parallaxScrollCue">
-                  <span class="cue-mouse">
-                    <span class="cue-wheel"></span>
-                  </span>
-                  <span>Scroll to explore projects</span>
+          <!-- Project 01: Exquisite Grandeur -->
+          <article class="project-item" data-category="villa" data-index="0">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">01</span>
+                <div class="project-title-group">
+                  <h3>Exquisite Grandeur <span class="arrow-accent">↘</span></h3>
+                  <p>Phoenix Bangalore One West</p>
                 </div>
               </div>
-
-              <!-- Bottom Scrubber & Progress Bar -->
-              <div class="parallax-card-footer">
-                <div class="parallax-progress-bar-track">
-                  <div class="parallax-progress-bar-fill" id="parallaxProgressBar"></div>
-                </div>
-                <div class="parallax-scrubber-tabs" id="parallaxScrubberTabs">
-                  <button class="scrubber-tab active" data-index="0" onclick="event.stopPropagation(); scrollToProject(0)">01 Phoenix One West</button>
-                  <button class="scrubber-tab" data-index="1" onclick="event.stopPropagation(); scrollToProject(1)">02 Phoenix Kessaku</button>
-                  <button class="scrubber-tab" data-index="2" onclick="event.stopPropagation(); scrollToProject(2)">03 Walnut Whisper</button>
-                  <button class="scrubber-tab" data-index="3" onclick="event.stopPropagation(); scrollToProject(3)">04 Majestic Muse</button>
-                  <button class="scrubber-tab" data-index="4" onclick="event.stopPropagation(); scrollToProject(4)">05 Pastel Haven</button>
-                  <button class="scrubber-tab" data-index="5" onclick="event.stopPropagation(); scrollToProject(5)">06 NovaVista</button>
-                  <button class="scrubber-tab" data-index="6" onclick="event.stopPropagation(); scrollToProject(6)">07 Punjab Bistro</button>
-                  <button class="scrubber-tab" data-index="7" onclick="event.stopPropagation(); scrollToProject(7)">08 Masala Martini</button>
-                </div>
-              </div>
-
+              <button class="btn-view-project" onclick="openProjectByIndex(0)">View Project</button>
             </div>
-          </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(0)" role="button" tabindex="0" aria-label="View Exquisite Grandeur details">
+              <img src="project_exquisite_grandeur.jpg" alt="Exquisite Grandeur - Phoenix Bangalore One West" class="project-parallax-img" loading="eager" />
+              <div class="project-overlay-badge">Turnkey Villa • Phoenix One West</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
+          <!-- Project 02: Luxe Aura -->
+          <article class="project-item" data-category="apartment" data-index="1">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">02</span>
+                <div class="project-title-group">
+                  <h3>Luxe Aura <span class="arrow-accent">↘</span></h3>
+                  <p>Phoenix Kessaku</p>
+                </div>
+              </div>
+              <button class="btn-view-project" onclick="openProjectByIndex(1)">View Project</button>
+            </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(1)" role="button" tabindex="0" aria-label="View Luxe Aura details">
+              <img src="project_luxe_aura.jpg" alt="Luxe Aura - Phoenix Kessaku" class="project-parallax-img" loading="lazy" />
+              <div class="project-overlay-badge">Luxury Penthouse • Phoenix Kessaku</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
+          <!-- Project 03: Walnut Whisper -->
+          <article class="project-item" data-category="turnkey" data-index="2">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">03</span>
+                <div class="project-title-group">
+                  <h3>Walnut Whisper <span class="arrow-accent">↘</span></h3>
+                  <p>Phoenix Bangalore One West</p>
+                </div>
+              </div>
+              <button class="btn-view-project" onclick="openProjectByIndex(2)">View Project</button>
+            </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(2)" role="button" tabindex="0" aria-label="View Walnut Whisper details">
+              <img src="project_walnut_whisper.jpg" alt="Walnut Whisper - Phoenix One West" class="project-parallax-img" loading="lazy" />
+              <div class="project-overlay-badge">Turnkey Modular • Italian Calacatta</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
+          <!-- Project 04: Majestic Muse -->
+          <article class="project-item" data-category="villa" data-index="3">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">04</span>
+                <div class="project-title-group">
+                  <h3>Majestic Muse <span class="arrow-accent">↘</span></h3>
+                  <p>Phoenix Bangalore One West</p>
+                </div>
+              </div>
+              <button class="btn-view-project" onclick="openProjectByIndex(3)">View Project</button>
+            </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(3)" role="button" tabindex="0" aria-label="View Majestic Muse details">
+              <img src="project_majestic_muse.jpg" alt="Majestic Muse - Phoenix One West" class="project-parallax-img" loading="lazy" />
+              <div class="project-overlay-badge">Modernist Estate • Architecture &amp; Build</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
+          <!-- Project 05: Pastel Haven -->
+          <article class="project-item" data-category="villa" data-index="4">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">05</span>
+                <div class="project-title-group">
+                  <h3>Pastel Haven <span class="arrow-accent">↘</span></h3>
+                  <p>Wood Song - Around The Mangoes</p>
+                </div>
+              </div>
+              <button class="btn-view-project" onclick="openProjectByIndex(4)">View Project</button>
+            </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(4)" role="button" tabindex="0" aria-label="View Pastel Haven details">
+              <img src="project_pastel_haven.jpg" alt="Pastel Haven - Wood Song Around The Mangoes" class="project-parallax-img" loading="lazy" />
+              <div class="project-overlay-badge">Nordic Contemporary • Around The Mangoes</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
+          <!-- Project 06: NovaVista -->
+          <article class="project-item" data-category="turnkey" data-index="5">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">06</span>
+                <div class="project-title-group">
+                  <h3>NovaVista <span class="arrow-accent">↘</span></h3>
+                  <p>Azven Realty, Breathe</p>
+                </div>
+              </div>
+              <button class="btn-view-project" onclick="openProjectByIndex(5)">View Project</button>
+            </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(5)" role="button" tabindex="0" aria-label="View NovaVista details">
+              <img src="project_novavista.jpg" alt="NovaVista - Azven Realty Breathe" class="project-parallax-img" loading="lazy" />
+              <div class="project-overlay-badge">Eco-Luxury Turnkey • Azven Breathe</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
+          <!-- Project 07: Punjab Bistro, Marthahalli -->
+          <article class="project-item" data-category="commercial" data-index="6">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">07</span>
+                <div class="project-title-group">
+                  <h3>Punjab Bistro, Marthahalli <span class="arrow-accent">↘</span></h3>
+                  <p>Outer Ring Road</p>
+                </div>
+              </div>
+              <button class="btn-view-project" onclick="openProjectByIndex(6)">View Project</button>
+            </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(6)" role="button" tabindex="0" aria-label="View Punjab Bistro details">
+              <img src="project_punjab_bistro.jpg" alt="Punjab Bistro Marthahalli - Outer Ring Road" class="project-parallax-img" loading="lazy" />
+              <div class="project-overlay-badge">Commercial Hospitality • Outer Ring Road</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
+          <!-- Project 08: Masala Martini -->
+          <article class="project-item" data-category="commercial" data-index="7">
+            <div class="project-meta-row">
+              <div class="project-meta-left">
+                <span class="project-num">08</span>
+                <div class="project-title-group">
+                  <h3>Masala Martini <span class="arrow-accent">↘</span></h3>
+                  <p>New Bel Road</p>
+                </div>
+              </div>
+              <button class="btn-view-project" onclick="openProjectByIndex(7)">View Project</button>
+            </div>
+            <div class="project-panoramic-card" onclick="openProjectByIndex(7)" role="button" tabindex="0" aria-label="View Masala Martini details">
+              <img src="project_masala_martini.jpg" alt="Masala Martini - New Bel Road" class="project-parallax-img" loading="lazy" />
+              <div class="project-overlay-badge">Commercial Hospitality • New Bel Road</div>
+              <div class="project-vignette"></div>
+              <div class="project-click-hint"><span>View Blueprint Specs →</span></div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -1566,8 +1563,8 @@
     }
   }, { passive: true });
 
-  // ==========================================================================
-  // PARALLAX PROJECT SHOWCASE CONTROLLER (All 8 Authentic Projects)
+    // ==========================================================================
+  // STACKED PANORAMIC PROJECTS CONTROLLER & PARALLAX ENGINE
   // ==========================================================================
   const projectsData = [
     {
@@ -1628,166 +1625,62 @@
     }
   ];
 
-  let currentProjectIndex = 0;
-  const pTrack = document.getElementById('projectsParallaxTrack');
-  const pLayers = document.querySelectorAll('.parallax-image-layer');
-  const pTitle = document.getElementById('parallaxProjectTitle');
-  const pSubtitle = document.getElementById('parallaxProjectSubtitle');
-  const pCounter = document.getElementById('projectCounter');
-  const pProgressBar = document.getElementById('parallaxProgressBar');
-  const pTabs = document.querySelectorAll('.scrubber-tab');
-  const pCue = document.getElementById('parallaxScrollCue');
-  const pFilterBtns = document.querySelectorAll('.project-filters .filter-btn');
+  // High-performance Parallax Scroll for Stacked Projects
+  const panoramicCards = document.querySelectorAll('.project-panoramic-card');
+  let parallaxTicking = false;
 
-  let pTicking = false;
-
-  function updateParallaxShowcase() {
-    if (!pTrack) return;
-    const rect = pTrack.getBoundingClientRect();
-    const trackHeight = pTrack.offsetHeight;
-    const viewportHeight = window.innerHeight;
-    const scrollDistance = trackHeight - viewportHeight;
-    
-    if (scrollDistance <= 0) return;
-
-    // Calculate normalized progress within the track (0.0 to 1.0)
-    const scrolled = -rect.top;
-    const progress = Math.min(Math.max(scrolled / scrollDistance, 0), 1);
-    
-    if (pProgressBar) {
-      pProgressBar.style.width = `${(progress * 100).toFixed(1)}%`;
-    }
-
-    if (pCue) {
-      pCue.style.opacity = progress > 0.04 ? '0' : '1';
-    }
-
-    const total = projectsData.length;
-    const exactIndex = progress * (total - 1);
-    const activeIndex = Math.min(Math.round(exactIndex), total - 1);
-
-    // Continuous GPU-accelerated opacity crossfade and parallax translation
-    pLayers.forEach((layer, i) => {
-      const diff = i - exactIndex;
-      const absDiff = Math.abs(diff);
-
-      if (absDiff < 1.0) {
-        const opacity = 1.0 - absDiff;
-        const translateY = diff * 32; // Seamless parallax drift in px
-        const scale = 1.0 + (1.0 - absDiff) * 0.04; // Subtle depth zoom
-        layer.style.opacity = opacity.toFixed(3);
-        layer.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0) scale(${scale.toFixed(3)})`;
-        layer.style.visibility = 'visible';
-        layer.style.zIndex = Math.round(opacity * 10) + 1;
-        layer.classList.add('active');
-      } else {
-        layer.style.opacity = '0';
-        layer.style.transform = `translate3d(0, ${diff > 0 ? 32 : -32}px, 0) scale(0.96)`;
-        layer.style.visibility = 'hidden';
-        layer.style.zIndex = '0';
-        layer.classList.remove('active');
+  function updateProjectParallax() {
+    const windowH = window.innerHeight;
+    panoramicCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.bottom >= -50 && rect.top <= windowH + 50) {
+        const img = card.querySelector('.project-parallax-img');
+        if (img) {
+          const centerOffset = (rect.top + rect.height / 2) - (windowH / 2);
+          const progress = centerOffset / windowH;
+          const translateY = progress * -45; // Smooth parallax drift in px
+          img.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
+        }
       }
     });
-
-    // When active index changes, update editorial title & subtitle
-    if (activeIndex !== currentProjectIndex) {
-      currentProjectIndex = activeIndex;
-      const item = projectsData[activeIndex];
-
-      if (pTitle && pSubtitle && pCounter) {
-        pTitle.style.opacity = '0';
-        pSubtitle.style.opacity = '0';
-        setTimeout(() => {
-          pCounter.textContent = `0${activeIndex + 1} / 0${total}`;
-          pTitle.innerHTML = `${item.title} <span class="arrow-accent">↘</span>`;
-          pSubtitle.textContent = item.subtitle;
-          pTitle.style.opacity = '1';
-          pSubtitle.style.opacity = '1';
-        }, 140);
-      }
-
-      // Update scrubber tabs
-      pTabs.forEach((tab, idx) => {
-        if (idx === activeIndex) {
-          tab.classList.add('active');
-          tab.setAttribute('aria-current', 'true');
-        } else {
-          tab.classList.remove('active');
-          tab.removeAttribute('aria-current');
-        }
-      });
-
-      // Synchronize category filter pills
-      pFilterBtns.forEach(btn => {
-        const f = btn.getAttribute('data-filter');
-        if (f === 'all' || f === item.category) {
-          btn.classList.toggle('active', f === item.category);
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-      const hasActive = Array.from(pFilterBtns).some(b => b.classList.contains('active') && b.getAttribute('data-filter') !== 'all');
-      if (!hasActive) {
-        const allBtn = document.querySelector('.project-filters .filter-btn[data-filter="all"]');
-        if (allBtn) allBtn.classList.add('active');
-      }
-    }
+    parallaxTicking = false;
   }
 
   window.addEventListener('scroll', () => {
-    if (!pTicking) {
-      window.requestAnimationFrame(() => {
-        updateParallaxShowcase();
-        pTicking = false;
-      });
-      pTicking = true;
+    if (!parallaxTicking) {
+      window.requestAnimationFrame(updateProjectParallax);
+      parallaxTicking = true;
     }
   }, { passive: true });
 
-  window.addEventListener('DOMContentLoaded', () => {
-    updateParallaxShowcase();
-  });
+  window.addEventListener('DOMContentLoaded', updateProjectParallax);
 
-  // Jump to project position on track
-  function scrollToProject(index) {
-    if (!pTrack) return;
-    const rect = pTrack.getBoundingClientRect();
-    const trackTop = window.pageYOffset + rect.top;
-    const trackHeight = pTrack.offsetHeight;
-    const viewportHeight = window.innerHeight;
-    const scrollDistance = trackHeight - viewportHeight;
-    
-    const targetProgress = index / (projectsData.length - 1);
-    const targetScrollY = trackTop + targetProgress * scrollDistance + 5;
-    
-    window.scrollTo({
-      top: targetScrollY,
-      behavior: 'smooth'
-    });
-  }
+  // Category Filtering
+  const filterBtns = document.querySelectorAll('.project-filters .filter-btn');
+  const projectItems = document.querySelectorAll('.projects-stacked-list .project-item');
 
-  // Filter category click handler
-  const categoryToProjectIndex = {
-    'all': 0,
-    'villa': 0,       // Exquisite Grandeur
-    'apartment': 1,   // Luxe Aura
-    'turnkey': 2,     // Walnut Whisper
-    'commercial': 6   // Punjab Bistro, Marthahalli
-  };
-
-  pFilterBtns.forEach(btn => {
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      pFilterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const cat = btn.getAttribute('data-filter');
-      const targetIdx = categoryToProjectIndex[cat] !== undefined ? categoryToProjectIndex[cat] : 0;
-      scrollToProject(targetIdx);
+
+      const filter = btn.getAttribute('data-filter');
+      projectItems.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+      // Re-trigger parallax after filter change
+      window.requestAnimationFrame(updateProjectParallax);
     });
   });
 
-  // Project Modal Functions
-  function openCurrentProjectModal() {
-    const p = projectsData[currentProjectIndex];
+  // Open modal by project index
+  function openProjectByIndex(index) {
+    const p = projectsData[index];
     if (p) {
       openProjectModal(p.title, p.subtitle, 'Bangalore Luxury Project', p.image, p.desc);
     }
@@ -1825,9 +1718,10 @@
       if (modal && modal.classList.contains('open')) {
         closeModalDirect();
       }
+      const navMenu = document.getElementById('navMenu');
       if (navMenu && navMenu.classList.contains('open')) {
         navMenu.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.getElementById('mobileToggle').setAttribute('aria-expanded', 'false');
       }
     }
   });
