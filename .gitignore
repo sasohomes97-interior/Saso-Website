@@ -28,6 +28,7 @@ found_*.png
 after_*.png
 materials_to_*.png
 check_no_*.png
+check_no_*.png
 
 crop_*.png
 scroll_*.png
@@ -35,3 +36,4 @@ test_*.png
 temp_*.html
 stacked_*.png
 redesign_*.png
+bento_*.png
