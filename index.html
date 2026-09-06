@@ -13,23 +13,27 @@
 
   <style>
     :root {
-      --color-teal-dark: #0B2527;      /* Primary Deep Forest Teal */
-      --color-teal-deeper: #07191B;    /* Deeper Slate for contrast */
-      --color-gold: #FDD161;           /* SaSo Signature Ochre Gold */
-      --color-gold-hover: #F2C446;     /* Gold hover */
-      --color-sage: #7BA66A;           /* SaSo Muted Sage Green */
-      --color-sage-light: #EBF2E9;     /* Light Sage Tint */
-      --color-bg-page: #FFFFFF;        /* Pure Alabaster White */
-      --color-bg-alt: #F8F6F2;         /* Warm Ivory Surface */
-      --color-text-dark: #121F21;      /* Charcoal Body Text */
-      --color-text-muted: #5C6E70;     /* Muted secondary text */
-      --color-text-light: #FFFFFF;     /* White text */
-      --color-text-light-muted: #B4C7C9; /* Soft teal-white */
+      --color-teal-dark: #00363A;        /* SaSo Deep Pine / Forest Teal */
+      --color-teal-deeper: #002224;      /* Deepest Slate Teal */
+      --color-teal-primary: #0D6E77;     /* SaSo Signature Ocean Teal */
+      --color-teal-hover: #09535A;       /* Darker Teal Hover */
+      --color-cyan: #05A6B0;             /* SaSo Vibrant Cyan Accent */
+      --color-cyan-light: #E6F5F6;       /* Ice Cyan Tint */
+      --color-gold: #FDD161;             /* SaSo Signature Gold */
+      --color-gold-hover: #E5A93C;       /* Warm Gold Hover */
+      --color-sage: #7BA66A;             /* SaSo Muted Sage Green */
+      --color-sage-light: #EBF2E9;       /* Light Sage Tint */
+      --color-bg-page: #FFFFFF;          /* Pure White */
+      --color-bg-alt: #F2F7F7;           /* SaSo Clean Ice-Teal Tint Surface */
+      --color-text-dark: #0A1F24;        /* Deep Charcoal Teal */
+      --color-text-muted: #4A6569;       /* Slate Teal Body */
+      --color-text-light: #FFFFFF;       /* Pure White */
+      --color-text-light-muted: #A3C2C5; /* Light Teal Accent */
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.16);
+      --shadow-sm: 0 4px 12px rgba(0, 54, 58, 0.06);
+      --shadow-md: 0 12px 30px rgba(0, 54, 58, 0.10);
+      --shadow-lg: 0 20px 48px rgba(0, 54, 58, 0.18);
       --radius-sm: 0px;
       --radius-md: 0px;
       --radius-lg: 0px;
@@ -196,7 +200,7 @@
 
     .btn-talk-gold {
       background-color: var(--color-gold);
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 1px;
@@ -270,7 +274,7 @@
       min-height: 620px;
       max-height: 950px;
       overflow: hidden;
-      background-color: var(--color-teal-dark);
+      background-color: var(--color-teal-primary);
     }
 
     .hero-slides-wrapper {
@@ -315,9 +319,9 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(11, 37, 39, 0.65) 0%,
-        rgba(11, 37, 39, 0.25) 40%,
-        rgba(11, 37, 39, 0.85) 100%
+        rgba(0, 54, 58, 0.70) 0%,
+        rgba(13, 110, 119, 0.25) 40%,
+        rgba(0, 34, 36, 0.90) 100%
       );
       z-index: 3;
     }
@@ -449,7 +453,7 @@
 
     .hero-arrow-btn:hover {
       background: var(--color-gold);
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
     }
 
     .hero-counter {
@@ -465,7 +469,7 @@
        SECTION 2: CURATED BY DESIGN MAESTROS (Authentic Casantro Overhang Section)
        ========================================================================== */
     .section-maestros {
-      background-color: var(--color-teal-dark);
+      background-color: var(--color-teal-primary);
       position: relative;
       padding: 80px 20px 0 20px;
       text-align: center;
@@ -665,7 +669,7 @@
       font-family: var(--font-serif);
       font-size: clamp(30px, 4.5vw, 48px);
       font-weight: 400;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       margin-bottom: 56px;
     }
 
@@ -705,7 +709,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
@@ -722,7 +726,7 @@
     .delight-label {
       font-size: 14px;
       font-weight: 600;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       line-height: 1.35;
       max-width: 140px;
     }
@@ -737,7 +741,7 @@
        SECTION 4: NUMBERS THAT TELL OUR STORY (Exact Casantro Metric Icons)
        ========================================================================== */
     .section-stats {
-      background-color: var(--color-teal-dark);
+      background-color: var(--color-teal-primary);
       padding: 80px 20px;
       color: #FFFFFF;
       text-align: center;
@@ -908,7 +912,7 @@
       font-family: var(--font-serif);
       font-size: clamp(30px, 4vw, 44px);
       font-weight: 400;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
     }
 
     .btn-explore-pill {
@@ -916,7 +920,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       border: 1px solid var(--color-teal-dark);
       padding: 8px 22px;
       border-radius: 0;
@@ -924,7 +928,7 @@
     }
 
     .btn-explore-pill:hover {
-      background-color: var(--color-teal-dark);
+      background-color: var(--color-teal-primary);
       color: #FFFFFF;
     }
 
@@ -1019,7 +1023,7 @@
       font-family: var(--font-serif);
       font-size: clamp(32px, 4vw, 48px);
       font-weight: 400;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       margin-bottom: 8px;
     }
 
@@ -1040,7 +1044,7 @@
       border-radius: 0;
       background: #FFFFFF;
       border: 1px solid #E2DED6;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1050,7 +1054,7 @@
     .portfolio-arrow-btn:hover {
       background: var(--color-teal-dark);
       color: #FFFFFF;
-      border-color: var(--color-teal-dark);
+      border-color: var(--color-teal-primary);
     }
 
     .portfolio-grid {
@@ -1148,7 +1152,7 @@
       font-family: var(--font-serif);
       font-size: clamp(32px, 4.5vw, 48px);
       font-weight: 400;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       margin-bottom: 8px;
     }
 
@@ -1228,7 +1232,7 @@
 
     .testimonial-card:hover .play-button-overlay {
       background: var(--color-gold);
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       transform: scale(1.1);
     }
 
@@ -1251,7 +1255,7 @@
       font-family: var(--font-serif);
       font-size: 15.5px;
       line-height: 1.6;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       margin-bottom: 24px;
       font-weight: 400;
       flex: 1;
@@ -1265,7 +1269,7 @@
     .client-author-name {
       font-size: 15px;
       font-weight: 700;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       margin-bottom: 2px;
     }
 
@@ -1278,7 +1282,7 @@
        SECTION 8: FULL-WIDTH SAGE GREEN LEAD MAGNET
        ========================================================================== */
     .section-lead-banner {
-      background-color: var(--color-sage);
+      background-color: var(--color-teal-primary);
       padding: 90px 20px;
       text-align: center;
       color: #FFFFFF;
@@ -1300,7 +1304,7 @@
 
     .btn-talk-white {
       background-color: #FFFFFF;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       font-size: 12.5px;
       font-weight: 700;
       letter-spacing: 1.2px;
@@ -1314,7 +1318,7 @@
 
     .btn-talk-white:hover {
       background-color: var(--color-gold);
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       transform: translateY(-2px);
     }
 
@@ -1322,7 +1326,7 @@
        SECTION 9: RICH DEEP TEAL FOOTER
        ========================================================================== */
     .site-footer {
-      background-color: var(--color-teal-dark);
+      background-color: var(--color-teal-primary);
       color: #FFFFFF;
       padding: 80px 24px 40px 24px;
     }
@@ -1419,7 +1423,7 @@
 
     .footer-social-btn:hover {
       background: var(--color-gold);
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
     }
 
     .footer-social-btn svg {
@@ -1489,7 +1493,7 @@
     .modal-title {
       font-family: var(--font-serif);
       font-size: 26px;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       margin-bottom: 6px;
     }
 
@@ -1507,7 +1511,7 @@
       display: block;
       font-size: 12.5px;
       font-weight: 600;
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       margin-bottom: 6px;
     }
 
@@ -1523,13 +1527,13 @@
     }
 
     .form-input:focus {
-      border-color: var(--color-teal-dark);
+      border-color: var(--color-teal-primary);
     }
 
     .form-submit-btn {
       width: 100%;
       background-color: var(--color-gold);
-      color: var(--color-teal-dark);
+      color: var(--color-teal-primary);
       font-weight: 700;
       font-size: 13.5px;
       letter-spacing: 1px;
