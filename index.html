@@ -553,30 +553,28 @@
       position: relative;
       z-index: 12;
       transform: translateY(22%);
-      padding: 0 4px;
+      padding: 0 16px;
     }
 
     @media (min-width: 768px) {
       .showcase-outer-container {
         margin-top: 52px;
         transform: translateY(38%);
-        padding: 0;
+        padding: 0 24px;
       }
     }
 
     .showcase-split-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 20px;
       border-radius: 0;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
     }
 
     @media (min-width: 768px) {
       .showcase-split-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 0;
+        gap: 28px;
       }
     }
 
@@ -586,6 +584,7 @@
       overflow: hidden;
       cursor: pointer;
       display: block;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
     }
 
     @media (min-width: 768px) {
