@@ -3,48 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SaSo Homes | Turnkey Interior Architecture &amp; Bespoke Living Spaces Bengaluru</title>
-  <meta name="description" content="SaSo Homes crafts bespoke turnkey interiors and architectural living spaces in Bangalore. Artisanal timber joinery, modular kitchens, and curated residential architecture." />
+  <title>SaSo Homes | Luxury Turnkey Interiors &amp; Architectural Lighting | Bangalore</title>
+  <meta name="description" content="SaSo Homes offers bespoke luxury interiors and architectural lighting for architects, designers, and luxury homeowners in Bengaluru. Crafted to European standards." />
 
-  <!-- Google Fonts: Playfair Display for editorial elegance, Plus Jakarta Sans for crisp modern legibility, Noto Sans Kannada -->
+  <!-- Google Fonts: Cormorant Garamond / Playfair Display for Casantro's poetic serif typography, Plus Jakarta Sans for UI -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       ARCHITECTURAL DESIGN SYSTEM & TOKENS (Anti-Slop Luxury Aesthetic)
+       CASANTRO LUXURY DESIGN SYSTEM (Applied with SaSo Brand Palette)
        ========================================================================== */
     :root {
-      /* Brand Color Palette */
-      --bg-page: #F5F4F0;              /* Architectural Warm Alabaster */
-      --card-dark: #0E2328;            /* Deep Forest Slate / Dark Teal */
-      --card-sage: #6B8E5E;            /* Refined Muted Olive / Sage */
-      --card-linen: #ECE6DC;           /* Warm Sand / Tactile Travertine */
-      --card-white: #FFFFFF;
+      /* SaSo Brand Color Tokens */
+      --color-teal-dark: #0E2328;      /* Signature Deep Slate / Teal (Casantro Dark Section Match) */
+      --color-teal-deep: #08161A;      /* Deeper Slate for Contrast */
+      --color-terracotta: #C88251;     /* Warm Terracotta / Sand Ochre (Casantro Button & Banner Match) */
+      --color-terracotta-hover: #B87342;
+      --color-gold: #FDD161;           /* SaSo Golden Honey Accent */
+      --color-gold-hover: #E5B946;
+      --color-sage: #7BA66A;           /* SaSo Muted Sage Accent */
       
-      --text-dark: #0E2328;
-      --text-muted-dark: #4A5560;
-      --text-light: #FFFFFF;
-      --text-muted-light: #A5B6B8;
-      --text-muted-green: #E2ECE0;
+      --color-bg-page: #FFFFFF;
+      --color-bg-alt: #FBF9F5;         /* Soft Luxury Warm Cream */
+      --color-bg-linen: #F4EFE6;       /* Warm Sand / Travertine */
       
-      --accent-gold: #F5C344;
-      --accent-gold-hover: #E5B232;
-      --accent-sage: #6B8E5E;
-      --accent-sage-hover: #5A7B4E;
-      --accent-terracotta: #D9654B;
+      --color-text-dark: #1A1A1A;
+      --color-text-muted: #666666;
+      --color-text-light: #FFFFFF;
+      --color-text-light-muted: #B4C4C6;
       
-      --radius-card: 32px;
-      --radius-badge: 999px;
-      --radius-inner: 22px;
-      
-      --font-display: 'Playfair Display', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       --font-kannada: 'Noto Sans Kannada', sans-serif;
       
-      --shadow-card: 0 16px 40px rgba(14, 35, 40, 0.07);
-      --shadow-hover: 0 24px 52px rgba(14, 35, 40, 0.12);
+      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     *, *::before, *::after {
@@ -60,51 +54,18 @@
     }
 
     body {
-      background-color: var(--bg-page);
+      background-color: var(--color-bg-page);
       font-family: var(--font-sans);
-      color: var(--text-dark);
-      line-height: 1.55;
+      color: var(--color-text-dark);
+      line-height: 1.5;
       overflow-x: hidden;
-      padding: 24px 16px 48px 16px;
     }
 
-    @media (min-width: 768px) {
-      body {
-        padding: 32px 24px 64px 24px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      body {
-        padding: 36px 36px 80px 36px;
-      }
-    }
-
-    /* Page Container */
-    .page-wrapper {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    @media (min-width: 768px) {
-      .page-wrapper {
-        gap: 40px;
-      }
-    }
-
-    /* Typography Hierarchy */
-    h1, h2, h3 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      letter-spacing: -0.015em;
-    }
-
-    p {
-      font-size: 15px;
-      line-height: 1.65;
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      letter-spacing: -0.01em;
     }
 
     a {
@@ -121,371 +82,342 @@
       transition: all 0.25s ease;
     }
 
-    /* Studio Section Marker (Typographic, not a bulky pill notch) */
-    .studio-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .kicker-light {
-      color: var(--accent-gold);
-    }
-
-    .kicker-sage {
-      color: #FFFFFF;
-      opacity: 0.9;
-    }
-
-    .kicker-dark {
-      color: var(--accent-sage);
-    }
-
-    .studio-kicker::before {
-      content: "";
-      display: inline-block;
-      width: 18px;
-      height: 1.5px;
-      background: currentColor;
-    }
-
-    /* Button Variants */
-    .btn-gold {
-      background-color: var(--accent-gold);
-      color: var(--card-dark);
-      font-weight: 700;
-      font-size: 14px;
-      padding: 13px 26px;
-      border-radius: var(--radius-badge);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 16px rgba(245, 195, 68, 0.32);
-    }
-
-    .btn-gold:hover {
-      background-color: var(--accent-gold-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(245, 195, 68, 0.42);
-    }
-
-    .btn-gold .arrow,
-    .btn-green .arrow {
-      transition: transform 0.25s ease;
-      font-size: 16px;
-    }
-
-    .btn-gold:hover .arrow,
-    .btn-green:hover .arrow {
-      transform: translateX(4px);
-    }
-
-    .btn-green {
-      background-color: var(--card-dark);
-      color: #FFFFFF;
-      font-weight: 700;
-      font-size: 14px;
-      padding: 13px 26px;
-      border-radius: var(--radius-badge);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 16px rgba(14, 35, 40, 0.2);
-    }
-
-    .btn-green:hover {
-      background-color: #193840;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(14, 35, 40, 0.3);
-    }
-
     /* ==========================================================================
-       CARD 1: HERO (Dark Bento Card with Refined Brand Tab & Studio Credential)
+       HEADER & NAVIGATION (Casantro Fixed Glass / Dark Navigation)
        ========================================================================== */
-    .card-hero {
-      background-color: var(--card-dark);
-      border-radius: var(--radius-card);
-      position: relative;
-      padding: 24px 20px 36px 20px;
-      color: #FFFFFF;
-      box-shadow: var(--shadow-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+    .header-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
     }
 
-    @media (min-width: 768px) {
-      .card-hero {
-        padding: 32px 36px 48px 36px;
-      }
+    .header-wrapper.scrolled {
+      background-color: rgba(14, 35, 40, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    @media (min-width: 1024px) {
-      .card-hero {
-        padding: 0 48px 52px 48px;
-      }
-    }
-
-    /* Integrated Header Bar */
-    .hero-header {
+    .header-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 18px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: relative;
-      margin-bottom: 32px;
-      min-height: 64px;
-      gap: 12px;
-    }
-
-    @media (max-width: 540px) {
-      .hero-header {
-        margin-bottom: 24px;
-        min-height: 56px;
-        gap: 8px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .hero-header {
-        margin-bottom: 48px;
-        min-height: 76px;
-        gap: 16px;
-      }
-    }
-
-    /* Clean Brand Tab */
-    .brand-tab {
-      background-color: #FFFFFF;
-      padding: 8px 14px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
-      position: relative;
-      z-index: 20;
     }
 
     @media (min-width: 768px) {
-      .brand-tab {
-        padding: 10px 18px;
-        border-radius: 16px;
-        gap: 12px;
+      .header-container {
+        padding: 22px 36px;
       }
     }
 
-    @media (min-width: 1024px) {
-      .brand-tab {
-        margin-top: -2px;
-        padding: 16px 28px;
-        border-radius: 0 0 24px 24px;
-      }
+    /* Brand Logo */
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #FFFFFF;
     }
 
-    .brand-tab img {
-      width: 34px;
-      height: 34px;
+    .brand-logo-wrap img {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    @media (min-width: 768px) {
-      .brand-tab img {
-        width: 38px;
-        height: 38px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .brand-tab img {
-        width: 44px;
-        height: 44px;
-      }
-    }
-
-    .brand-text-wrap {
+    .brand-title-group {
       display: flex;
       flex-direction: column;
     }
 
-    .brand-name {
-      font-family: var(--font-display);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--card-dark);
-      letter-spacing: -0.01em;
-      line-height: 1.1;
-    }
-
-    @media (min-width: 768px) {
-      .brand-name {
-        font-size: 18px;
-      }
-    }
-
-    .brand-sub {
-      font-size: 10px;
+    .brand-main-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
       font-weight: 600;
-      color: #6B7280;
-      letter-spacing: 0.2px;
-      margin-top: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .brand-kannada-sub {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--color-gold);
+      letter-spacing: 0.5px;
+      margin-top: 3px;
       font-family: var(--font-kannada), var(--font-sans);
     }
 
-    @media (min-width: 768px) {
-      .brand-sub {
-        font-size: 11px;
-        margin-top: 2px;
-      }
-    }
-
-    /* Responsive CTA Text Toggle */
-    .btn-text-short {
-      display: none;
-    }
-
-    @media (max-width: 480px) {
-      .btn-text-full {
-        display: none;
-      }
-      .btn-text-short {
-        display: inline;
-      }
-      .hero-actions .btn-gold {
-        padding: 9px 15px;
-        font-size: 12.5px;
-        gap: 6px;
-      }
-      .search-btn {
-        width: 36px;
-        height: 36px;
-      }
-    }
-
     /* Nav Links */
-    .hero-nav {
+    .main-nav {
       display: none;
       align-items: center;
-      gap: 30px;
+      gap: 32px;
     }
 
-    @media (min-width: 900px) {
-      .hero-nav {
+    @media (min-width: 960px) {
+      .main-nav {
         display: flex;
       }
     }
 
-    .hero-nav a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #D6E0E2;
+    .nav-item {
       position: relative;
-      padding: 6px 0;
-      letter-spacing: 0.2px;
     }
 
-    .hero-nav a:hover {
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
       color: #FFFFFF;
-    }
-
-    .hero-nav a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent-gold);
-      transition: width 0.25s ease;
-    }
-
-    .hero-nav a:hover::after {
-      width: 100%;
-    }
-
-    /* Right Header Actions */
-    .hero-actions {
+      letter-spacing: 0.3px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 4px;
+      padding: 6px 0;
     }
 
-    .search-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+    .nav-link:hover {
+      color: var(--color-gold);
+    }
+
+    .nav-arrow {
+      font-size: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item:hover .nav-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Menu */
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: -16px;
+      min-width: 220px;
+      background: var(--color-teal-dark);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 0;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.25s ease;
+      z-index: 110;
+    }
+
+    .nav-item:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      color: #D2DFE2;
+    }
+
+    .nav-dropdown a:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--color-gold);
+      padding-left: 24px;
+    }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-user-btn {
       color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      opacity: 0.85;
+      transition: opacity 0.2s;
     }
 
-    .search-btn:hover {
-      background: rgba(255, 255, 255, 0.18);
-      transform: scale(1.05);
+    .header-user-btn:hover {
+      opacity: 1;
+      color: var(--color-gold);
     }
 
-    /* Hero Two-Column Layout */
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
+    .btn-talk {
+      background-color: var(--color-terracotta);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 999px;
+      display: inline-flex;
       align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(200, 130, 81, 0.3);
     }
 
-    @media (min-width: 992px) {
-      .hero-grid {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 52px;
+    .btn-talk:hover {
+      background-color: var(--color-terracotta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(200, 130, 81, 0.45);
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      background: transparent;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 960px) {
+      .mobile-menu-toggle {
+        display: none;
       }
     }
 
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      max-width: 600px;
+    /* ==========================================================================
+       HERO SECTION (Full-Width Cinematic Slider Match)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      max-height: 960px;
+      width: 100%;
+      overflow: hidden;
+      background-color: var(--color-teal-dark);
     }
 
-    .hero-title {
-      font-size: 34px;
-      line-height: 1.14;
-      font-weight: 600;
-      margin-bottom: 20px;
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: scale(1.04);
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Hero Gradient Vignette Overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(14, 35, 40, 0.5) 0%,
+        rgba(14, 35, 40, 0.1) 40%,
+        rgba(14, 35, 40, 0.75) 85%,
+        rgba(14, 35, 40, 0.95) 100%
+      );
+      z-index: 2;
+    }
+
+    .hero-content-container {
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 0 24px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content-container {
+        bottom: 80px;
+        padding: 0 48px;
+      }
+    }
+
+    .hero-inner-row {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner-row {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    .hero-text-block {
+      max-width: 640px;
       color: #FFFFFF;
     }
 
-    .hero-title em {
-      font-style: italic;
-      font-family: var(--font-display);
+    .hero-kicker {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: 42px;
       font-weight: 400;
-      color: var(--accent-gold);
+      line-height: 1.12;
+      color: #FFFFFF;
+      margin-bottom: 16px;
     }
 
     @media (min-width: 768px) {
       .hero-title {
-        font-size: 46px;
+        font-size: 58px;
       }
     }
 
     @media (min-width: 1200px) {
       .hero-title {
-        font-size: 52px;
+        font-size: 68px;
       }
     }
 
     .hero-desc {
       font-size: 15px;
-      line-height: 1.65;
-      color: #B5C6C8;
-      margin-bottom: 30px;
-      max-width: 500px;
+      color: #E2EBEB;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 520px;
     }
 
     @media (min-width: 768px) {
@@ -494,786 +426,526 @@
       }
     }
 
-    .hero-cta-row {
+    .hero-btn-group {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
-    .hero-sub-cta {
-      font-size: 13px;
-      font-weight: 600;
-      color: #9FB5B7;
+    .btn-explore-outline {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 12px 26px;
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-explore-outline:hover {
+      background: #FFFFFF;
+      color: var(--color-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Slider Pagination Controls (Casantro Arrow Navigation) */
+    .hero-slider-nav {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 12px;
+      background: rgba(14, 35, 40, 0.65);
+      backdrop-filter: blur(10px);
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .hero-sub-cta span {
-      color: var(--accent-gold);
+    .slider-arrow-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
     }
 
-    /* Hero Right Media Wrap */
-    .hero-media-wrap {
+    .slider-arrow-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .slider-counter {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      padding: 0 4px;
+    }
+
+    /* ==========================================================================
+       SECTION 1: GEOMETRIC WIREFRAME & "Curated by design maestros"
+       ========================================================================== */
+    .section-maestros {
+      background-color: var(--color-teal-dark);
       position: relative;
-      border-radius: var(--radius-inner);
+      padding: 80px 24px 0 24px;
+      color: #FFFFFF;
       overflow: hidden;
-      height: 380px;
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     @media (min-width: 768px) {
-      .hero-media-wrap {
-        height: 440px;
+      .section-maestros {
+        padding: 100px 36px 0 36px;
+      }
+    }
+
+    /* Decorative Geometric Architectural Wireframe Lines (Casantro Pattern) */
+    .geo-lines-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 240px;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .geo-lines-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 240px;
+      height: 240px;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .maestros-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 52px auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    .maestros-title {
+      font-size: 44px;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    @media (min-width: 768px) {
+      .maestros-title {
+        font-size: 56px;
+      }
+    }
+
+    .maestros-desc {
+      font-size: 15px;
+      color: var(--color-text-light-muted);
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .maestros-desc {
+        font-size: 16px;
+      }
+    }
+
+    /* 2-Column Split Cards (Luxury Kitchens & Luxury Wardrobes) */
+    .split-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .split-showcase-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+    }
+
+    .split-showcase-card {
+      position: relative;
+      height: 480px;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .split-showcase-card {
+        height: 560px;
+      }
+    }
+
+    .split-showcase-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s var(--transition-smooth);
+    }
+
+    .split-showcase-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .split-card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 32px 32px 80px 32px;
+      background: linear-gradient(180deg, rgba(14, 35, 40, 0.85) 0%, rgba(14, 35, 40, 0) 100%);
+      z-index: 2;
+    }
+
+    .split-card-title {
+      font-size: 32px;
+      color: #FFFFFF;
+      font-weight: 400;
+    }
+
+    @media (min-width: 768px) {
+      .split-card-title {
+        font-size: 38px;
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 2: NOTES OF DELIGHT (6 Core Value Props Match)
+       ========================================================================== */
+    .section-delight {
+      background-color: var(--color-bg-alt);
+      padding: 90px 24px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .section-delight {
+        padding: 110px 36px;
+      }
+    }
+
+    .delight-title {
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--color-teal-dark);
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: 768px) {
+      .delight-title {
+        font-size: 52px;
+      }
+    }
+
+    .delight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+    }
+
+    @media (min-width: 640px) {
+      .delight-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px 32px;
       }
     }
 
     @media (min-width: 1024px) {
-      .hero-media-wrap {
-        height: 480px;
+      .delight-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 24px;
       }
     }
 
-    .hero-media-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    .hero-media-wrap:hover img {
-      transform: scale(1.03);
-    }
-
-    /* Authentic Studio Credential Floating Badge (Replaces Fake Trustpilot) */
-    .studio-credential-badge {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(14, 35, 40, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      padding: 12px 18px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-      z-index: 10;
-      max-width: 280px;
-    }
-
-    .badge-icon-wrap {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(245, 195, 68, 0.15);
-      border: 1px solid var(--accent-gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--accent-gold);
-    }
-
-    .badge-content {
+    .delight-item {
       display: flex;
       flex-direction: column;
-    }
-
-    .badge-metric {
-      font-size: 13px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.01em;
-    }
-
-    .badge-caption {
-      font-size: 11px;
-      color: #B5C6C8;
-      line-height: 1.35;
-      margin-top: 1px;
-    }
-
-    @media (max-width: 480px) {
-      .studio-credential-badge {
-        bottom: 12px;
-        right: 12px;
-        left: 12px;
-        max-width: none;
-        padding: 9px 12px;
-        gap: 10px;
-      }
-      .badge-icon-wrap {
-        width: 32px;
-        height: 32px;
-      }
-      .badge-metric {
-        font-size: 12px;
-      }
-      .badge-caption {
-        font-size: 10px;
-      }
-    }
-
-    /* ==========================================================================
-       CARD 2: APPROACH / PHILOSOPHY (Refined Sage Bento Card)
-       ========================================================================== */
-    .card-approach {
-      background-color: var(--card-sage);
-      border-radius: var(--radius-card);
-      position: relative;
-      padding: 44px 20px 40px 20px;
-      color: #FFFFFF;
-      box-shadow: var(--shadow-card);
-    }
-
-    @media (min-width: 768px) {
-      .card-approach {
-        padding: 56px 48px;
-      }
-    }
-
-    .approach-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
       align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .approach-grid {
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 48px;
-      }
-    }
-
-    .approach-title {
-      font-size: 30px;
-      line-height: 1.18;
-      color: #FFFFFF;
-      margin-bottom: 16px;
-    }
-
-    .approach-title em {
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    @media (min-width: 768px) {
-      .approach-title {
-        font-size: 40px;
-      }
-    }
-
-    .approach-desc {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--text-muted-green);
-      margin-bottom: 28px;
-      max-width: 500px;
-    }
-
-    .media-card-play {
-      position: relative;
-      border-radius: var(--radius-inner);
-      overflow: hidden;
-      height: 280px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
-      border: 3px solid rgba(255, 255, 255, 0.2);
-      cursor: pointer;
-    }
-
-    @media (min-width: 768px) {
-      .media-card-play {
-        height: 350px;
-      }
-    }
-
-    .media-card-play img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .media-card-play:hover img {
-      transform: scale(1.04);
-    }
-
-    .play-btn-circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .play-btn-circle:hover {
-      transform: translate(-50%, -50%) scale(1.1);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.36);
-    }
-
-    .play-btn-circle svg {
-      width: 22px;
-      height: 22px;
-      fill: var(--card-dark);
-      margin-left: 3px;
-    }
-
-    .media-play-caption {
-      position: absolute;
-      bottom: 14px;
-      left: 16px;
-      background: rgba(14, 35, 40, 0.85);
-      backdrop-filter: blur(8px);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #FFFFFF;
-    }
-
-    /* ==========================================================================
-       CARD 3: MATERIALS & PROVENANCE (Dark Slate Bento Card)
-       ========================================================================== */
-    .card-materials {
-      background-color: var(--card-dark);
-      border-radius: var(--radius-card);
-      position: relative;
-      padding: 44px 20px 40px 20px;
-      color: #FFFFFF;
-      box-shadow: var(--shadow-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    @media (min-width: 768px) {
-      .card-materials {
-        padding: 56px 48px;
-      }
-    }
-
-    .materials-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .materials-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 48px;
-      }
-    }
-
-    .materials-title {
-      font-size: 30px;
-      line-height: 1.18;
-      color: #FFFFFF;
-      margin-bottom: 16px;
-    }
-
-    .materials-title em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent-gold);
-    }
-
-    @media (min-width: 768px) {
-      .materials-title {
-        font-size: 40px;
-      }
-    }
-
-    .materials-desc {
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--text-muted-light);
-      margin-bottom: 26px;
-      max-width: 480px;
-    }
-
-    /* Architectural Material Checklist */
-    .materials-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-
-    .materials-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 14px;
-      color: #E2E8F0;
-    }
-
-    @media (min-width: 640px) {
-      .materials-item {
-        font-size: 15px;
-      }
-    }
-
-    .bullet-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(107, 142, 94, 0.22);
-      border: 1.5px solid var(--accent-sage);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .bullet-icon svg {
-      width: 11px;
-      height: 11px;
-      stroke: #A8D196;
-      stroke-width: 2.5;
-    }
-
-    .materials-media {
-      border-radius: var(--radius-inner);
-      overflow: hidden;
-      height: 320px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @media (min-width: 768px) {
-      .materials-media {
-        height: 400px;
-      }
-    }
-
-    .materials-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .materials-media:hover img {
-      transform: scale(1.03);
-    }
-
-    /* ==========================================================================
-       CARD 4: SPACES & LIVING ENVIRONMENTS (Warm Luxury Linen Bento Card)
-       Eliminated gaudy saturated yellow; replaced with refined architectural linen
-       ========================================================================== */
-    .card-collection {
-      background-color: var(--card-linen);
-      border-radius: var(--radius-card);
-      position: relative;
-      padding: 48px 16px 44px 16px;
-      color: var(--card-dark);
-      box-shadow: var(--shadow-card);
-      border: 1px solid rgba(14, 35, 40, 0.06);
-    }
-
-    @media (min-width: 768px) {
-      .card-collection {
-        padding: 56px 36px 48px 36px;
-      }
-    }
-
-    .collection-header {
       text-align: center;
-      max-width: 660px;
-      margin: 0 auto 28px auto;
     }
 
-    .collection-title {
-      font-size: 32px;
-      line-height: 1.18;
-      color: var(--card-dark);
-      margin-bottom: 12px;
-    }
-
-    .collection-title em {
-      font-style: italic;
-      font-weight: 400;
-      color: #6B8E5E;
-    }
-
-    @media (min-width: 768px) {
-      .collection-title {
-        font-size: 42px;
-      }
-    }
-
-    .collection-desc {
-      font-size: 15px;
-      color: var(--text-muted-dark);
-      line-height: 1.6;
-    }
-
-    /* Filter Pills Bar */
-    .filter-bar {
+    .delight-icon-wrap {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .delight-item:hover .delight-icon-wrap {
+      transform: translateY(-4px);
+    }
+
+    .delight-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .delight-label {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #222222;
+      line-height: 1.35;
+      max-width: 140px;
+    }
+
+    .delight-fineprint {
+      font-size: 11.5px;
+      color: #888888;
+      margin-top: 24px;
+    }
+
+    /* ==========================================================================
+       SECTION 3: NUMBERS THAT TELL OUR STORY (Metrics Banner Match)
+       ========================================================================== */
+    .section-stats {
+      background-color: var(--color-teal-dark);
+      padding: 80px 24px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .section-stats {
+        padding: 100px 36px;
+      }
+    }
+
+    .stats-title {
+      font-size: 42px;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .stats-title {
+        font-size: 52px;
+      }
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+      }
+    }
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-icon-wrap {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stat-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4.5vw, 56px);
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 13.5px;
+      color: var(--color-text-light-muted);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       SECTION 4: ARCHITECTURAL LIGHTING & PRODUCTS SHOWCASE
+       ========================================================================== */
+    .section-lighting {
+      background-color: #FFFFFF;
+      padding: 90px 24px;
+    }
+
+    @media (min-width: 768px) {
+      .section-lighting {
+        padding: 110px 36px;
+      }
+    }
+
+    .lighting-container {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    /* Top Lighting Banner Card */
+    .lighting-banner-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 380px;
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      padding: 32px;
+      background-color: #1A1A1A;
+    }
+
+    @media (min-width: 768px) {
+      .lighting-banner-card {
+        height: 440px;
+        padding: 56px 64px;
+      }
+    }
+
+    .lighting-banner-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+
+    .lighting-banner-content {
+      position: relative;
+      z-index: 5;
+      max-width: 520px;
+      color: #FFFFFF;
+    }
+
+    .lighting-sub-brand {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: var(--color-gold);
+    }
+
+    .lighting-banner-title {
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .lighting-banner-title {
+        font-size: 48px;
+      }
+    }
+
+    /* Products Header & Grid */
+    .products-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 32px;
     }
 
-    @media (min-width: 640px) {
-      .filter-bar {
-        gap: 10px;
-        margin-bottom: 36px;
+    .products-main-title {
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--color-teal-dark);
+    }
+
+    @media (min-width: 768px) {
+      .products-main-title {
+        font-size: 44px;
       }
     }
 
-    .filter-pill {
-      background: #FFFFFF;
-      color: #374151;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 9px 18px;
-      border-radius: var(--radius-badge);
-      cursor: pointer;
-      border: 1px solid rgba(14, 35, 40, 0.08);
+    .btn-explore-pill {
+      border: 1px solid var(--color-terracotta);
+      color: var(--color-terracotta);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: all 0.25s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     }
 
-    .filter-pill:hover {
-      background: #FAF8F5;
-      color: #111827;
-      transform: translateY(-1px);
-    }
-
-    .filter-pill.active {
-      background: var(--card-dark);
+    .btn-explore-pill:hover {
+      background-color: var(--color-terracotta);
       color: #FFFFFF;
-      border-color: var(--card-dark);
-      box-shadow: 0 4px 14px rgba(14, 35, 40, 0.25);
     }
 
-    /* Products Grid: 4 Columns on Desktop */
-    .products-grid {
+    .products-grid-row {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
-      margin-bottom: 36px;
+      gap: 20px;
     }
 
     @media (min-width: 540px) {
-      .products-grid {
+      .products-grid-row {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (min-width: 1024px) {
-      .products-grid {
+      .products-grid-row {
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        margin-bottom: 40px;
+        gap: 24px;
       }
     }
 
-    /* Individual White Product Card */
-    .product-card {
-      background: #FFFFFF;
-      border-radius: 20px;
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(14, 35, 40, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(14, 35, 40, 0.12);
-    }
-
-    .product-thumb {
-      background-color: #0E2328;
-      border-radius: 14px;
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .product-box {
+      background: #F4F4F4;
+      border-radius: 12px;
       overflow: hidden;
-      margin-bottom: 12px;
       position: relative;
-    }
-
-    .product-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.45s ease;
-    }
-
-    .product-card:hover .product-thumb img {
-      transform: scale(1.06);
-    }
-
-    /* Room Category Badge */
-    .room-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: rgba(14, 35, 40, 0.82);
-      backdrop-filter: blur(6px);
-      color: #FFFFFF;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
-      letter-spacing: 0.3px;
-      z-index: 5;
-    }
-
-    .product-info-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 4px 4px 6px 4px;
-    }
-
-    .product-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .product-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: #111827;
-      line-height: 1.25;
-    }
-
-    .product-price {
-      font-size: 13px;
-      font-weight: 700;
-      color: #0D6E77;
-    }
-
-    .product-price span {
-      font-size: 12px;
-      color: #6B7280;
-      margin-left: 2px;
-      font-weight: 500;
-    }
-
-    .bookmark-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: var(--card-dark);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 360px;
       cursor: pointer;
-      flex-shrink: 0;
-      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     }
 
-    .bookmark-btn:hover {
-      background: #1B444C;
-      transform: scale(1.08);
-    }
-
-    .bookmark-btn svg {
-      width: 15px;
-      height: 15px;
-      fill: none;
-      stroke: #FFFFFF;
-      stroke-width: 2;
-    }
-
-    .collection-footer-cta {
-      text-align: center;
-    }
-
-    /* ==========================================================================
-       CARD 5: TURNKEY SERVICES (Dark Slate Bento Card with Dual Selectors)
-       ========================================================================== */
-    .card-service {
-      background-color: var(--card-dark);
-      border-radius: var(--radius-card);
-      position: relative;
-      padding: 44px 20px 40px 20px;
-      color: #FFFFFF;
-      box-shadow: var(--shadow-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    @media (min-width: 768px) {
-      .card-service {
-        padding: 56px 48px;
-      }
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .service-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 48px;
-      }
-    }
-
-    .service-title {
-      font-size: 30px;
-      line-height: 1.18;
-      color: #FFFFFF;
-      margin-bottom: 16px;
-    }
-
-    .service-title em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent-gold);
-    }
-
-    @media (min-width: 768px) {
-      .service-title {
-        font-size: 40px;
-      }
-    }
-
-    .service-desc {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--text-muted-light);
-      margin-bottom: 28px;
-      max-width: 490px;
-    }
-
-    /* 2 Toggle Selection Buttons */
-    .service-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    @media (min-width: 520px) {
-      .service-actions {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-
-    .service-pill-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 13px 24px;
-      border-radius: var(--radius-badge);
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-
-    .service-pill-gold {
-      background-color: var(--accent-gold);
-      color: var(--card-dark);
-      box-shadow: 0 4px 14px rgba(245, 195, 68, 0.32);
-    }
-
-    .service-pill-gold:hover {
-      background-color: var(--accent-gold-hover);
-      transform: translateY(-2px);
-    }
-
-    .icon-box-green {
-      width: 24px;
-      height: 24px;
-      border-radius: 6px;
-      background-color: var(--card-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .icon-box-green svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--accent-gold);
-      stroke-width: 2.5;
-    }
-
-    .service-pill-outline {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      color: #FFFFFF;
-    }
-
-    .service-pill-outline:hover {
-      background-color: rgba(255, 255, 255, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .icon-box-white {
-      width: 24px;
-      height: 24px;
-      border-radius: 6px;
-      background-color: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .icon-box-white svg {
-      width: 14px;
-      height: 14px;
-      stroke: #FFFFFF;
-      stroke-width: 2.5;
-    }
-
-    .service-media {
-      border-radius: var(--radius-inner);
-      overflow: hidden;
-      height: 320px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @media (min-width: 768px) {
-      .service-media {
-        height: 400px;
-      }
-    }
-
-    .service-media img {
+    .product-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -1281,263 +953,513 @@
       transition: transform 0.5s ease;
     }
 
-    .service-media:hover img {
-      transform: scale(1.03);
+    .product-box:hover img {
+      transform: scale(1.05);
     }
 
-    /* ==========================================================================
-       CARD 6: CONSULTATION & MONOGRAPH (Refined Sage Bento Card)
-       ========================================================================== */
-    .card-subscribe {
-      background-color: var(--card-sage);
-      border-radius: var(--radius-card);
-      position: relative;
-      padding: 48px 20px 44px 20px;
+    .product-box-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 20px 60px 20px;
+      background: linear-gradient(180deg, rgba(14, 35, 40, 0.75) 0%, rgba(14, 35, 40, 0) 100%);
+      z-index: 2;
+    }
+
+    .product-box-title {
+      font-size: 22px;
       color: #FFFFFF;
-      box-shadow: var(--shadow-card);
-      text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .card-subscribe {
-        padding: 60px 48px;
-      }
-    }
-
-    .subscribe-title {
-      font-size: 28px;
-      line-height: 1.25;
-      max-width: 680px;
-      margin: 0 auto 12px auto;
-      color: #FFFFFF;
-    }
-
-    .subscribe-title em {
-      font-style: italic;
       font-weight: 400;
     }
 
-    @media (min-width: 768px) {
-      .subscribe-title {
-        font-size: 38px;
-      }
-    }
-
-    .subscribe-sub {
-      font-size: 15px;
-      color: var(--text-muted-green);
-      max-width: 540px;
-      margin: 0 auto 28px auto;
-      line-height: 1.6;
-    }
-
-    .subscribe-form {
-      max-width: 520px;
-      margin: 0 auto;
-      background: #FFFFFF;
-      border-radius: var(--radius-badge);
-      padding: 6px 6px 6px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
-    }
-
-    .subscribe-input {
-      border: none;
-      outline: none;
-      font-family: var(--font-sans);
-      font-size: 14px;
-      color: #111827;
-      flex: 1;
-      background: transparent;
-      min-width: 0;
-    }
-
-    .subscribe-input::placeholder {
-      color: #9CA3AF;
-    }
-
-    .subscribe-form .btn-gold {
-      padding: 11px 22px;
-      font-size: 13px;
-      border: none;
-      white-space: nowrap;
-    }
-
     /* ==========================================================================
-       CARD 7: FOOTER (Dark Bento Card with Cutout Logo & Editorial Columns)
+       SECTION 5: OUR PORTFOLIO (Project Slider Match)
        ========================================================================== */
-    .card-footer {
-      background-color: var(--card-dark);
-      border-radius: var(--radius-card);
-      position: relative;
-      padding: 36px 20px 32px 20px;
-      color: #FFFFFF;
-      box-shadow: var(--shadow-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+    .section-portfolio {
+      background-color: var(--color-bg-linen);
+      padding: 90px 24px;
     }
 
     @media (min-width: 768px) {
-      .card-footer {
-        padding: 44px 48px 36px 48px;
+      .section-portfolio {
+        padding: 110px 36px;
       }
     }
 
-    .footer-top-row {
+    .portfolio-container {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    .portfolio-header-row {
       display: flex;
       flex-direction: column;
-      gap: 20px;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 32px;
-    }
-
-    @media (min-width: 768px) {
-      .footer-top-row {
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 36px;
-      }
-    }
-
-    .footer-brand-tab {
-      background-color: #FFFFFF;
-      padding: 12px 22px;
-      border-radius: 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-    }
-
-    .footer-brand-tab img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .footer-contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      color: #CAD7D9;
-      font-size: 13px;
-    }
-
-    @media (min-width: 768px) {
-      .footer-contact-info {
-        font-size: 14px;
-        text-align: right;
-      }
-    }
-
-    .footer-contact-phone {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--accent-gold);
-    }
-
-    .footer-divider {
-      height: 1px;
-      background: rgba(255, 255, 255, 0.1);
       margin-bottom: 36px;
+      gap: 18px;
     }
 
-    .footer-links-grid {
+    @media (min-width: 768px) {
+      .portfolio-header-row {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    .portfolio-title-group h2 {
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--color-teal-dark);
+      line-height: 1.15;
+    }
+
+    @media (min-width: 768px) {
+      .portfolio-title-group h2 {
+        font-size: 52px;
+      }
+    }
+
+    .portfolio-title-group p {
+      font-size: 14.5px;
+      color: #666666;
+      margin-top: 6px;
+    }
+
+    .portfolio-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .circle-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: var(--color-teal-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .circle-nav-btn:hover {
+      background: var(--color-teal-dark);
+      color: #FFFFFF;
+    }
+
+    /* Portfolio Horizontal Scroll / Grid */
+    .portfolio-carousel-track {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px 20px;
+      grid-template-columns: 1fr;
+      gap: 20px;
       margin-bottom: 40px;
     }
 
     @media (min-width: 640px) {
-      .footer-links-grid {
-        grid-template-columns: repeat(3, 1fr);
+      .portfolio-carousel-track {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (min-width: 1024px) {
-      .footer-links-grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 32px;
+      .portfolio-carousel-track {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
       }
     }
 
-    .footer-col-title {
-      font-family: var(--font-sans);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #FFFFFF;
-      margin-bottom: 14px;
+    .portfolio-project-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      height: 420px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
 
-    .footer-col-links {
+    .portfolio-project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-project-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .portfolio-card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(14, 35, 40, 0.82) 0%, rgba(14, 35, 40, 0) 100%);
+      z-index: 2;
+    }
+
+    .portfolio-card-title {
+      font-size: 26px;
+      color: #FFFFFF;
+      font-weight: 400;
+    }
+
+    .portfolio-card-location {
+      font-size: 12px;
+      color: var(--color-gold);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .portfolio-bottom-cta {
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       SECTION 6: TESTIMONIALS (Video & Quote Card Match)
+       ========================================================================== */
+    .section-testimonials {
+      background-color: var(--color-bg-alt);
+      padding: 90px 24px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .section-testimonials {
+        padding: 110px 36px;
+      }
+    }
+
+    .testimonials-title {
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--color-teal-dark);
+      margin-bottom: 6px;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-title {
+        font-size: 52px;
+      }
+    }
+
+    .testimonials-sub {
+      font-size: 14.5px;
+      color: #666666;
+      margin-bottom: 52px;
+    }
+
+    .testimonial-card-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+      text-align: left;
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-card-wrap {
+        grid-template-columns: 1.1fr 0.9fr;
+        padding: 36px;
+        gap: 48px;
+      }
+    }
+
+    .testimonial-media {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 280px;
+      background-color: var(--color-teal-dark);
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-media {
+        height: 320px;
+      }
+    }
+
+    .testimonial-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .testimonial-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--color-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(200, 130, 81, 0.4);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-play-btn:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .testimonial-play-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #FFFFFF;
+      margin-left: 2px;
+    }
+
+    .testimonial-quote-text {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1.35;
+      color: #222222;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-quote-text {
+        font-size: 28px;
+      }
+    }
+
+    .testimonial-author-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-teal-dark);
+    }
+
+    .testimonial-author-role {
+      font-size: 13px;
+      color: #777777;
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       SECTION 7: LEAD MAGNET BANNER ("Your dream home is just a click away")
+       ========================================================================== */
+    .section-cta-banner {
+      background-color: var(--color-terracotta);
+      position: relative;
+      padding: 90px 24px;
+      color: #FFFFFF;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .section-cta-banner {
+        padding: 110px 36px;
+      }
+    }
+
+    .cta-banner-title {
+      font-size: 42px;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 5;
+    }
+
+    @media (min-width: 768px) {
+      .cta-banner-title {
+        font-size: 58px;
+      }
+    }
+
+    .btn-talk-white {
+      background-color: #FFFFFF;
+      color: var(--color-teal-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 5;
+    }
+
+    .btn-talk-white:hover {
+      background-color: var(--color-teal-dark);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       SECTION 8: CASANTRO COMPREHENSIVE LUXURY FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-teal-dark);
+      color: #FFFFFF;
+      padding: 80px 24px 36px 24px;
+    }
+
+    @media (min-width: 768px) {
+      .site-footer {
+        padding: 100px 36px 40px 36px;
+      }
+    }
+
+    .footer-container {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 36px;
+      }
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 380px;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .footer-brand-desc {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--color-text-light-muted);
+    }
+
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .social-circle-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .social-circle-btn:hover {
+      background: var(--color-gold);
+      color: var(--color-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .footer-col-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .footer-links-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 12px;
     }
 
-    .footer-col-links a {
-      font-size: 13.5px;
-      color: #9FB5B8;
+    .footer-links-list a {
+      font-size: 14px;
+      color: var(--color-text-light-muted);
       transition: color 0.2s;
     }
 
-    .footer-col-links a:hover {
-      color: #FFFFFF;
-      padding-left: 3px;
+    .footer-links-list a:hover {
+      color: var(--color-gold);
     }
 
-    .footer-bottom-row {
+    .footer-contact-item {
+      font-size: 14px;
+      color: var(--color-text-light-muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-item a {
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 28px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       justify-content: space-between;
       align-items: center;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 12.5px;
       color: #8C9EA1;
     }
 
     @media (min-width: 768px) {
-      .footer-bottom-row {
+      .footer-bottom-bar {
         flex-direction: row;
       }
     }
 
-    .footer-socials {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-socials a {
-      color: #CAD7D9;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .footer-socials a:hover {
-      color: var(--accent-gold);
-    }
-
     /* ==========================================================================
-       MODALS: REAL BANGALORE PROJECTS & INTERIOR DETAIL LIGHTBOX
+       MODALS: TALK TO US / CONSULTATION & PORTFOLIO DETAILS
        ========================================================================== */
     .modal-backdrop {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(14, 35, 40, 0.82);
-      backdrop-filter: blur(8px);
+      inset: 0;
+      background: rgba(14, 35, 40, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       z-index: 999;
       display: none;
       align-items: center;
@@ -1554,12 +1476,12 @@
 
     .modal-card {
       background: #FFFFFF;
-      border-radius: 28px;
-      max-width: 860px;
+      border-radius: 20px;
+      max-width: 640px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      padding: 32px 24px;
+      padding: 36px 28px;
       position: relative;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
       transform: translateY(20px);
@@ -1568,7 +1490,7 @@
 
     @media (min-width: 640px) {
       .modal-card {
-        padding: 36px 32px;
+        padding: 44px 40px;
       }
     }
 
@@ -1588,684 +1510,664 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 18px;
-      color: #374151;
+      font-size: 20px;
+      color: #333333;
       border: none;
       transition: background 0.2s;
     }
 
     .modal-close-btn:hover {
       background: #E5E7EB;
-      color: #111827;
     }
 
-    .modal-interior-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+    .modal-form-group {
+      margin-bottom: 18px;
     }
 
-    @media (min-width: 768px) {
-      .modal-interior-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 28px;
-      }
-    }
-
-    .modal-img-wrap {
-      border-radius: 18px;
-      overflow: hidden;
-      background: #0E2328;
-      height: 280px;
-    }
-
-    @media (min-width: 640px) {
-      .modal-img-wrap {
-        height: 360px;
-      }
-    }
-
-    .modal-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Video Lightbox */
-    .video-modal-card {
-      background: #000000;
-      border-radius: 20px;
-      max-width: 780px;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .video-modal-card img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
+    .modal-form-group label {
       display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 6px;
+    }
+
+    .modal-form-group input,
+    .modal-form-group select,
+    .modal-form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #D1D5DB;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .modal-form-group input:focus,
+    .modal-form-group select:focus,
+    .modal-form-group textarea:focus {
+      border-color: var(--color-terracotta);
     }
   </style>
 </head>
 <body>
 
-  <div class="page-wrapper">
+  <!-- ==========================================================================
+       HEADER (Casantro Transparent / Dark Glass Fixed Navigation)
+       ========================================================================== -->
+  <header class="header-wrapper" id="siteHeader">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="#home" class="brand-logo-wrap">
+        <img src="saso_logo_circle.png" alt="SaSo Homes Emblem" />
+        <div class="brand-title-group">
+          <span class="brand-main-title">SASO HOMES</span>
+          <span class="brand-kannada-sub">ಸಾಸೊ ಹೋಮ್ಸ್ • Interiors</span>
+        </div>
+      </a>
 
-    <!-- ========================================================================
-         CARD 1: HERO (Dark Slate Bento Card with Refined Brand Tab)
-         ======================================================================== -->
-    <section class="card-hero" id="home">
-      <!-- Top Navigation & Brand Tab Header -->
-      <header class="hero-header">
-        <!-- Brand Tab Cutout -->
-        <a href="#home" class="brand-tab">
-          <img src="saso_logo_circle.png" alt="SaSo Homes Bangalore Logo" />
-          <div class="brand-text-wrap">
-            <span class="brand-name">SaSo Homes</span>
-            <span class="brand-sub">ಸಾಸೊ ಹೋಮ್ಸ್ • Interiors</span>
-          </div>
-        </a>
-
-        <!-- Horizontal Nav Links -->
-        <nav class="hero-nav" aria-label="Main Navigation">
-          <a href="#about">Studio</a>
-          <a href="#materials">Materials</a>
-          <a href="#collection">Spaces</a>
-          <a href="#services">Practice</a>
-          <a href="javascript:void(0)" onclick="openPortfolioModal()">Portfolio</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <!-- Right Header Actions -->
-        <div class="hero-actions">
-          <button class="search-btn" title="Search interior spaces &amp; projects" onclick="openPortfolioModal()">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-          <a href="https://wa.me/919880000000?text=Hi%20SaSo%20Homes,%20I%20would%20like%20to%20book%20a%20turnkey%20interior%20design%20consultation" target="_blank" rel="noopener" class="btn-gold">
-            <span class="btn-text-full">Consultation</span>
-            <span class="btn-text-short">Consult</span>
-            <span class="arrow">→</span>
+      <!-- Desktop Nav -->
+      <nav class="main-nav">
+        <div class="nav-item">
+          <a href="#maestros" class="nav-link">
+            Interiors <span class="nav-arrow">▼</span>
           </a>
-        </div>
-      </header>
-
-      <!-- Hero Content & Media -->
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="studio-kicker kicker-light">Bespoke Architectural Studio • Bengaluru</div>
-          <h1 class="hero-title">
-            Turnkey <em>Interior Architecture</em> for Discerning Residences.
-          </h1>
-          <p class="hero-desc">
-            From initial spatial blueprints and handcrafted timber joinery to complete turnkey execution—SaSo Homes crafts enduring, light-filled living environments across Whitefield, Indiranagar, and Sadashivanagar.
-          </p>
-          <div class="hero-cta-row">
-            <a href="#collection" class="btn-gold">
-              Explore Living Spaces <span class="arrow">→</span>
-            </a>
-            <div class="hero-sub-cta">
-              <span>●</span> 45-Day Guaranteed Handover
-            </div>
+          <div class="nav-dropdown">
+            <a href="#maestros">Luxury Kitchens</a>
+            <a href="#maestros">Bespoke Wardrobes</a>
+            <a href="#portfolio">Living Room Suites</a>
+            <a href="#portfolio">Turnkey Architecture</a>
           </div>
         </div>
-
-        <div class="hero-media-wrap">
-          <img src="interior_luxury_living.jpg" alt="SaSo Homes luxury living room interior with curved boucle sofa, fluted wood wall panelling, and ambient cove lighting" />
-          
-          <!-- Authentic Studio Credential Floating Badge -->
-          <div class="studio-credential-badge">
-            <div class="badge-icon-wrap">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            </div>
-            <div class="badge-content">
-              <span class="badge-metric">150+ Bespoke Residences</span>
-              <span class="badge-caption">Delivered across Bengaluru • 10-Yr Guarantee</span>
-            </div>
-          </div>
+        <div class="nav-item">
+          <a href="#lighting" class="nav-link">Lighting</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         CARD 2: STUDIO CRAFT & PHILOSOPHY (Refined Sage Bento Card)
-         ======================================================================== -->
-    <section class="card-approach" id="about">
-      <div class="approach-grid">
-        <div>
-          <div class="studio-kicker kicker-sage">Our Architectural Philosophy</div>
-          <h2 class="approach-title">Rooted in craft, engineered for <em>modern living</em>.</h2>
-          <p class="approach-desc">
-            We merge Scandinavian spatial clarity with Bengaluru's finest hand-crafted artisanal joinery. Every alcove, partition, and custom fixture is drafted to elevate natural light and respond intuitively to daily family routines.
-          </p>
-          <button class="btn-gold" onclick="openPortfolioModal()">
-            View Case Studies <span class="arrow">→</span>
-          </button>
+        <div class="nav-item">
+          <a href="#delight" class="nav-link">Quality &amp; Craft</a>
         </div>
-
-        <!-- Video Inset Card with Play Button -->
-        <div class="media-card-play" onclick="openVideoModal()">
-          <img src="craftsmen_woodwork.jpg" alt="Master carpenters crafting bespoke architectural joinery at SaSo Homes studio" />
-          <div class="play-btn-circle" title="Play craftsmanship film">
-            <svg viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </div>
-          <div class="media-play-caption">In-House Bengaluru Carpentry Studio</div>
+        <div class="nav-item">
+          <a href="#portfolio" class="nav-link">Portfolio</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         CARD 3: MATERIALS & PROVENANCE (Dark Slate Bento Card)
-         ======================================================================== -->
-    <section class="card-materials" id="materials">
-      <div class="materials-grid">
-        <div>
-          <div class="studio-kicker kicker-light">Material Provenance &amp; Engineering</div>
-          <h2 class="materials-title">Uncompromising integrity in <em>every layer</em>.</h2>
-          <p class="materials-desc">
-            We meticulously curate materials that withstand Bangalore's seasonal humidity shifts and daily wear, partnering directly with certified sustainable forestry and European hardware pioneers.
-          </p>
-
-          <!-- Authentic Architectural Material List -->
-          <ul class="materials-list">
-            <li class="materials-item">
-              <div class="bullet-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Seasoned Natural Hardwoods:</strong>
-                <span style="color: #A0B2B5;"> Burma Teak, American Walnut &amp; European White Oak hand-finished with low-VOC oils.</span>
-              </div>
-            </li>
-            <li class="materials-item">
-              <div class="bullet-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>IS 710 Marine-Grade BWP Plywood:</strong>
-                <span style="color: #A0B2B5;"> Calibrated boiling waterproof cores for absolute stability in wet areas and modular kitchens.</span>
-              </div>
-            </li>
-            <li class="materials-item">
-              <div class="bullet-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Acoustic Slatted Panelling:</strong>
-                <span style="color: #A0B2B5;"> Precision-fluted timber louvers with recycled PET acoustic felt for serene room dynamics.</span>
-              </div>
-            </li>
-            <li class="materials-item">
-              <div class="bullet-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Architectural Metalwork:</strong>
-                <span style="color: #A0B2B5;"> Matte powder-coated structural steel framing, concealed soft-close Blum hinges, and satin brass details.</span>
-              </div>
-            </li>
-            <li class="materials-item">
-              <div class="bullet-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Natural Stone &amp; Quartz Surfaces:</strong>
-                <span style="color: #A0B2B5;"> Book-matched Italian Statuario marble and stain-resistant quartz for high-traffic surfaces.</span>
-              </div>
-            </li>
-          </ul>
-
-          <button class="btn-gold" onclick="openPortfolioModal()">
-            Download Material Guide <span class="arrow">→</span>
-          </button>
+        <div class="nav-item">
+          <a href="#testimonials" class="nav-link">About Us</a>
         </div>
+      </nav>
 
-        <div class="materials-media">
-          <img src="green_arch_alcove.jpg" alt="Sage green arched wall alcove styling with natural timber console and ceramics" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         CARD 4: SIGNATURE LIVING SPACES (Warm Luxury Linen Bento Card)
-         Refined tactile background with 8 Curated Interior Environments
-         ======================================================================== -->
-    <section class="card-collection" id="collection">
-      <div class="collection-header">
-        <div class="studio-kicker kicker-dark" style="justify-content: center;">Curated Portfolio</div>
-        <h2 class="collection-title">Signature <em>Living Environments</em></h2>
-        <p class="collection-desc">
-          Explore our completed turnkey residences, modular chef's kitchens, and bespoke living suites crafted across Bengaluru.
-        </p>
-      </div>
-
-      <!-- Filter Pills Bar -->
-      <div class="filter-bar" role="tablist">
-        <button class="filter-pill active" onclick="filterCategory('all', this)">All Spaces</button>
-        <button class="filter-pill" onclick="filterCategory('living', this)">Living Rooms</button>
-        <button class="filter-pill" onclick="filterCategory('kitchen', this)">Modular Kitchens</button>
-        <button class="filter-pill" onclick="filterCategory('dining', this)">Dining Suites</button>
-        <button class="filter-pill" onclick="filterCategory('villas', this)">Luxury Villas</button>
-        <button class="filter-pill" onclick="filterCategory('penthouses', this)">Penthouses</button>
-        <button class="filter-pill" onclick="filterCategory('woodwork', this)">Teak Joinery</button>
-      </div>
-
-      <!-- Grid of 8 White Cards Featuring Real Luxury Interior Design Spaces -->
-      <div class="products-grid" id="productsGrid">
-        
-        <!-- Space 1: Curved Bouclé Living Suite -->
-        <div class="product-card" data-category="living villas" onclick="openInteriorDetail('Curved Bouclé Living Suite', '₹18.5L+', 'interior_luxury_living.jpg', 'Living Room', 'Whitefield, Bangalore', 'Turnkey living room interior with custom steam-bent fluted timber panelling, curved cream bouclé sofa, organic Calacatta marble coffee table, and architectural indirect cove lighting.')">
-          <div class="product-thumb">
-            <span class="room-badge">Living Room</span>
-            <img src="interior_luxury_living.jpg" alt="Curved Bouclé Living Suite" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Curved Living Suite</h4>
-              <div class="product-price">₹18.5L <span>(Turnkey)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Curved Living Suite', '₹18.5L Turnkey')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Space 2: Waterfall Island Kitchen -->
-        <div class="product-card" data-category="kitchen villas" onclick="openInteriorDetail('Waterfall Island Modular Kitchen', '₹8.4L+', 'turnkey_luxury_kitchen.jpg', 'Kitchen', 'Bengaluru Outskirts Villa', 'Seamless book-matched Calacatta marble waterfall counter with fluted oak tall cabinetry, integrated Siemens appliances, and acoustic slatted timber ceilings.')">
-          <div class="product-thumb">
-            <span class="room-badge">Modular Kitchen</span>
-            <img src="turnkey_luxury_kitchen.jpg" alt="Waterfall Island Modular Kitchen" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Waterfall Island Kitchen</h4>
-              <div class="product-price">₹8.4L <span>(Modular)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Waterfall Island Kitchen', '₹8.4L Modular')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Space 3: Grand Marble Penthouse Hall -->
-        <div class="product-card" data-category="living penthouses" onclick="openInteriorDetail('Grand Marble Penthouse Hall', '₹24.0L+', 'project_luxe_aura.jpg', 'Penthouse', 'Indiranagar, Bangalore', 'High-end open plan living hall with imported Italian Statuario marble, backlit translucent onyx TV feature panel, fluted vertical moulding, and custom velvet seating.')">
-          <div class="product-thumb">
-            <span class="room-badge">Penthouse Hall</span>
-            <img src="project_luxe_aura.jpg" alt="Grand Marble Penthouse Hall" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Grand Marble Hall</h4>
-              <div class="product-price">₹24.0L <span>(Turnkey)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Grand Marble Hall', '₹24.0L Turnkey')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Space 4: Nordic Minimalist Living Room -->
-        <div class="product-card" data-category="living woodwork" onclick="openInteriorDetail('Nordic Minimalist Living Room', '₹14.8L+', 'project_pastel_haven.jpg', 'Living Room', 'HSR Layout, Bangalore', 'Scandinavian-inspired living space with rounded arch niches, acoustic timber media console with warm backlighting, pastel teal sofa, and dual organic nesting tables.')">
-          <div class="product-thumb">
-            <span class="room-badge">Nordic Living</span>
-            <img src="project_pastel_haven.jpg" alt="Nordic Minimalist Living Room" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Nordic Pastel Living</h4>
-              <div class="product-price">₹14.8L <span>(Turnkey)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Nordic Pastel Living', '₹14.8L Turnkey')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Space 5: Double-Height Villa Living Room -->
-        <div class="product-card" data-category="living villas" onclick="openInteriorDetail('Double-Height Architectural Villa', '₹32.0L+', 'interiors_luxury_living.jpg', 'Villa Architecture', 'Sadashivanagar, Bangalore', 'Spectacular double-height living room featuring full-height sliding glass portals, architectural suspended ring chandelier, travertine fireplace wall, and walnut library shelving.')">
-          <div class="product-thumb">
-            <span class="room-badge">Villa Hall</span>
-            <img src="interiors_luxury_living.jpg" alt="Double-Height Architectural Villa" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Double-Height Villa</h4>
-              <div class="product-price">₹32.0L <span>(Architectural)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Double-Height Villa', '₹32.0L Architectural')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Space 6: Illuminated Quartz Villa Kitchen -->
-        <div class="product-card" data-category="kitchen villas" onclick="openInteriorDetail('Illuminated Quartz Villa Kitchen', '₹9.6L+', 'project_exquisite_grandeur.jpg', 'Kitchen &amp; Pantry', 'Whitefield, Bangalore', '4BHK Villa open-concept kitchen featuring metallic champagne acrylic cabinetry, backlit fluted breakfast counter, crystal ring light fixture, and concealed appliance wall.')">
-          <div class="product-thumb">
-            <span class="room-badge">Villa Kitchen</span>
-            <img src="project_exquisite_grandeur.jpg" alt="Illuminated Quartz Villa Kitchen" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Quartz Villa Kitchen</h4>
-              <div class="product-price">₹9.6L <span>(Turnkey)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Quartz Villa Kitchen', '₹9.6L Turnkey')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Space 7: Royal Dining Suite & Crockery Unit -->
-        <div class="product-card" data-category="dining penthouses" onclick="openInteriorDetail('Royal Dining Suite & Crockery Unit', '₹12.5L+', 'project_majestic_muse.jpg', 'Dining Room', 'Koramangala, Bangalore', 'Expansive 10-seater dining room with bespoke brushed brass chandelier, fluted gold glass bar and crockery console with warm LED backlighting, and plush leather dining chairs.')">
-          <div class="product-thumb">
-            <span class="room-badge">Dining Suite</span>
-            <img src="project_majestic_muse.jpg" alt="Royal Dining Suite & Crockery Unit" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Royal Dining Suite</h4>
-              <div class="product-price">₹12.5L <span>(Suite)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Royal Dining Suite', '₹12.5L Suite')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Space 8: Architectural Teak & Walnut Lounge -->
-        <div class="product-card" data-category="living woodwork" onclick="openInteriorDetail('Architectural Teak & Walnut Lounge', '₹16.2L+', 'project_walnut_whisper.jpg', 'Lounge &amp; Mandir', 'Sadashivanagar, Bangalore', 'Solid Burma teak & American walnut wall panelling, integrated back-lit geometric jali pooja mandir, bespoke glass coffee table, and seamless concealed storage.')">
-          <div class="product-thumb">
-            <span class="room-badge">Teak Lounge</span>
-            <img src="project_walnut_whisper.jpg" alt="Architectural Teak & Walnut Lounge" loading="lazy" />
-          </div>
-          <div class="product-info-row">
-            <div class="product-meta">
-              <h4 class="product-name">Walnut Teak Lounge</h4>
-              <div class="product-price">₹16.2L <span>(Woodwork)</span></div>
-            </div>
-            <button class="bookmark-btn" title="Inquire on WhatsApp" onclick="event.stopPropagation(); openWhatsAppOrder('Walnut Teak Lounge', '₹16.2L Woodwork')">
-              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom View All Button -->
-      <div class="collection-footer-cta">
-        <button class="btn-green" onclick="openPortfolioModal()">
-          View All Bangalore Projects <span class="arrow">→</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         CARD 5: TURNKEY PRACTICE (Dark Slate Bento Card with Dual Selectors)
-         ======================================================================== -->
-    <section class="card-service" id="services">
-      <div class="service-grid">
-        <div>
-          <div class="studio-kicker kicker-light">Comprehensive Studio Practice</div>
-          <h2 class="service-title">End-to-end <em>architectural &amp; interior</em> execution.</h2>
-          <p class="service-desc">
-            Whether transforming a villa in Whitefield or reimagining an urban residence in Indiranagar, our multidisciplinary team coordinates 3D spatial planning, structural civil contracting, and bespoke factory-finished joinery under one roof.
-          </p>
-
-          <!-- 2 Selectors -->
-          <div class="service-actions">
-            <!-- Active Button -->
-            <button class="service-pill-btn service-pill-gold" onclick="toggleService('interior', this)">
-              <div class="icon-box-green">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span>Interior Architecture</span>
-            </button>
-
-            <!-- Outline Button -->
-            <button class="service-pill-btn service-pill-outline" onclick="toggleService('exterior', this)">
-              <div class="icon-box-white">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span>Facade &amp; Landscape</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="service-media" id="serviceMediaContainer">
-          <img id="serviceMediaImg" src="architecture_planning.jpg" alt="Architect examining floor plans, material palettes, and swatches at wooden desk" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         CARD 6: MONOGRAPH & CONSULTATION (Refined Sage Bento Card)
-         ======================================================================== -->
-    <section class="card-subscribe">
-      <div class="studio-kicker kicker-sage" style="justify-content: center;">Bengaluru Studio Enquiries</div>
-      <h2 class="subscribe-title">
-        Request our <em>2026 Architectural Lookbook</em> &amp; Private Consultation.
-      </h2>
-      <p class="subscribe-sub">
-        Receive our curated project monographs, seasonal timber release guides, and transparent turnkey pricing benchmarks directly in your inbox.
-      </p>
-
-      <!-- Clean Form Container -->
-      <form class="subscribe-form" onsubmit="handleSubscribe(event)">
-        <input type="email" class="subscribe-input" placeholder="Enter your email address..." required />
-        <button type="submit" class="btn-gold">
-          Request Lookbook <span class="arrow">→</span>
-        </button>
-      </form>
-    </section>
-
-    <!-- ========================================================================
-         CARD 7: FOOTER (Dark Slate Bento Card with Cutout Logo & Editorial Columns)
-         ======================================================================== -->
-    <footer class="card-footer" id="contact">
-      <!-- Header Row: Logo Tab & Contact Info -->
-      <div class="footer-top-row">
-        <a href="#home" class="footer-brand-tab">
-          <img src="saso_logo_circle.png" alt="SaSo Homes circular insignia" />
-          <div class="brand-text-wrap">
-            <span class="brand-name">SaSo Homes</span>
-            <span class="brand-sub">Bangalore Studio • Interiors</span>
-          </div>
+      <!-- Right Actions -->
+      <div class="header-actions">
+        <a href="javascript:void(0)" onclick="openConsultationModal()" class="header-user-btn" title="Client Area">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
         </a>
-
-        <div class="footer-contact-info">
-          <a href="tel:+919880000000" class="footer-contact-phone">+91 98800 00000</a>
-          <span>Sector 2, HSR Layout, Bengaluru, Karnataka 560102</span>
-          <span>hello@sasohomes.com • Open Mon - Sat, 9:30 AM - 7:30 PM</span>
-        </div>
+        <button class="btn-talk" onclick="openConsultationModal()">TALK TO US</button>
+        <button class="mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
       </div>
+    </div>
+  </header>
 
-      <div class="footer-divider"></div>
+  <!-- ==========================================================================
+       HERO SLIDER (Casantro Full-Width Cinematic Background Slider)
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    
+    <!-- Slide 1: Kitchen Masterpiece -->
+    <div class="hero-slide active" id="heroSlide1">
+      <img src="casantro_kitchen_hero.webp" alt="SaSo Homes luxury modular kitchen with warm ambient lighting" />
+    </div>
 
-      <!-- 5 Editorial Columns -->
-      <div class="footer-links-grid">
-        <!-- Col 1: Studio -->
-        <div>
-          <h4 class="footer-col-title">Studio</h4>
-          <ul class="footer-col-links">
-            <li><a href="#about">Our Practice</a></li>
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">Completed Projects</a></li>
-            <li><a href="#about">Joinery Workshop</a></li>
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">Architectural Careers</a></li>
-          </ul>
-        </div>
+    <!-- Slide 2: Turnkey Architectural Living -->
+    <div class="hero-slide" id="heroSlide2">
+      <img src="casantro_wallpanel_hero.webp" alt="SaSo Homes luxury wall panelling and living room interior" />
+    </div>
 
-        <!-- Col 2: Materials -->
-        <div>
-          <h4 class="footer-col-title">Provenance</h4>
-          <ul class="footer-col-links">
-            <li><a href="#materials">Burma Teak</a></li>
-            <li><a href="#materials">IS 710 Marine Plywood</a></li>
-            <li><a href="#materials">Architectural Steel</a></li>
-            <li><a href="#materials">Italian Marble &amp; Quartz</a></li>
-          </ul>
-        </div>
+    <div class="hero-overlay"></div>
 
-        <!-- Col 3: Publications -->
-        <div>
-          <h4 class="footer-col-title">Media</h4>
-          <ul class="footer-col-links">
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">2026 Lookbook</a></li>
-            <li><a href="javascript:void(0)" onclick="openVideoModal()">Craftsmanship Film</a></li>
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">Press &amp; Features</a></li>
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">Client Monographs</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Assurance -->
-        <div>
-          <h4 class="footer-col-title">Assurance</h4>
-          <ul class="footer-col-links">
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">10-Year Warranty</a></li>
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">45-Day Move-in Guarantee</a></li>
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">Timber Care Guide</a></li>
-            <li><a href="javascript:void(0)" onclick="openPortfolioModal()">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 5: Consultation -->
-        <div>
-          <h4 class="footer-col-title">Consultation</h4>
-          <ul class="footer-col-links">
-            <li><a href="https://wa.me/919880000000" target="_blank">Book Studio Visit</a></li>
-            <li><a href="https://wa.me/919880000000" target="_blank">Turnkey Timeline FAQs</a></li>
-            <li><a href="https://wa.me/919880000000" target="_blank">Budget Estimation</a></li>
-            <li><a href="https://wa.me/919880000000" target="_blank">Architect Partnership</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Bottom Row: Copyright & Socials -->
-      <div class="footer-bottom-row">
-        <div>
-          &copy; 2026 SaSo Homes Architecture &amp; Interior Design Studio. All rights reserved. Crafted with distinction in Bengaluru.
-        </div>
-        <div class="footer-socials">
-          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
-          <a href="https://wa.me/919880000000" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- ========================================================================
-       MODAL 1: INTERIOR SPACE DETAIL MODAL (Quick View & WhatsApp Quote)
-       ======================================================================== -->
-  <div class="modal-backdrop" id="interiorModal" onclick="closeInteriorModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeInteriorModal()">&times;</button>
-      <div class="modal-interior-grid">
-        <div class="modal-img-wrap">
-          <img id="modalSpaceImg" src="interior_luxury_living.jpg" alt="Selected Interior Space" />
-        </div>
-        <div style="display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div id="modalSpaceBadge" style="display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; background: #F3F4F6; padding: 4px 10px; border-radius: 6px; color: #0E2328; margin-bottom: 8px;">Living Room • Turnkey</div>
-            <h3 id="modalSpaceTitle" style="font-size: 26px; margin-bottom: 6px; color: #111827;">Curved Bouclé Living Suite</h3>
-            <div id="modalSpaceLocation" style="font-size: 13px; font-weight: 600; color: #6B8E5E; margin-bottom: 12px;">Whitefield, Bangalore</div>
-            <div id="modalSpacePrice" style="font-size: 20px; font-weight: 700; color: #0E2328; margin-bottom: 16px;">Starting at ₹18.5 Lakhs</div>
-            <p id="modalSpaceDesc" style="color: #4B5563; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
-              Turnkey living room interior with custom steam-bent fluted timber panelling, curved cream bouclé sofa, organic Calacatta marble coffee table, and architectural indirect cove lighting.
-            </p>
-            <div style="font-size: 12px; color: #6B7280; display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px;">
-              <div>✓ 100% Turnkey Execution (Design, Civil, Joinery, Styling)</div>
-              <div>✓ 10-Year Structural Timber &amp; Waterproofing Warranty</div>
-              <div>✓ 45-Day Guaranteed Move-In Timeline</div>
-            </div>
+    <div class="hero-content-container">
+      <div class="hero-inner-row">
+        <div class="hero-text-block">
+          <div class="hero-kicker" id="heroKicker">LUXURY INTERIORS</div>
+          <h1 class="hero-title" id="heroTitle">Experience poetry in design</h1>
+          <p class="hero-desc" id="heroDesc">
+            European-inspired turnkey interiors crafted to turn your Bengaluru residence into an enduring masterpiece.
+          </p>
+          <div class="hero-btn-group">
+            <button class="btn-talk" onclick="openConsultationModal()">TALK TO US</button>
+            <a href="#portfolio" class="btn-explore-outline">EXPLORE MORE</a>
           </div>
-          <a id="modalWhatsAppBtn" href="#" target="_blank" class="btn-gold" style="justify-content: center; width: 100%;">
-            Get Free Design Estimate on WhatsApp <span class="arrow">→</span>
-          </a>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="hero-slider-nav">
+          <button class="slider-arrow-btn" onclick="prevHeroSlide()" aria-label="Previous Slide">←</button>
+          <span class="slider-counter" id="heroCounter">1/2</span>
+          <button class="slider-arrow-btn" onclick="nextHeroSlide()" aria-label="Next Slide">→</button>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ========================================================================
-       MODAL 2: BANGALORE REAL PORTFOLIO LOOKBOOK
-       ======================================================================== -->
-  <div class="modal-backdrop" id="portfolioModal" onclick="closePortfolioModal(event)">
-    <div class="modal-card" style="max-width: 960px;" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closePortfolioModal()">&times;</button>
-      <div style="margin-bottom: 24px;">
-        <span style="font-size: 12px; font-weight: 700; color: var(--accent-sage); text-transform: uppercase; letter-spacing: 0.8px;">Architectural Portfolio</span>
-        <h3 style="font-size: 30px; color: var(--card-dark); margin-top: 4px;">Recent Turnkey Projects in Bengaluru</h3>
-        <p style="color: #6B7280; font-size: 14px;">Explore our award-winning residential villas, bespoke penthouses, and signature commercial spaces.</p>
+  <!-- ==========================================================================
+       SECTION 1: GEOMETRIC LINES & "Curated by design maestros."
+       ========================================================================== -->
+  <section class="section-maestros" id="maestros">
+    
+    <!-- SVG Geometric Corner Line Art (Casantro Match) -->
+    <svg class="geo-lines-left" viewBox="0 0 200 200" fill="none" stroke="rgba(253, 209, 97, 0.25)" stroke-width="1.5">
+      <path d="M0,0 L180,0 L0,180 Z" />
+      <path d="M0,0 L120,0 L0,120 Z" />
+      <circle cx="0" cy="0" r="140" stroke-dasharray="4,4" />
+    </svg>
+
+    <svg class="geo-lines-right" viewBox="0 0 200 200" fill="none" stroke="rgba(253, 209, 97, 0.25)" stroke-width="1.5">
+      <path d="M200,0 L20,0 L200,180 Z" />
+      <path d="M200,0 L80,0 L200,120 Z" />
+      <circle cx="200" cy="0" r="140" stroke-dasharray="4,4" />
+    </svg>
+
+    <div class="maestros-header">
+      <h2 class="maestros-title">Curated by design maestros.</h2>
+      <p class="maestros-desc">
+        Interiors perfected for Indian homes with zero-error manufacturing, bubble-free finish and moisture-resistant build.
+      </p>
+      <button class="btn-talk" onclick="openConsultationModal()">TALK TO US</button>
+    </div>
+
+    <!-- Split 2-Column Showcase (Kitchens & Wardrobes) -->
+    <div class="split-showcase-grid">
+      <!-- Card 1: Luxury Kitchens -->
+      <div class="split-showcase-card" onclick="openProductModal('Luxury Kitchens', 'Seamless modular kitchens with German Blum soft-close fittings, Calacatta quartz countertops, and anti-fingerprint acrylic finishes.', 'casantro_kitchen_desktop.webp')">
+        <div class="split-card-overlay">
+          <h3 class="split-card-title">Luxury kitchens</h3>
+        </div>
+        <img src="casantro_kitchen_desktop.webp" alt="Luxury Modular Kitchen" />
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px;">
-        <!-- Project 1 -->
-        <div style="background: #F9FAFB; border-radius: 18px; overflow: hidden; border: 1px solid #E5E7EB;">
-          <img src="project_exquisite_grandeur.jpg" alt="Exquisite Grandeur" style="width: 100%; height: 180px; object-fit: cover;" />
-          <div style="padding: 16px;">
-            <div style="font-size: 11px; font-weight: 700; color: #9CA3AF; text-transform: uppercase;">Whitefield, Bangalore</div>
-            <h4 style="font-size: 16px; font-weight: 700; color: #111827; margin: 4px 0 6px 0;">Exquisite Grandeur</h4>
-            <p style="font-size: 12px; color: #4B5563; margin-bottom: 12px;">4BHK Luxury Villa with double-height fluted teak paneling.</p>
-            <a href="https://wa.me/919880000000?text=Hi%20SaSo%20Homes,%20I%20am%20interested%20in%20a%20turnkey%20interior%20like%20Exquisite%20Grandeur" target="_blank" style="font-size: 12px; font-weight: 700; color: var(--accent-sage);">View Case Study &amp; Cost &rarr;</a>
+      <!-- Card 2: Luxury Wardrobes -->
+      <div class="split-showcase-card" onclick="openProductModal('Luxury Wardrobes', 'Bespoke floor-to-ceiling wardrobe joinery featuring fluted glass doors, acoustic cane inlays, and sensor-activated internal ambient illumination.', 'casantro_wardrobe_desktop.webp')">
+        <div class="split-card-overlay">
+          <h3 class="split-card-title">Luxury wardrobes</h3>
+        </div>
+        <img src="casantro_wardrobe_desktop.webp" alt="Luxury Master Wardrobe" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: NOTES OF DELIGHT (6 Core Value Propositions)
+       ========================================================================== -->
+  <section class="section-delight" id="delight">
+    <h2 class="delight-title">SaSo's notes of delight</h2>
+
+    <div class="delight-grid">
+      <!-- 1: Lifetime Warranty -->
+      <div class="delight-item">
+        <div class="delight-icon-wrap">
+          <img src="icon_warranty.svg" alt="Lifetime Warranty Icon" />
+        </div>
+        <div class="delight-label">Lifetime warranty*</div>
+      </div>
+
+      <!-- 2: 45-Day Production -->
+      <div class="delight-item">
+        <div class="delight-icon-wrap">
+          <img src="icon_production.svg" alt="45-Day Production Icon" />
+        </div>
+        <div class="delight-label">45-day production**</div>
+      </div>
+
+      <!-- 3: Zero-Error Manufacturing -->
+      <div class="delight-item">
+        <div class="delight-icon-wrap">
+          <img src="icon_zero_error.svg" alt="Zero-Error Manufacturing Icon" />
+        </div>
+        <div class="delight-label">Zero-error manufacturing</div>
+      </div>
+
+      <!-- 4: Finest Raw Materials -->
+      <div class="delight-item">
+        <div class="delight-icon-wrap">
+          <img src="icon_raw_materials.svg" alt="Finest Raw Materials Icon" />
+        </div>
+        <div class="delight-label">Finest raw materials</div>
+      </div>
+
+      <!-- 5: Bubble-Free Finish -->
+      <div class="delight-item">
+        <div class="delight-icon-wrap">
+          <img src="icon_bubble_free.svg" alt="Bubble-Free Finish Icon" />
+        </div>
+        <div class="delight-label">Bubble-free finish</div>
+      </div>
+
+      <!-- 6: Moisture-Resistant Build -->
+      <div class="delight-item">
+        <div class="delight-icon-wrap">
+          <img src="icon_moisture.svg" alt="Moisture Resistance Icon" />
+        </div>
+        <div class="delight-label">Moisture-resistant build</div>
+      </div>
+    </div>
+
+    <div class="delight-fineprint">
+      *T&amp;C Apply **With an additional 5-10 days for turnkey installation
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: NUMBERS THAT TELL OUR STORY (Metrics Banner)
+       ========================================================================== -->
+  <section class="section-stats">
+    <h2 class="stats-title">Numbers that tell our story</h2>
+
+    <div class="stats-grid">
+      <!-- Metric 1 -->
+      <div class="stat-card">
+        <div class="stat-icon-wrap">
+          <img src="icon_stat_homes.svg" alt="Homes Delivered" />
+        </div>
+        <div class="stat-number">150+</div>
+        <div class="stat-label">homes delivered</div>
+      </div>
+
+      <!-- Metric 2 -->
+      <div class="stat-card">
+        <div class="stat-icon-wrap">
+          <img src="icon_stat_cities.svg" alt="Cities Served" />
+        </div>
+        <div class="stat-number">Bengaluru</div>
+        <div class="stat-label">prime locations</div>
+      </div>
+
+      <!-- Metric 3 -->
+      <div class="stat-card">
+        <div class="stat-icon-wrap">
+          <img src="icon_stat_stores.svg" alt="Studio Locations" />
+        </div>
+        <div class="stat-number">1</div>
+        <div class="stat-label">experience studio</div>
+      </div>
+
+      <!-- Metric 4 -->
+      <div class="stat-card">
+        <div class="stat-icon-wrap">
+          <img src="icon_stat_rating.svg" alt="Client Rating" />
+        </div>
+        <div class="stat-number">4.9★</div>
+        <div class="stat-label">average rating</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: ARCHITECTURAL LIGHTING & PRODUCTS
+       ========================================================================== -->
+  <section class="section-lighting" id="lighting">
+    <div class="lighting-container">
+      
+      <!-- Top Spotlight Banner -->
+      <div class="lighting-banner-card">
+        <img src="lighting_banner.jpg" alt="Architectural Lighting Focus" class="lighting-banner-bg" />
+        <div class="lighting-banner-content">
+          <div class="lighting-sub-brand">SASO ARCHITECTURAL LIGHTING</div>
+          <h2 class="lighting-banner-title">The Lighting Your Space Deserves</h2>
+          <button class="btn-talk" onclick="openConsultationModal()">ENQUIRE NOW</button>
+        </div>
+      </div>
+
+      <!-- Products Grid Header -->
+      <div class="products-header-row">
+        <h3 class="products-main-title">Products</h3>
+        <a href="#portfolio" class="btn-explore-pill">EXPLORE &gt;</a>
+      </div>
+
+      <!-- 4 Products Cards -->
+      <div class="products-grid-row">
+        <!-- Product 1 -->
+        <div class="product-box" onclick="openProductModal('Spots &amp; Accents', 'Precision architectural spotlight fixtures with deep anti-glare baffles, museum-grade 95+ CRI, and magnetic swivels.', 'lighting_spotlight.jpg')">
+          <div class="product-box-overlay">
+            <h4 class="product-box-title">Spots &amp; Accents</h4>
           </div>
+          <img src="lighting_spotlight.jpg" alt="Spots &amp; Accents" />
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-box" onclick="openProductModal('Downlights', 'Trimless recessed downlights delivering warm dimmable illumination engineered for seamless false-ceiling integration.', 'lighting_downlight.jpg')">
+          <div class="product-box-overlay">
+            <h4 class="product-box-title">Downlights</h4>
+          </div>
+          <img src="lighting_downlight.jpg" alt="Downlights" />
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-box" onclick="openProductModal('Profiles &amp; Linear LEDs', 'Continuous aluminum architectural profile lighting with seamless diffusers for cove, under-cabinet, and ceiling accents.', 'lighting_profile.jpg')">
+          <div class="product-box-overlay">
+            <h4 class="product-box-title">Profiles</h4>
+          </div>
+          <img src="lighting_profile.jpg" alt="Profiles" />
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-box" onclick="openProductModal('Track Lights', 'Magnetic track lighting systems offering versatile fixture repositioning, ambient linear washes, and focused accent spots.', 'project_luxe_aura.jpg')">
+          <div class="product-box-overlay">
+            <h4 class="product-box-title">Track Lights</h4>
+          </div>
+          <img src="project_luxe_aura.jpg" alt="Track Lights" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: OUR PORTFOLIO (Project Showcase)
+       ========================================================================== -->
+  <section class="section-portfolio" id="portfolio">
+    <div class="portfolio-container">
+      
+      <!-- Header Row -->
+      <div class="portfolio-header-row">
+        <div class="portfolio-title-group">
+          <h2>Our portfolio</h2>
+          <p>Expressions of artistry &amp; turnkey execution across Bengaluru</p>
+        </div>
+
+        <div class="portfolio-controls">
+          <button class="circle-nav-btn" onclick="prevPortfolio()" aria-label="Previous Project">←</button>
+          <button class="circle-nav-btn" onclick="nextPortfolio()" aria-label="Next Project">→</button>
+        </div>
+      </div>
+
+      <!-- Projects Track -->
+      <div class="portfolio-carousel-track" id="portfolioTrack">
+        <!-- Project 1 -->
+        <div class="portfolio-project-card" onclick="openProductModal('Luxe Aura Penthouse', '3.5 BHK open-concept luxury penthouse in Indiranagar featuring book-matched Italian Statuario marble and bespoke joinery.', 'project_luxe_aura.jpg')">
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">3.5 BHK Apartment</h3>
+            <div class="portfolio-card-location">Indiranagar, Bengaluru</div>
+          </div>
+          <img src="project_luxe_aura.jpg" alt="Luxe Aura Penthouse" />
         </div>
 
         <!-- Project 2 -->
-        <div style="background: #F9FAFB; border-radius: 18px; overflow: hidden; border: 1px solid #E5E7EB;">
-          <img src="project_luxe_aura.jpg" alt="Luxe Aura" style="width: 100%; height: 180px; object-fit: cover;" />
-          <div style="padding: 16px;">
-            <div style="font-size: 11px; font-weight: 700; color: #9CA3AF; text-transform: uppercase;">Indiranagar, Bangalore</div>
-            <h4 style="font-size: 16px; font-weight: 700; color: #111827; margin: 4px 0 6px 0;">Luxe Aura Penthouse</h4>
-            <p style="font-size: 12px; color: #4B5563; margin-bottom: 12px;">Open-concept sky home featuring Italian marble &amp; brushed brass.</p>
-            <a href="https://wa.me/919880000000?text=Hi%20SaSo%20Homes,%20I%20am%20interested%20in%20Luxe%20Aura%20Penthouse" target="_blank" style="font-size: 12px; font-weight: 700; color: var(--accent-sage);">View Case Study &amp; Cost &rarr;</a>
+        <div class="portfolio-project-card" onclick="openProductModal('Exquisite Grandeur Villa', '4 BHK Luxury Villa in Whitefield with double-height fluted Burma teak wall panelling and integrated modular chef kitchen.', 'project_exquisite_grandeur.jpg')">
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">4 BHK Villa</h3>
+            <div class="portfolio-card-location">Whitefield, Bengaluru</div>
           </div>
+          <img src="project_exquisite_grandeur.jpg" alt="Exquisite Grandeur Villa" />
         </div>
 
         <!-- Project 3 -->
-        <div style="background: #F9FAFB; border-radius: 18px; overflow: hidden; border: 1px solid #E5E7EB;">
-          <img src="project_pastel_haven.jpg" alt="Pastel Haven" style="width: 100%; height: 180px; object-fit: cover;" />
-          <div style="padding: 16px;">
-            <div style="font-size: 11px; font-weight: 700; color: #9CA3AF; text-transform: uppercase;">HSR Layout, Bangalore</div>
-            <h4 style="font-size: 16px; font-weight: 700; color: #111827; margin: 4px 0 6px 0;">Pastel Haven</h4>
-            <p style="font-size: 12px; color: #4B5563; margin-bottom: 12px;">Nordic minimalist 3BHK with soft curves &amp; bespoke modular kitchen.</p>
-            <a href="https://wa.me/919880000000?text=Hi%20SaSo%20Homes,%20I%20am%20interested%20in%20Pastel%20Haven" target="_blank" style="font-size: 12px; font-weight: 700; color: var(--accent-sage);">View Case Study &amp; Cost &rarr;</a>
+        <div class="portfolio-project-card" onclick="openProductModal('Sadashivanagar Sky Home', 'Architectural living hall featuring double-height glass portals, travertine fireplace, and walnut library shelving.', 'interiors_luxury_living.jpg')">
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">Double-Height Villa</h3>
+            <div class="portfolio-card-location">Sadashivanagar, Bengaluru</div>
           </div>
+          <img src="interiors_luxury_living.jpg" alt="Sadashivanagar Sky Home" />
         </div>
 
         <!-- Project 4 -->
-        <div style="background: #F9FAFB; border-radius: 18px; overflow: hidden; border: 1px solid #E5E7EB;">
-          <img src="project_masala_martini.jpg" alt="Masala Martini" style="width: 100%; height: 180px; object-fit: cover;" />
-          <div style="padding: 16px;">
-            <div style="font-size: 11px; font-weight: 700; color: #9CA3AF; text-transform: uppercase;">Lavelle Road, Bangalore</div>
-            <h4 style="font-size: 16px; font-weight: 700; color: #111827; margin: 4px 0 6px 0;">Masala Martini Lounge</h4>
-            <p style="font-size: 12px; color: #4B5563; margin-bottom: 12px;">High-energy bar &amp; fine dining architectural interior execution.</p>
-            <a href="https://wa.me/919880000000?text=Hi%20SaSo%20Homes,%20I%20am%20interested%20in%20commercial%20interiors" target="_blank" style="font-size: 12px; font-weight: 700; color: var(--accent-sage);">View Case Study &amp; Cost &rarr;</a>
+        <div class="portfolio-project-card" onclick="openProductModal('Pastel Haven 3BHK', 'Nordic minimalist residence in HSR Layout with soft curved alcoves, acoustic media console, and modular kitchen.', 'project_pastel_haven.jpg')">
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">3 BHK Nordic Living</h3>
+            <div class="portfolio-card-location">HSR Layout, Bengaluru</div>
+          </div>
+          <img src="project_pastel_haven.jpg" alt="Pastel Haven 3BHK" />
+        </div>
+
+        <!-- Project 5 -->
+        <div class="portfolio-project-card" onclick="openProductModal('Royal Dining Suite', '10-seater dining hall in Koramangala with brushed brass chandelier and fluted gold bar console.', 'project_majestic_muse.jpg')">
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">Dining Suite</h3>
+            <div class="portfolio-card-location">Koramangala, Bengaluru</div>
+          </div>
+          <img src="project_majestic_muse.jpg" alt="Royal Dining Suite" />
+        </div>
+
+        <!-- Project 6 -->
+        <div class="portfolio-project-card" onclick="openProductModal('Masala Martini Fine Dining', 'Commercial restaurant interior on Lavelle Road with bespoke teak woodwork and ambient cove lighting.', 'project_masala_martini.jpg')">
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">Commercial Lounge</h3>
+            <div class="portfolio-card-location">Lavelle Road, Bengaluru</div>
+          </div>
+          <img src="project_masala_martini.jpg" alt="Masala Martini Fine Dining" />
+        </div>
+      </div>
+
+      <!-- Bottom View More -->
+      <div class="portfolio-bottom-cta">
+        <a href="javascript:void(0)" onclick="openConsultationModal()" class="btn-explore-pill">VIEW ALL PROJECTS &gt;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: TESTIMONIALS (Video & Quote Card)
+       ========================================================================== -->
+  <section class="section-testimonials" id="testimonials">
+    <h2 class="testimonials-title">Testimonials</h2>
+    <p class="testimonials-sub">Verses from the heart</p>
+
+    <div class="testimonial-card-wrap">
+      <!-- Left Video Card -->
+      <div class="testimonial-media" onclick="openVideoModal()">
+        <img src="craftsmen_woodwork.jpg" alt="Client Story &amp; Craftsmanship Video" />
+        <div class="testimonial-play-btn" title="Watch Client Story">
+          <svg viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Right Quote Text -->
+      <div>
+        <div style="font-size: 48px; line-height: 1; color: var(--color-terracotta); font-family: var(--font-serif); margin-bottom: -10px;">“</div>
+        <p class="testimonial-quote-text">
+          SaSo Homes has filled the void in the market for bespoke luxury kitchens and wardrobes, delivering European precision with true 45-day guaranteed handover in Bangalore.
+        </p>
+        <div class="testimonial-author-name">Deeksha &amp; Rahul Agarwal</div>
+        <div class="testimonial-author-role">Villa Homeowners • Whitefield, Bengaluru</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: LEAD MAGNET BANNER ("Your dream home is just a click away")
+       ========================================================================== -->
+  <section class="section-cta-banner">
+    
+    <!-- SVG Subtle Geometric Background Wireframe Lines -->
+    <svg class="geo-lines-left" viewBox="0 0 200 200" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5">
+      <path d="M0,0 L180,0 L0,180 Z" />
+      <circle cx="0" cy="0" r="140" stroke-dasharray="4,4" />
+    </svg>
+
+    <svg class="geo-lines-right" viewBox="0 0 200 200" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5">
+      <path d="M200,0 L20,0 L200,180 Z" />
+      <circle cx="200" cy="0" r="140" stroke-dasharray="4,4" />
+    </svg>
+
+    <h2 class="cta-banner-title">Your dream home is just a click away</h2>
+    <button class="btn-talk-white" onclick="openConsultationModal()">TALK TO US</button>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: SITE FOOTER (Casantro Dark Luxury Footer Match)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Poetic Bio -->
+        <div class="footer-brand-col">
+          <div class="brand-logo-wrap" style="margin-bottom: 4px;">
+            <img src="saso_logo_circle.png" alt="SaSo Homes Logo" />
+            <div class="brand-title-group">
+              <span class="brand-main-title">SASO HOMES</span>
+              <span class="brand-kannada-sub">ಸಾಸೊ ಹೋಮ್ಸ್ • Interiors</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            SaSo homes are like poesia (poetry) where each offering recites a thought and a story. Crafted par excellence, paralleling European standards, every product is a masterpiece in itself, but also an integral part of another masterpiece — the home.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-circle-btn" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-circle-btn" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="social-circle-btn" title="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.6 19.3c.1-.8.2-2 .04-3L9.8 12.5s-.3-.7-.3-1.7c0-1.6.9-2.8 2.1-2.8 1 0 1.5.7 1.5 1.6 0 1-.6 2.5-1 3.9-.3 1.2.6 2.2 1.8 2.2 2.2 0 3.7-2.8 3.7-6.1 0-2.5-1.7-4.4-4.8-4.4-3.5 0-5.7 2.6-5.7 5.5 0 1 .4 2.1.9 2.7.1.1.1.2.1.3l-.3 1.4c0 .2-.2.3-.4.2-1.7-.7-2.5-2.6-2.5-4.6 0-3.7 3.1-8.2 9.3-8.2 5 0 8.3 3.6 8.3 7.5 0 5.1-2.8 8.9-7 8.9-1.4 0-2.7-.8-3.1-1.6l-.9 3.5c-.3 1.2-1.1 2.7-1.7 3.6A10 10 0 1 0 12 2z"/></svg>
+            </a>
+            <a href="https://wa.me/919880000000" target="_blank" rel="noopener" class="social-circle-btn" title="WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#maestros">Interiors</a></li>
+            <li><a href="#lighting">Lighting</a></li>
+            <li><a href="#delight">Notes of Delight</a></li>
+            <li><a href="#portfolio">Our Portfolio</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company -->
+        <div>
+          <h4 class="footer-col-title">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="#testimonials">About Us</a></li>
+            <li><a href="#delight">Zero-Error Factory</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultationModal()">Architect Partner Program</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultationModal()">Store Locator</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultationModal()">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div>
+          <h4 class="footer-col-title">Contact Us</h4>
+          <div class="footer-contact-item">
+            Call us at<br />
+            <a href="tel:+919880000000">+91 98800 00000</a>
+          </div>
+          <div class="footer-contact-item">
+            Write to us<br />
+            <a href="mailto:hello@sasohomes.com">hello@sasohomes.com</a>
+          </div>
+          <div class="footer-contact-item">
+            Studio Address<br />
+            <span>Sector 2, HSR Layout, Bengaluru, Karnataka 560102</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 SaSo Homes Interior &amp; Architecture. All Rights Reserved.</div>
+        <div>
+          <a href="javascript:void(0)" onclick="openConsultationModal()" style="color: inherit; margin-right: 18px;">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="openConsultationModal()" style="color: inherit;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 1: TALK TO US / CONSULTATION MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="consultationModal" onclick="closeConsultationModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeConsultationModal()">&times;</button>
+      <div style="margin-bottom: 24px;">
+        <span style="font-size: 11px; font-weight: 700; color: var(--color-terracotta); text-transform: uppercase; letter-spacing: 1.5px;">Private Studio Consultation</span>
+        <h3 style="font-size: 32px; color: var(--color-teal-dark); margin-top: 4px;">Talk to our Design Maestros</h3>
+        <p style="color: #666666; font-size: 14px; margin-top: 4px;">Schedule an exploratory design consultation with our principal architects.</p>
+      </div>
+
+      <form onsubmit="handleConsultationSubmit(event)">
+        <div class="modal-form-group">
+          <label>Your Full Name</label>
+          <input type="text" id="consultName" placeholder="e.g. Ananya Sharma" required />
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="modal-form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="consultPhone" placeholder="+91 98800 00000" required />
+          </div>
+          <div class="modal-form-group">
+            <label>Email Address</label>
+            <input type="email" id="consultEmail" placeholder="ananya@example.com" required />
+          </div>
+        </div>
+        <div class="modal-form-group">
+          <label>Project Scope</label>
+          <select id="consultScope">
+            <option value="Complete Turnkey Home Interior">Complete Turnkey Home Interior</option>
+            <option value="Luxury Modular Kitchen">Luxury Modular Kitchen</option>
+            <option value="Master Wardrobes & Joinery">Master Wardrobes &amp; Joinery</option>
+            <option value="Architectural Lighting Package">Architectural Lighting Package</option>
+            <option value="Villa Architectural Execution">Villa Architectural Execution</option>
+          </select>
+        </div>
+        <div class="modal-form-group">
+          <label>Location in Bengaluru</label>
+          <input type="text" id="consultLoc" placeholder="e.g. Whitefield, Indiranagar, Sadashivanagar" required />
+        </div>
+
+        <button type="submit" class="btn-talk" style="width: 100%; padding: 14px; font-size: 13px; margin-top: 8px;">
+          SUBMIT &amp; CONNECT ON WHATSAPP &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: PRODUCT & PROJECT LIGHTBOX
+       ========================================================================== -->
+  <div class="modal-backdrop" id="productModal" onclick="closeProductModal(event)">
+    <div class="modal-card" style="max-width: 760px;" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeProductModal()">&times;</button>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+        <div style="height: 320px; border-radius: 12px; overflow: hidden; background: #0E2328;">
+          <img id="modalProductImg" src="" alt="Selected Showcase" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div>
+          <h3 id="modalProductTitle" style="font-size: 28px; color: var(--color-teal-dark); margin-bottom: 8px;"></h3>
+          <p id="modalProductDesc" style="font-size: 14.5px; color: #555555; line-height: 1.65; margin-bottom: 24px;"></p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn-talk" onclick="openConsultationModal()">TALK TO DESIGNER &rarr;</button>
+            <a id="modalWhatsAppDirect" href="#" target="_blank" class="btn-explore-pill" style="border-color: #25D366; color: #25D366;">
+              WhatsApp Inquiry &rarr;
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ========================================================================
-       MODAL 3: VIDEO CRAFTSMANSHIP LIGHTBOX
-       ======================================================================== -->
+  <!-- ==========================================================================
+       MODAL 3: VIDEO LIGHTBOX
+       ========================================================================== -->
   <div class="modal-backdrop" id="videoModal" onclick="closeVideoModal(event)">
-    <div class="video-modal-card" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" style="position: absolute; z-index: 30; top: 16px; right: 16px; background: rgba(0,0,0,0.6); color: #FFF;" onclick="closeVideoModal()">&times;</button>
-      <img src="craftsmen_woodwork.jpg" alt="Craftsmanship Video Preview" />
-      <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px; background: linear-gradient(transparent, rgba(14,35,40,0.94)); color: #FFF;">
-        <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 6px;">SaSo Homes Master Woodwork Studio</h4>
-        <p style="font-size: 13.5px; color: #D1D5DB; line-height: 1.55;">Discover how our master carpenters craft precision mortise-and-tenon joints, hand-finish organic teak surfaces, and build lifetime furniture in Bangalore.</p>
+    <div class="modal-card" style="max-width: 780px; padding: 0; background: #000; overflow: hidden;" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" style="position: absolute; top: 14px; right: 14px; z-index: 30; background: rgba(0,0,0,0.6); color: #FFF;" onclick="closeVideoModal()">&times;</button>
+      <img src="craftsmen_woodwork.jpg" alt="Video Preview" style="width: 100%; height: 380px; object-fit: cover; display: block;" />
+      <div style="padding: 24px; background: #0E2328; color: #FFF;">
+        <h4 style="font-size: 20px; margin-bottom: 6px;">SaSo Homes Master Joinery &amp; Factory Studio</h4>
+        <p style="font-size: 13.5px; color: #D1D5DB; line-height: 1.55;">Discover our zero-error factory manufacturing, bubble-free finishing technology, and master joinery craftsmanship in Bengaluru.</p>
       </div>
     </div>
   </div>
@@ -2274,102 +2176,94 @@
        INTERACTIVE JAVASCRIPT
        ========================================================================== -->
   <script>
-    // Category Filtering
-    function filterCategory(cat, el) {
-      document.querySelectorAll('.filter-pill').forEach(btn => btn.classList.remove('active'));
-      el.classList.add('active');
+    // Header Scroll State
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('siteHeader');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 
-      const cards = document.querySelectorAll('.product-card');
-      cards.forEach((card, index) => {
-        const categories = card.getAttribute('data-category') || '';
-        const shouldShow = (cat === 'all') || categories.includes(cat);
+    // Hero Slider
+    let currentHeroIndex = 0;
+    const heroSlides = [
+      {
+        kicker: 'LUXURY INTERIORS',
+        title: 'Experience poetry in design',
+        desc: 'European-inspired turnkey interiors crafted to turn your Bengaluru residence into an enduring masterpiece.'
+      },
+      {
+        kicker: 'MATERIALS & SURFACES',
+        title: 'Surfaces that feel like art',
+        desc: 'Fluted acoustic panelling, imported Italian marble, and zero-error master joinery.'
+      }
+    ];
 
-        card.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-        if (shouldShow) {
-          card.style.display = 'flex';
-          card.style.opacity = '0.3';
-          card.style.transform = 'scale(0.97)';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, 80 + (index * 20));
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.95)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 200);
-        }
+    function updateHeroSlide(index) {
+      document.querySelectorAll('.hero-slide').forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
       });
+      document.getElementById('heroKicker').textContent = heroSlides[index].kicker;
+      document.getElementById('heroTitle').textContent = heroSlides[index].title;
+      document.getElementById('heroDesc').textContent = heroSlides[index].desc;
+      document.getElementById('heroCounter').textContent = `${index + 1}/2`;
     }
 
-    // Toggle Design Service (Interior Architecture vs Facade & Landscape)
-    function toggleService(type, btn) {
-      const parent = btn.parentElement;
-      parent.querySelectorAll('.service-pill-btn').forEach(b => {
-        b.className = 'service-pill-btn service-pill-outline';
-        const box = b.querySelector('div');
-        box.className = 'icon-box-white';
-        box.querySelector('svg').style.stroke = '#FFFFFF';
-      });
-
-      btn.className = 'service-pill-btn service-pill-gold';
-      const activeBox = btn.querySelector('div');
-      activeBox.className = 'icon-box-green';
-      activeBox.querySelector('svg').style.stroke = 'var(--accent-gold)';
-
-      const img = document.getElementById('serviceMediaImg');
-      img.style.opacity = '0.4';
-      setTimeout(() => {
-        if (type === 'interior') {
-          img.src = 'architecture_planning.jpg';
-          img.alt = 'Interior architectural planning and blueprints';
-        } else {
-          img.src = 'hero_modern_villa.jpg';
-          img.alt = 'Exterior facade architecture and execution';
-        }
-        img.style.opacity = '1';
-      }, 200);
+    function nextHeroSlide() {
+      currentHeroIndex = (currentHeroIndex + 1) % 2;
+      updateHeroSlide(currentHeroIndex);
     }
 
-    // Interior Detail Modal
-    function openInteriorDetail(title, price, img, roomType, location, desc) {
-      document.getElementById('modalSpaceTitle').textContent = title;
-      document.getElementById('modalSpacePrice').textContent = `Starting at ${price}`;
-      document.getElementById('modalSpaceImg').src = img;
-      document.getElementById('modalSpaceDesc').textContent = desc;
-      document.getElementById('modalSpaceBadge').textContent = `${roomType} • Turnkey Scope`;
-      document.getElementById('modalSpaceLocation').textContent = location;
+    function prevHeroSlide() {
+      currentHeroIndex = (currentHeroIndex - 1 + 2) % 2;
+      updateHeroSlide(currentHeroIndex);
+    }
 
-      const encoded = encodeURIComponent(`Hi SaSo Homes, I am interested in getting a turnkey interior design consultation and estimate for the "${title}" (${location}).`);
-      document.getElementById('modalWhatsAppBtn').href = `https://wa.me/919880000000?text=${encoded}`;
+    // Auto rotate hero slide every 7 seconds
+    setInterval(nextHeroSlide, 7000);
 
-      const modal = document.getElementById('interiorModal');
+    // Portfolio carousel buttons
+    function nextPortfolio() {
+      const track = document.getElementById('portfolioTrack');
+      track.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+
+    function prevPortfolio() {
+      const track = document.getElementById('portfolioTrack');
+      track.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+
+    // Consultation Modal
+    function openConsultationModal() {
+      const modal = document.getElementById('consultationModal');
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeInteriorModal() {
-      const modal = document.getElementById('interiorModal');
+    function closeConsultationModal() {
+      const modal = document.getElementById('consultationModal');
       modal.classList.remove('active');
       document.body.style.overflow = '';
     }
 
-    // Direct WhatsApp Bookmark Order
-    function openWhatsAppOrder(title, price) {
-      const encoded = encodeURIComponent(`Hi SaSo Homes, I would like to get a quote and design catalogue for "${title}" (${price}).`);
-      window.open(`https://wa.me/919880000000?text=${encoded}`, '_blank');
-    }
+    // Product Detail Modal
+    function openProductModal(title, desc, img) {
+      document.getElementById('modalProductTitle').textContent = title;
+      document.getElementById('modalProductDesc').textContent = desc;
+      document.getElementById('modalProductImg').src = img;
+      
+      const encoded = encodeURIComponent(`Hi SaSo Homes, I am interested in exploring "${title}" for my home in Bengaluru.`);
+      document.getElementById('modalWhatsAppDirect').href = `https://wa.me/919880000000?text=${encoded}`;
 
-    // Portfolio Modal
-    function openPortfolioModal() {
-      const modal = document.getElementById('portfolioModal');
+      const modal = document.getElementById('productModal');
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
 
-    function closePortfolioModal() {
-      const modal = document.getElementById('portfolioModal');
+    function closeProductModal() {
+      const modal = document.getElementById('productModal');
       modal.classList.remove('active');
       document.body.style.overflow = '';
     }
@@ -2387,20 +2281,29 @@
       document.body.style.overflow = '';
     }
 
-    // Handle Newsletter Subscription
-    function handleSubscribe(e) {
+    // Handle Consultation Form
+    function handleConsultationSubmit(e) {
       e.preventDefault();
-      const input = e.target.querySelector('input');
-      const email = input.value;
-      alert(`Thank you for requesting the 2026 Architectural Lookbook (${email})! Our design team will transmit the monograph shortly.`);
-      input.value = '';
+      const name = document.getElementById('consultName').value;
+      const phone = document.getElementById('consultPhone').value;
+      const scope = document.getElementById('consultScope').value;
+      const loc = document.getElementById('consultLoc').value;
+
+      const text = encodeURIComponent(`Hi SaSo Homes! My name is ${name}. I am looking for ${scope} for my residence in ${loc} (Phone: ${phone}).`);
+      window.open(`https://wa.me/919880000000?text=${text}`, '_blank');
+      closeConsultationModal();
     }
 
-    // Escape key modal close
+    // Mobile nav placeholder
+    function toggleMobileNav() {
+      openConsultationModal();
+    }
+
+    // Escape key close
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeInteriorModal();
-        closePortfolioModal();
+        closeConsultationModal();
+        closeProductModal();
         closeVideoModal();
       }
     });
