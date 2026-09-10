@@ -185,20 +185,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     position:fixed;
     top:0; left:0; right:0;
     z-index:100;
-    padding:1.1rem 0;
-    transition:background-color .4s ease, padding .4s ease, border-color .4s ease, backdrop-filter .4s ease;
-    border-bottom:1px solid transparent;
-  }
-  .nav.scrolled{
-    background:rgba(255,255,255,.95);
+    padding:.85rem 0;
+    background:#FFFFFF;
     backdrop-filter:blur(16px) saturate(140%);
     -webkit-backdrop-filter:blur(16px) saturate(140%);
-    border-color:var(--line);
-    padding:.75rem 0;
+    border-bottom:1px solid var(--line);
     box-shadow:0 4px 20px rgba(5,166,176,.06);
+    transition:padding .3s ease, box-shadow .3s ease;
+  }
+  .nav.scrolled{
+    padding:.75rem 0;
+    box-shadow:0 6px 24px rgba(5,166,176,.1);
   }
   .nav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:2rem; }
-    /* ---------- Brand Lockup (Header: Logo + Wordmark) ---------- */
+  
+  /* ---------- Brand Lockup (Header: Logo + Wordmark) ---------- */
   .brand{
     text-decoration:none;
     display:inline-flex;
@@ -210,29 +211,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transform:translateY(-1px);
   }
   .brand-logo-img{
-    height:56px;
-    width:56px;
+    height:52px;
+    width:52px;
     object-fit:contain;
     border-radius:50%;
     display:block;
     flex-shrink:0;
     padding:2px;
-    background:rgba(10,31,36,.55);
-    box-shadow:0 6px 18px -3px rgba(0,0,0,.45), 0 0 0 1.2px rgba(255,255,255,.28), 0 0 18px rgba(5,166,176,.28);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-    transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, height .4s ease, width .4s ease, background .35s ease;
+    background:rgba(255,255,255,.9);
+    box-shadow:0 3px 12px -2px rgba(0,54,58,.16), 0 0 0 1.2px rgba(5,166,176,.35);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, height .4s ease, width .4s ease;
   }
   .nav.scrolled .brand-logo-img{
     height:46px;
     width:46px;
-    padding:2px;
-    background:rgba(255,255,255,.9);
-    box-shadow:0 3px 12px -2px rgba(0,54,58,.16), 0 0 0 1.2px rgba(5,166,176,.35);
   }
   .brand:hover .brand-logo-img{
     transform:scale(1.05);
-    box-shadow:0 8px 24px -3px rgba(0,0,0,.45), 0 0 0 1.5px rgba(5,166,176,.8), 0 0 22px rgba(5,166,176,.4);
+    box-shadow:0 6px 18px -2px rgba(0,54,58,.22), 0 0 0 1.5px rgba(5,166,176,.6);
   }
   .brand-wordmark{
     display:flex;
@@ -246,37 +242,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size:1.85rem;
     font-weight:400;
     letter-spacing:0.16em;
-    color:#FFFFFF;
+    color:var(--charcoal);
     text-transform:uppercase;
     line-height:0.94;
-    transition:color .4s ease, font-size .4s ease, letter-spacing .35s ease;
-    text-shadow:0 2px 14px rgba(0,0,0,.45);
+    transition:color .3s ease;
+    text-shadow:none;
   }
   .brand-tag{
     font-family:var(--font-body);
     font-size:0.62rem;
     font-weight:700;
     letter-spacing:0.44em;
-    color:var(--brass);
+    color:var(--walnut);
     text-transform:uppercase;
     padding-left:2px;
-    transition:color .4s ease, font-size .4s ease;
-    text-shadow:0 1px 8px rgba(0,0,0,.4);
-  }
-  .nav.scrolled .brand-name{
-    font-size:1.6rem;
-    color:var(--charcoal);
-    text-shadow:none;
-  }
-  .nav.scrolled .brand-tag{
-    font-size:0.56rem;
-    color:var(--walnut);
+    transition:color .3s ease;
     text-shadow:none;
   }
   .brand:hover .brand-name{
-    color:var(--brass);
-  }
-  .nav.scrolled .brand:hover .brand-name{
     color:var(--brass);
   }
   .nav-links{
@@ -288,14 +271,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     letter-spacing:.02em;
   }
   .nav-links a{
-    color:#FFFFFF;
+    color:var(--charcoal-soft);
     text-decoration:none;
     position:relative;
     padding-bottom:4px;
-    transition:color .4s ease;
-    text-shadow:0 1px 4px rgba(0,0,0,.3);
+    transition:color .3s ease;
+    text-shadow:none;
   }
-  .nav.scrolled .nav-links a{ color:var(--charcoal-soft); text-shadow:none; }
   .nav-links a::after{
     content:"";
     position:absolute; left:0; right:100%; bottom:0;
@@ -319,20 +301,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     width:40px; height:40px;
     flex-direction:column; align-items:center; justify-content:center; gap:5px;
   }
-  .nav-toggle span{ width:22px; height:1px; background:#FFFFFF; transition:all .3s ease; }
-  .nav.scrolled .nav-toggle span{ background:var(--charcoal); }
+  .nav-toggle span{ width:22px; height:1px; background:var(--charcoal); transition:all .3s ease; }
 
   @media (max-width:768px){
     .hero-tagline{ display:none !important; }
   }
   @media (max-width:900px){
     .brand{ gap:0.75rem; }
-    .brand-logo-img{ height:46px; width:46px; }
+    .brand-logo-img{ height:44px; width:44px; }
     .nav.scrolled .brand-logo-img{ height:40px; width:40px; }
     .brand-name{ font-size:1.5rem; letter-spacing:0.14em; }
-    .nav.scrolled .brand-name{ font-size:1.35rem; }
     .brand-tag{ font-size:0.54rem; letter-spacing:0.36em; }
-    .nav.scrolled .brand-tag{ font-size:0.5rem; }
     .nav-links, .nav-cta .btn-ghost{ display:none; }
     .nav-toggle{ display:flex; }
   }
