@@ -205,35 +205,37 @@
     flex-direction:column;
     align-items:flex-start;
     line-height:1;
-    gap:3px;
+    gap:4px;
   }
   .brand-name{
     font-family:var(--font-display);
-    font-size:1.75rem;
+    font-size:2.4rem;
     font-weight:400;
     letter-spacing:0.18em;
     color:#FFFFFF;
     text-transform:uppercase;
-    line-height:0.95;
-    transition:color .4s ease, letter-spacing .35s ease;
-    text-shadow:0 2px 14px rgba(0,0,0,.45);
+    line-height:0.92;
+    transition:color .4s ease, font-size .4s ease, letter-spacing .35s ease;
+    text-shadow:0 2px 16px rgba(0,0,0,.5);
   }
   .brand-tag{
     font-family:var(--font-body);
-    font-size:0.62rem;
+    font-size:0.78rem;
     font-weight:700;
-    letter-spacing:0.42em;
+    letter-spacing:0.46em;
     color:var(--brass);
     text-transform:uppercase;
-    padding-left:2px;
-    transition:color .4s ease;
+    padding-left:3px;
+    transition:color .4s ease, font-size .4s ease;
     text-shadow:0 1px 8px rgba(0,0,0,.4);
   }
   .nav.scrolled .brand-name{
+    font-size:1.95rem;
     color:var(--charcoal);
     text-shadow:none;
   }
   .nav.scrolled .brand-tag{
+    font-size:0.68rem;
     color:var(--walnut);
     text-shadow:none;
   }
@@ -290,8 +292,10 @@
     .hero-tagline{ display:none !important; }
   }
   @media (max-width:900px){
-    .brand-name{ font-size:1.45rem; letter-spacing:0.16em; }
-    .brand-tag{ font-size:0.56rem; letter-spacing:0.36em; }
+    .brand-name{ font-size:1.9rem; letter-spacing:0.16em; }
+    .nav.scrolled .brand-name{ font-size:1.65rem; }
+    .brand-tag{ font-size:0.66rem; letter-spacing:0.4em; }
+    .nav.scrolled .brand-tag{ font-size:0.6rem; }
     .nav-links, .nav-cta .btn-ghost{ display:none; }
     .nav-toggle{ display:flex; }
   }
