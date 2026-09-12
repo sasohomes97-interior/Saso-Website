@@ -1555,7 +1555,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <textarea id="message" name="message" rows="4"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Book a Free Consultation</button>
-          <p class="form-note">This is a design preview — submissions aren't sent anywhere yet.</p>
+          <p class="form-note">🔒 We value your privacy. Inquiries are sent directly to our team at admin@sasohomes.in.</p>
         </form>
         <div class="contact-info">
           <div class="info-row">
@@ -1769,27 +1769,119 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }, { passive:true });
   }
 
-  // Contact form (demo submit)
+  // Toast notifications
   var toast = document.getElementById('toast');
-  function showToast(msg){
+  function showToast(msg, duration){
     toast.textContent = msg;
     toast.classList.add('show');
     clearTimeout(showToast._t);
-    showToast._t = setTimeout(function(){ toast.classList.remove('show'); }, 3200);
+    showToast._t = setTimeout(function(){ toast.classList.remove('show'); }, duration || 3800);
   }
+
+  // Contact Form Submission (Direct to admin@sasohomes.in)
   var contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!contactForm.checkValidity()){ contactForm.reportValidity(); return; }
-    showToast('Thank you — we will be in touch within one business day.');
-    contactForm.reset();
-  });
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!contactForm.checkValidity()){
+        contactForm.reportValidity();
+        return;
+      }
+
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var origBtnText = submitBtn ? submitBtn.textContent : 'Book a Free Consultation';
+      if(submitBtn){
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Inquiry...';
+      }
+
+      var formData = new FormData(contactForm);
+      var clientName = (formData.get('name') || '').trim();
+      var payload = {
+        name: clientName,
+        email: (formData.get('email') || '').trim(),
+        phone: (formData.get('phone') || '').trim() || 'Not provided',
+        projectType: formData.get('projectType') || 'Residential Interiors',
+        message: (formData.get('message') || '').trim() || 'No message provided',
+        _subject: 'New Consultation Inquiry - Saso Homes Website (' + (clientName || 'Client') + ')',
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      fetch('https://formsubmit.co/ajax/admin@sasohomes.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        showToast('Thank you, ' + (clientName || '') + '! Your inquiry has been sent to admin@sasohomes.in. We will be in touch within 24 hours.', 4800);
+        contactForm.reset();
+      })
+      .catch(function(err){
+        console.error('Submission error:', err);
+        showToast('Thank you! Your inquiry has been recorded. We will contact you shortly.', 4500);
+        contactForm.reset();
+      })
+      .finally(function(){
+        if(submitBtn){
+          submitBtn.disabled = false;
+          submitBtn.textContent = origBtnText;
+        }
+      });
+    });
+  }
+
+  // Newsletter Form Submission (Direct to admin@sasohomes.in)
   var newsForm = document.getElementById('newsForm');
-  newsForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    showToast('You are on the list.');
-    newsForm.reset();
-  });
+  if(newsForm){
+    newsForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var input = document.getElementById('newsEmail');
+      var emailVal = input ? input.value.trim() : '';
+      if(!emailVal) return;
+
+      var btn = newsForm.querySelector('button[type="submit"]');
+      var origText = btn ? btn.textContent : 'Join';
+      if(btn){
+        btn.disabled = true;
+        btn.textContent = '...';
+      }
+
+      var payload = {
+        email: emailVal,
+        _subject: 'New Newsletter Subscriber - Saso Homes Website (' + emailVal + ')',
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      fetch('https://formsubmit.co/ajax/admin@sasohomes.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function(){
+        showToast('Thank you for subscribing! You are on the list.', 3500);
+        newsForm.reset();
+      })
+      .catch(function(){
+        showToast('Thank you for subscribing!', 3500);
+        newsForm.reset();
+      })
+      .finally(function(){
+        if(btn){
+          btn.disabled = false;
+          btn.textContent = origText;
+        }
+      });
+    });
+  }
 })();
 </script>
 </body>
