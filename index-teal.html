@@ -1525,34 +1525,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <form id="contactForm" novalidate>
           <div class="field-row">
             <div class="field">
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" required autocomplete="name" />
+              <label for="name">Full Name *</label>
+              <input id="name" name="name" type="text" placeholder="e.g. Rahul Sharma" required autocomplete="name" />
             </div>
             <div class="field">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" required autocomplete="email" />
+              <label for="email">Email Address *</label>
+              <input id="email" name="email" type="email" placeholder="e.g. rahul@example.com" required autocomplete="email" />
             </div>
           </div>
           <div class="field-row">
             <div class="field">
-              <label for="phone">Phone number</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              <label for="phone">Contact Number *</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required autocomplete="tel" />
             </div>
             <div class="field">
-              <label for="projectType">Project type</label>
-              <select id="projectType" name="projectType">
-                <option>Residential Interiors</option>
-                <option>Commercial Interiors</option>
-                <option>Modular Kitchen</option>
-                <option>Custom Furniture</option>
-                <option>Renovation &amp; Remodeling</option>
-                <option>Other</option>
+              <label for="whatsapp">WhatsApp Number</label>
+              <input id="whatsapp" name="whatsapp" type="tel" placeholder="+91 98765 43210 (or same as contact)" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bhkType">Property Type (BHKs) *</label>
+              <select id="bhkType" name="bhkType" required>
+                <option value="" disabled selected>Select BHK Configuration</option>
+                <option value="1 BHK">1 BHK</option>
+                <option value="2 BHK">2 BHK</option>
+                <option value="3 BHK">3 BHK</option>
+                <option value="4 BHK">4 BHK</option>
+                <option value="4+ BHK / Penthouse">4+ BHK / Penthouse</option>
+                <option value="Studio / 1 RK">Studio / 1 RK</option>
+                <option value="Commercial / Office">Commercial / Office</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="propertyType">Property (Flat, Villa, Home) *</label>
+              <select id="propertyType" name="propertyType" required>
+                <option value="" disabled selected>Select Property Type</option>
+                <option value="Flat / Apartment">Flat / Apartment</option>
+                <option value="Villa">Villa</option>
+                <option value="Independent Home / House">Independent Home / House</option>
+                <option value="Commercial Space">Commercial Space</option>
+                <option value="Plot / Construction">Plot / Construction</option>
+                <option value="Other">Other</option>
               </select>
             </div>
           </div>
           <div class="field">
-            <label for="message">Tell us about your space</label>
-            <textarea id="message" name="message" rows="4"></textarea>
+            <label for="cityPincode">City or Pincode *</label>
+            <input id="cityPincode" name="cityPincode" type="text" placeholder="e.g. RR Nagar, Bengaluru or 560098" required />
+          </div>
+          <div class="field">
+            <label for="message">Tell us about your space (Optional)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Possession date, floor plan status, design preferences, or specific questions..."></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Book a Free Consultation</button>
           <p class="form-note">🔒 We value your privacy. Inquiries are sent directly to our team at admin@sasohomes.in.</p>
@@ -1797,13 +1822,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       var formData = new FormData(contactForm);
       var clientName = (formData.get('name') || '').trim();
+      var clientPhone = (formData.get('phone') || '').trim();
+      var clientWhatsapp = (formData.get('whatsapp') || '').trim() || clientPhone;
+      var bhk = formData.get('bhkType') || 'Not specified';
+      var propType = formData.get('propertyType') || 'Not specified';
+      var cityPin = (formData.get('cityPincode') || '').trim() || 'Not specified';
+
       var payload = {
         name: clientName,
         email: (formData.get('email') || '').trim(),
-        phone: (formData.get('phone') || '').trim() || 'Not provided',
-        projectType: formData.get('projectType') || 'Residential Interiors',
-        message: (formData.get('message') || '').trim() || 'No message provided',
-        _subject: 'New Consultation Inquiry - Saso Homes Website (' + (clientName || 'Client') + ')',
+        phone: clientPhone || 'Not provided',
+        whatsapp: clientWhatsapp,
+        bhkType: bhk,
+        propertyType: propType,
+        cityOrPincode: cityPin,
+        message: (formData.get('message') || '').trim() || 'No additional notes',
+        _subject: 'New Inquiry: ' + bhk + ' (' + propType + ') - ' + (clientName || 'Client') + ' [' + cityPin + ']',
         _template: 'table',
         _captcha: 'false'
       };
