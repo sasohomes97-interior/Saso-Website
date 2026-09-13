@@ -1128,20 +1128,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     line-height:1.45;
     margin:0;
   }
-  .qr-btn-link{
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-    font-size:0.82rem;
-    font-weight:600;
-    color:var(--brass);
-    text-decoration:none;
-    margin-top:3px;
-    transition:gap .25s ease, color .25s ease;
+  .qr-btn, .qr-btn-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--brass);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-top: 4px;
+    white-space: nowrap;
+    transition: gap .25s ease, color .25s ease;
   }
-  .qr-btn-link:hover{
-    gap:8px;
-    color:var(--walnut);
+  .qr-btn:hover, .qr-btn-link:hover{
+    gap: 9px;
+    color: var(--walnut);
+  }
+  .qr-btn svg, .qr-btn-link svg{
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
   }
   @media (max-width:480px){
     .qr-card{
