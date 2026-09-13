@@ -31,7 +31,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .brand-font{
     font-family: var(--font-logo);
     font-weight: 700;
+    font-size: 1.28em;
     letter-spacing: 0;
+    display: inline-block;
+    vertical-align: baseline;
   }
   p{
     color: var(--charcoal-soft);
@@ -285,31 +288,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     text-decoration:none;
     display:inline-flex;
     align-items:center;
-    gap:1.1rem;
+    gap:1.15rem;
     transition:transform .35s cubic-bezier(.2,.8,.2,1);
   }
   .brand:hover{
     transform:translateY(-1px);
   }
   .brand-logo-img{
-    height:68px;
-    width:68px;
+    height:78px;
+    width:78px;
     object-fit:contain;
     border-radius:50%;
     display:block;
     flex-shrink:0;
     padding:2px;
     background:rgba(255,255,255,.95);
-    box-shadow:0 4px 16px -2px rgba(0,54,58,.16), 0 0 0 1.2px rgba(5,166,176,.35);
+    box-shadow:0 4px 18px -2px rgba(0,54,58,.18), 0 0 0 1.2px rgba(5,166,176,.35);
     transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, height .4s ease, width .4s ease;
   }
   .nav.scrolled .brand-logo-img{
-    height:56px;
-    width:56px;
+    height:62px;
+    width:62px;
   }
   .brand:hover .brand-logo-img{
     transform:scale(1.05);
-    box-shadow:0 8px 22px -2px rgba(0,54,58,.24), 0 0 0 1.5px rgba(5,166,176,.6);
+    box-shadow:0 8px 24px -2px rgba(0,54,58,.26), 0 0 0 1.5px rgba(5,166,176,.6);
   }
   .brand-wordmark{
     display:flex;
@@ -320,16 +323,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .brand-name{
     font-family:var(--font-logo);
-    font-size:2.2rem;
+    font-size:2.85rem;
     font-weight:700;
     letter-spacing:0.01em;
     color:var(--charcoal);
-    line-height:0.95;
+    line-height:0.92;
     transition:color .3s ease, font-size .3s ease;
   }
   .brand-tag{
     font-family:var(--font-logo);
-    font-size:1.42rem;
+    font-size:1.82rem;
     font-weight:700;
     letter-spacing:0;
     color:var(--brass);
@@ -337,8 +340,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding-left:1px;
     transition:color .3s ease, font-size .3s ease;
   }
-  .nav.scrolled .brand-name{ font-size:1.88rem; }
-  .nav.scrolled .brand-tag{ font-size:1.22rem; }
+  .nav.scrolled .brand-name{ font-size:2.2rem; }
+  .nav.scrolled .brand-tag{ font-size:1.42rem; }
   .brand:hover .brand-name{ color:var(--brass); }
   .nav-links{
     display:flex;
@@ -385,24 +388,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-tagline{ display:none !important; }
   }
   @media (max-width:900px){
-    .brand{ gap:0.9rem; }
-    .brand-logo-img{ height:56px; width:56px; }
-    .nav.scrolled .brand-logo-img{ height:48px; width:48px; }
-    .brand-name{ font-size:1.85rem; letter-spacing:0.01em; }
-    .brand-tag{ font-size:1.22rem; letter-spacing:0; }
-    .nav.scrolled .brand-name{ font-size:1.58rem; }
-    .nav.scrolled .brand-tag{ font-size:1.05rem; }
+    .brand{ gap:0.95rem; }
+    .brand-logo-img{ height:66px; width:66px; }
+    .nav.scrolled .brand-logo-img{ height:54px; width:54px; }
+    .brand-name{ font-size:2.35rem; letter-spacing:0.01em; }
+    .brand-tag{ font-size:1.52rem; letter-spacing:0; }
+    .nav.scrolled .brand-name{ font-size:1.92rem; }
+    .nav.scrolled .brand-tag{ font-size:1.24rem; }
     .nav-links, .nav-cta .btn-ghost{ display:none; }
     .nav-toggle{ display:flex; }
   }
   @media (max-width:480px){
-    .brand{ gap:0.75rem; }
-    .brand-logo-img{ height:48px; width:48px; }
-    .nav.scrolled .brand-logo-img{ height:42px; width:42px; }
-    .brand-name{ font-size:1.62rem; letter-spacing:0.01em; }
-    .brand-tag{ font-size:1.12rem; letter-spacing:0; }
-    .nav.scrolled .brand-name{ font-size:1.45rem; }
-    .nav.scrolled .brand-tag{ font-size:0.98rem; }
+    .brand{ gap:0.85rem; }
+    .brand-logo-img{ height:56px; width:56px; }
+    .nav.scrolled .brand-logo-img{ height:46px; width:46px; }
+    .brand-name{ font-size:1.98rem; letter-spacing:0.01em; }
+    .brand-tag{ font-size:1.32rem; letter-spacing:0; }
+    .nav.scrolled .brand-name{ font-size:1.62rem; }
+    .nav.scrolled .brand-tag{ font-size:1.08rem; }
   }
   /* Mobile menu link colours */
   #mobileMenu a{ color:var(--charcoal); text-decoration:none; }
@@ -622,7 +625,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .spread-kicker .brandbit{
     color: var(--brass);
-    font-size: 1.18rem;
+    font-size: 1.52rem;
     font-weight: 700;
     letter-spacing: 0;
     text-transform: none;
@@ -679,7 +682,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .feature-list{ grid-template-columns:1fr; }
     .spread-media{ aspect-ratio:4/3; border-radius:var(--radius-md); }
     .spread-kicker{ font-size:0.9rem; letter-spacing:0; text-transform:none; flex-direction:column; align-items:flex-start; gap:.4rem; }
-    .spread-kicker .brandbit{ font-size:1.1rem; letter-spacing:0; text-transform:none; }
+    .spread-kicker .brandbit{
+    color: var(--brass);
+    font-size: 1.52rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+  }
   }
 
   /* ---------- CTA band ---------- */
@@ -1405,7 +1414,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img class="hero-art" alt="" aria-hidden="true" />
     <div class="hero-scrim"></div>
     <div class="hero-frame" aria-hidden="true"></div>
-    <div class="hero-content wrap">      <h1 class="reveal in" style="transition-delay:.1s">Interiors designed for living. Built with precision.</h1>
+    <div class="hero-content wrap">      <div class="hero-eyebrow reveal in" style="transition-delay:.05s"><span class="brand-font">SaSo Homes</span> &bull; Bengaluru</div>
+      <h1 class="reveal in" style="transition-delay:.1s">Interiors designed for living. Built with precision.</h1>
       <p class="lede reveal in" style="transition-delay:.2s">A Bengaluru-based interior architecture studio. We oversee private residences and commercial spaces from initial spatial planning through bespoke joinery to turnkey handover.</p>
       <div class="hero-actions reveal in" style="transition-delay:.3s">
         <a href="#contact" class="btn btn-fill-on-dark">Schedule a Consultation</a>
@@ -1423,7 +1433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap about-grid">
       <img class="about-art reveal" alt="A quiet, minimalist Saso Homes kitchen in warm mauve and stone tones" />
       <div class="about-copy reveal">        <h2>Design grounded in proportion, honest materials, and site discipline.</h2>
-        <p class="lede">We believe an interior should feel natural to the structure it inhabits, balanced in volume, rich in tactile surfaces, and effortless to live in. Based in RR Nagar, Bengaluru, our studio unites spatial architects, detailers, and in-house craftsmen to deliver residences that mature gracefully with time.</p>
+        <p class="lede">We believe an interior should feel natural to the structure it inhabits, balanced in volume, rich in tactile surfaces, and effortless to live in. Based in RR Nagar, Bengaluru, <span class="brand-font">SaSo Homes</span> unites spatial architects, detailers, and in-house craftsmen to deliver residences that mature gracefully with time.</p>
         <div class="about-highlights">
           <div class="highlight"><span class="num">13+</span><span class="label">Years of Practice</span></div>
           <div class="highlight"><span class="num">180+</span><span class="label">Projects Delivered</span></div>
@@ -1632,7 +1642,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ===================== WHY CHOOSE ===================== -->
   <section id="why">
     <div class="wrap">
-      <div class="section-head center">        <h2>Studio Standards</h2>
+      <div class="section-head center">        <h2>Inside <span class="brand-font">SaSo Homes</span> Standards</h2>
       </div>
       <div class="why-grid">
         <div class="why-item reveal">
@@ -1795,8 +1805,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </form>
         <div class="contact-info">
           <div class="contact-info-header">
-            <h3>Direct Studio Connect</h3>
-            <p>Ready to design your home? Connect with our principal designers directly.</p>
+            <h3><span class="brand-font">SaSo Homes</span> Studio Connect</h3>
+            <p>Ready to design your space? Connect directly with the <span class="brand-font">SaSo Homes</span> team.</p>
           </div>
 
           <!-- Phone Number Row -->
@@ -1880,7 +1890,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="brand-tag">Homes</span>
           </div>
         </a>
-        <p>A residential and commercial interior design studio crafting timeless, functional spaces with 13+ years of practice.</p>
+        <p><span class="brand-font">SaSo Homes</span> is a residential and commercial interior architecture studio crafting timeless, functional spaces with 13+ years of practice.</p>
         <div class="footer-social">
           <!-- Instagram -->
           <a href="https://www.instagram.com/sasohomes" target="_blank" rel="noopener noreferrer" aria-label="Follow SaSo Homes on Instagram" title="Instagram @sasohomes">
