@@ -515,13 +515,9 @@ src="https://www.facebook.com/tr?id=1078634098212395&ev=PageView&noscript=1"
     border: 1px solid var(--line);
     padding: clamp(1.6rem, 2.5vw, 2.2rem);
     box-shadow: var(--shadow-sm);
-    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    
   }
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--brass);
-  }
+  
 
   /* Timeline / Process */
   .process-timeline {
@@ -1155,6 +1151,67 @@ src="https://www.facebook.com/tr?id=1078634098212395&ev=PageView&noscript=1"
     align-items: center;
     gap: 1.2rem;
     flex-wrap: wrap;
+  }
+
+
+  /* ===================== ESSENTIAL INTERACTIVE HOVER STATES ONLY ===================== */
+  /* Buttons */
+  .btn-primary:hover {
+    background: #048C95;
+    border-color: #048C95;
+  }
+  .btn-outline:hover {
+    background: rgba(5, 166, 176, 0.08);
+    border-color: var(--brass);
+    color: var(--brass);
+  }
+  .nav-cta .btn:hover {
+    background: #048C95 !important;
+    border-color: #048C95 !important;
+  }
+
+  /* Nav & Breadcrumb Links */
+  .nav-links a:hover {
+    color: var(--brass);
+  }
+  .breadcrumb-list a:hover, .breadcrumb a:hover {
+    color: var(--brass);
+  }
+
+  /* Service Pill Links */
+  .service-pill:hover, .service-pill.active {
+    background: var(--brass);
+    color: #FFFFFF;
+    border-color: var(--brass);
+  }
+
+  /* Gallery Filters & Zoom (Interactive) */
+  .gallery-filter-btn:hover {
+    border-color: var(--brass);
+    color: var(--brass);
+    background: rgba(5, 166, 176, 0.06);
+  }
+  .gallery-thumb-wrapper:hover .gallery-zoom-icon {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .gallery-thumb-wrapper:hover img {
+    transform: scale(1.03);
+  }
+
+  /* Footer Links & Socials */
+  .footer a:hover {
+    color: var(--brass);
+  }
+  .footer-social a:hover {
+    color: var(--brass);
+    border-color: var(--brass);
+    background: rgba(5, 166, 176, 0.08);
+  }
+
+  /* Floating WhatsApp */
+  .floating-wa:hover {
+    transform: scale(1.06);
   }
 
 </style>
