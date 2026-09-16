@@ -595,366 +595,66 @@ src="https://www.facebook.com/tr?id=1078634098212395&ev=PageView&noscript=1"
     color: var(--charcoal-soft);
   }
 
-  /* FAQ Accordion */
-  .faq-accordion {
-    max-width: 860px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+    /* FAQ Styles matching Homepage */
+  .bg-stone { background: var(--stone); }
+  .faq-wrap { max-width: 840px; margin: 2.5rem auto 0; }
   .faq-item {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: border-color .25s ease;
+    border-bottom: 1px solid var(--line);
   }
-  .faq-item.active {
-    border-color: var(--brass);
-    box-shadow: var(--shadow-md);
-  }
-  .faq-btn {
-    width: 100%;
-    text-align: left;
-    background: transparent;
-    border: none;
-    padding: 1.3rem 1.6rem;
-    font-family: var(--font-body);
-    font-size: 1.05rem;
+  .faq-item summary {
+    font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
     font-weight: 700;
-    color: var(--spruce);
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    color: var(--charcoal);
+    transition: color .25s ease;
   }
-  .faq-icon {
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item .plus {
     width: 28px;
     height: 28px;
-    border-radius: 50%;
-    background: var(--stone);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--brass);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .faq-item .plus::before, .faq-item .plus::after {
+    content: "";
+    position: absolute;
+    background: var(--brass);
     transition: transform .3s ease;
   }
-  .faq-item.active .faq-icon {
-    transform: rotate(45deg);
-    background: var(--brass);
-    color: #FFFFFF;
+  .faq-item .plus::before {
+    top: 50%;
+    left: 2px;
+    right: 2px;
+    height: 1.5px;
+    transform: translateY(-50%);
   }
-  .faq-content {
-    display: none;
-    padding: 0 1.6rem 1.4rem;
-    color: var(--charcoal-soft);
-    font-size: .95rem;
-    line-height: 1.65;
+  .faq-item .plus::after {
+    left: 50%;
+    top: 2px;
+    bottom: 2px;
+    width: 1.5px;
+    transform: translateX(-50%);
   }
-  .faq-item.active .faq-content {
-    display: block;
+  .faq-item[open] .plus::after {
+    transform: translateX(-50%) scaleY(0);
   }
-
-  /* Gallery Styles */
-  .gallery-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: .65rem;
-    margin-bottom: clamp(2rem, 3.5vw, 3rem);
-  }
-  .gallery-filter-btn {
-    appearance: none;
-    border: 1px solid var(--line);
-    background: #FFFFFF;
-    color: var(--charcoal-soft);
-    font-family: var(--font-body);
-    font-size: .88rem;
-    font-weight: 600;
-    padding: .6rem 1.4rem;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: all .25s ease;
-  }
-  .gallery-filter-btn:hover {
-    border-color: var(--brass);
-    color: var(--brass);
-    background: rgba(5,166,176,.06);
-  }
-  .gallery-filter-btn.active {
-    background: var(--brass);
-    color: #FFFFFF;
-    border-color: var(--brass);
-    box-shadow: 0 6px 18px -4px rgba(5,166,176,.45);
-  }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
-  }
-  .gallery-item {
-    position: relative;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    box-shadow: 0 6px 24px -6px rgba(0,54,58,.08);
-    cursor: pointer;
-    transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .3s ease, opacity .35s ease;
-  }
-  .gallery-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px -10px rgba(0,54,58,.16);
-    border-color: var(--brass);
-  }
-  .gallery-thumb-wrapper {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    background: #0A1F24;
-  }
-  .gallery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .6s cubic-bezier(.2,.8,.2,1);
-    display: block;
-  }
-  .gallery-item:hover .gallery-img {
-    transform: scale(1.08);
-  }
-  .gallery-badge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(10,31,36,.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #FFFFFF;
-    font-size: .74rem;
-    font-weight: 700;
-    letter-spacing: .04em;
-    padding: .35rem .75rem;
-    border-radius: 100px;
-    border: 1px solid rgba(255,255,255,.2);
-    z-index: 2;
-  }
-  .gallery-zoom-icon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(10,31,36,.65);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
-  .gallery-meta {
-    padding: 1.25rem 1.4rem;
-  }
-  .gallery-meta h3 {
-    font-size: 1.12rem;
-    font-weight: 800;
-    color: var(--charcoal);
-    margin: 0 0 .35rem;
-  }
-  .gallery-meta p {
-    font-size: .84rem;
-    color: var(--charcoal-soft);
-    margin: 0 0 .8rem;
-    line-height: 1.5;
-  }
-  .gallery-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .4rem;
-  }
-  .gallery-tag {
-    font-size: .72rem;
-    font-weight: 600;
-    color: #24464B;
-    background: #E8F4F5;
-    padding: .25rem .6rem;
-    border-radius: 4px;
+  .faq-item .faq-a {
+    padding-bottom: 1.7rem;
+    color: #203336;
+    font-size: 1rem;
+    line-height: 1.75;
+    max-width: 68ch;
   }
 
-  /* Lightbox */
-  .gallery-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: rgba(10,31,36,.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(1rem, 3vw, 2.5rem);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .35s ease;
-  }
-  .gallery-lightbox.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .lightbox-card {
-    background: #FFFFFF;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    max-width: 960px;
-    width: 100%;
-    max-height: 90vh;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    box-shadow: 0 24px 60px rgba(0,0,0,.4);
-    position: relative;
-  }
-  .lightbox-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    border: 1px solid var(--line);
-    box-shadow: 0 4px 12px rgba(0,0,0,.15);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--charcoal);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
-  .lightbox-media {
-    background: #0A1F24;
-    min-height: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .lightbox-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .lightbox-info {
-    padding: clamp(1.5rem, 3vw, 2.4rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: auto;
-  }
-  .lightbox-location {
-    display: inline-flex;
-    align-items: center;
-    gap: .4rem;
-    font-size: .8rem;
-    font-weight: 700;
-    color: var(--brass);
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    margin-bottom: .5rem;
-  }
-  .lightbox-info h3 {
-    font-size: 1.45rem;
-    font-weight: 800;
-    margin: 0 0 .7rem;
-    color: var(--charcoal);
-  }
-  .lightbox-info p {
-    font-size: .92rem;
-    color: var(--charcoal-soft);
-    line-height: 1.65;
-    margin-bottom: 1.2rem;
-  }
-  .lightbox-specs-title {
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: #587276;
-    margin-bottom: .6rem;
-  }
-  .lightbox-specs-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
-    font-size: .88rem;
-    color: #243B3E;
-  }
-  .lightbox-specs-list li {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-  }
-  .lightbox-specs-list li::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--brass);
-    display: inline-block;
-  }
-
-  /* Forms */
-  .form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-  }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
-  }
-  .form-group.full {
-    grid-column: span 2;
-  }
-  .form-group label {
-    font-size: .86rem;
-    font-weight: 700;
-    color: var(--spruce);
-  }
-  .form-control {
-    width: 100%;
-    padding: .85rem 1.1rem;
-    border-radius: var(--radius-sm);
-    border: 1.5px solid var(--line);
-    font-family: var(--font-body);
-    font-size: .95rem;
-    color: var(--charcoal);
-    background: #FFFFFF;
-    transition: border-color .25s ease, box-shadow .25s ease;
-  }
-  .form-control:focus {
-    outline: none;
-    border-color: var(--brass);
-    box-shadow: 0 0 0 4px rgba(5,166,176,.15);
-  }
-  textarea.form-control {
-    resize: vertical;
-    min-height: 110px;
-  }
-
-  /* Bottom CTA Banner */
-  .subpage-cta {
+  /* Subpage CTA {
     background: linear-gradient(135deg, var(--spruce-dark) 0%, var(--spruce) 100%);
     color: #FFFFFF;
     padding: clamp(3.5rem, 5vw, 5rem) 0;
@@ -1325,98 +1025,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main>
 
-<section style="padding:var(--section-pad) 0; background:var(--stone);">
-  <div class="wrap">
-    <div class="section-head center">
-      <h2>Transparency in Every <span class="accent">Detail</span></h2>
-      <p>Click any question below to reveal detailed answers regarding our design and execution standards.</p>
+  <!-- ===================== FREQUENTLY ASKED QUESTIONS ===================== -->
+  <section id="faq" class="bg-stone" style="padding: calc(var(--nav-h) + 3.5rem) 0 var(--section-pad) 0;">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Frequently Asked Questions</h2>
+        <p class="lede">Everything you need to know about our interior architecture, modular systems, and turnkey delivery in Bengaluru.</p>
+      </div>
+      <div class="faq-wrap">
+        <details class="faq-item" open>
+          <summary>What is included in complete home interiors?<span class="plus"></span></summary>
+          <div class="faq-a">Complete home interiors can include living room design, bedroom interiors, modular kitchen, wardrobes, TV units, storage, false ceiling, lighting, electrical work, painting, flooring, civil modifications and installation. The package can be customised based on the homeowner's lifestyle, requirements and budget.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the difference between turnkey interiors and modular interiors?<span class="plus"></span></summary>
+          <div class="faq-a">Modular interiors generally focus on factory-made furniture such as kitchens and wardrobes, while turnkey interiors can cover the entire project, including design, civil work, electrical, plumbing, false ceiling, painting, furniture and installation. Turnkey interiors are therefore suitable for homeowners seeking a complete solution.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How much does a 2BHK interior cost in Bangalore?<span class="plus"></span></summary>
+          <div class="faq-a">The cost of 2BHK interiors in Bangalore depends on the size of the apartment, materials, modular kitchen, wardrobes, ceiling, electrical work, civil modifications and level of customisation. A professional interior company can provide a project-specific quotation after understanding the home's requirements.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What materials are best for modular kitchens?<span class="plus"></span></summary>
+          <div class="faq-a">The right modular kitchen materials depend on durability, moisture resistance, budget and usage. Options can include different grades of plywood, engineered boards, laminates, acrylic finishes and other surface materials. A professional modular kitchen designer can recommend suitable combinations for the specific kitchen.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How much do home interiors cost in Bangalore?<span class="plus"></span></summary>
+          <div class="faq-a">The cost of home interiors in Bangalore varies depending on the apartment size, materials, design requirements, modular furniture, civil work and level of customisation. A professional interior company can prepare a project-specific quotation after understanding your requirements.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How can I plan home interiors on a budget?<span class="plus"></span></summary>
+          <div class="faq-a">Start by prioritising essential areas such as the modular kitchen, wardrobes, storage and lighting, then allocate the remaining budget to decorative elements and custom furniture. Choosing practical materials and finalising the design before execution can also help control home interior costs.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a typical project take?<span class="plus"></span></summary>
+          <div class="faq-a">A single room can take 4 to 6 weeks from approval to handover; a full home typically runs 4 to 8 months depending on structural work. You'll receive a stage-by-stage timeline during the design and planning phase.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What happens during the first consultation?<span class="plus"></span></summary>
+          <div class="faq-a">We walk the space (or review your floor plans), discuss how you use the area day to day, and align on style, budget, and timeline. It's a working conversation, not a sales pitch, and it is free.</div>
+        </details>
+      </div>
     </div>
+  </section>
 
-    <div class="faq-accordion">
-      
-      <div class="faq-item active">
-        <button type="button" class="faq-btn">
-          <span>How does SaSo Homes guarantee a 45-day delivery?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>Traditional carpenters cut and assemble everything on-site, causing massive dust and unpredictable delays. At <span class="brand-font">SaSo Homes</span>, 90% of your modular units are fabricated in our Bengaluru German CNC factory while site electrical and ceiling prep is underway. Once the site is ready, our factory-calibrated modular units are cleanly assembled in 10-14 days, easily achieving the 45-day handover guarantee.</p>
-        </div>
+  <!-- ===================== SUBPAGE CTA ===================== -->
+  <section class="subpage-cta">
+    <div class="wrap">
+      <h2>Transform Your Home with <span class="accent">SaSo Homes</span></h2>
+      <p>Schedule a complimentary 3D discovery consultation with our senior architects or visit our RR Nagar Experience Centre.</p>
+      <div class="subpage-cta-actions">
+        <a href="../contact/" class="btn btn-primary">Book Consultation</a>
+        <a href="https://wa.me/919148297197?text=Hi%20SaSo%20Homes%2C%20I%20have%20questions%20about%20your%20interior%20services." class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
       </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn">
-          <span>What plywood grade and core materials do you use?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>We use 100% genuine IS:710 Boiling Waterproof (BWP) Marine Grade plywood for all wet zones (kitchens, utility, bathrooms) and calibrated commercial BWP cores for dry zones. We never use cheap particle boards, low-density MDF, or uncalibrated commercial ply that deteriorates over time.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn">
-          <span>What hardware and fittings brands do you supply?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>We exclusively partner with world-leading architectural hardware manufacturers including BLUM (Austria), Hettich (Germany), and Hafele. All hinges, tandem boxes, lift-up systems, and drawer slides come with factory soft-close dampening and are covered under warranty.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn">
-          <span>How does your pricing compare with other interior firms?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>Because we own our manufacturing facility and eliminate intermediaries, our pricing is factory-direct. We provide transparent, itemized Bill of Quantities (BOM) with fixed price locks—meaning zero mid-project price spikes or hidden fees.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn">
-          <span>What does your 10-Year Warranty cover?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>Our 10-year warranty covers manufacturing defects, anti-delamination of laminates and acrylics, BWP marine plywood integrity, and structural hardware mechanics. You receive an official physical warranty certificate at final handover.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn">
-          <span>Can I see a 3D visual of my home before signing off?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>Yes, absolutely! We provide 1:1 photorealistic 3D renders and virtual walkthroughs of your complete floor plan, allowing you to review lighting, color palettes, finishes, and storage dimensions before any fabrication starts.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn">
-          <span>Where is your Experience Centre located and what can I see there?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>Our Experience Centre is located in RR Nagar (Rajarajeshwari Nagar), Bengaluru. You can view full-scale modular kitchens with quartz islands, walk-in wardrobe suites with sensor LEDs, fluted oak TV units, and touch over 200+ material samples in person.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn">
-          <span>How do payment milestones work?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-content">
-          <p>We operate on a transparent, milestone-linked payment structure: 10% on initial 3D design booking, 40% on design finalization and factory production commencement, 45% when materials arrive at site, and 5% after the final 140-point snag inspection and handover.</p>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
