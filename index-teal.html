@@ -1020,6 +1020,303 @@ src="https://www.facebook.com/tr?id=1078634098212395&ev=PageView&noscript=1"
   @media (max-width:860px){ .materials-wrap{ grid-template-columns:1fr; } }
   @media (max-width:480px){ .materials-list{ grid-template-columns:1fr; } }
 
+  
+  /* ---------- Project Gallery Section ---------- */
+  .gallery-section{
+    padding:var(--section-pad) 0;
+    background:var(--stone);
+    position:relative;
+  }
+  .gallery-filters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:.65rem;
+    margin-bottom:clamp(2rem, 3.5vw, 3rem);
+  }
+  .gallery-filter-btn{
+    appearance:none;
+    border:1px solid var(--line);
+    background:#FFFFFF;
+    color:var(--charcoal-soft);
+    font-family:var(--font-body);
+    font-size:.88rem;
+    font-weight:600;
+    padding:.6rem 1.4rem;
+    border-radius:100px;
+    cursor:pointer;
+    transition:all .25s ease;
+  }
+  .gallery-filter-btn:hover{
+    border-color:var(--brass);
+    color:var(--brass);
+    background:rgba(5,166,176,.06);
+  }
+  .gallery-filter-btn.active{
+    background:var(--brass);
+    color:#FFFFFF;
+    border-color:var(--brass);
+    box-shadow:0 6px 18px -4px rgba(5,166,176,.45);
+  }
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.6rem;
+  }
+  .gallery-item{
+    position:relative;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    background:var(--paper);
+    border:1px solid var(--line);
+    box-shadow:0 6px 24px -6px rgba(0,54,58,.08);
+    cursor:pointer;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .3s ease, opacity .35s ease;
+  }
+  .gallery-item.hidden{
+    display:none;
+  }
+  .gallery-item:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px -10px rgba(0,54,58,.16);
+    border-color:var(--brass);
+  }
+  .gallery-thumb-wrapper{
+    position:relative;
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:#0A1F24;
+  }
+  .gallery-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s cubic-bezier(.2,.8,.2,1);
+    display:block;
+  }
+  .gallery-item:hover .gallery-img{
+    transform:scale(1.08);
+  }
+  .gallery-badge{
+    position:absolute;
+    top:1rem;
+    left:1rem;
+    background:rgba(10,31,36,.75);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    color:#FFFFFF;
+    font-size:.74rem;
+    font-weight:700;
+    letter-spacing:.04em;
+    padding:.35rem .75rem;
+    border-radius:100px;
+    border:1px solid rgba(255,255,255,.2);
+    z-index:2;
+  }
+  .gallery-zoom-icon{
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:rgba(10,31,36,.65);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    color:#FFFFFF;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transform:scale(.8);
+    transition:all .3s ease;
+    z-index:2;
+  }
+  .gallery-item:hover .gallery-zoom-icon{
+    opacity:1;
+    transform:scale(1);
+  }
+  .gallery-meta{
+    padding:1.4rem 1.5rem;
+    background:#FFFFFF;
+  }
+  .gallery-meta h3{
+    font-size:1.15rem;
+    font-weight:700;
+    margin-bottom:.4rem;
+    color:var(--charcoal);
+  }
+  .gallery-meta p{
+    font-size:.88rem;
+    color:var(--charcoal-soft);
+    line-height:1.55;
+    margin-bottom:.85rem;
+  }
+  .gallery-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem;
+  }
+  .gallery-tag{
+    font-size:.72rem;
+    font-weight:600;
+    color:var(--brass);
+    background:rgba(5,166,176,.08);
+    padding:.2rem .6rem;
+    border-radius:6px;
+  }
+
+  /* Lightbox Modal */
+  .gallery-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    background:rgba(10,31,36,.92);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:clamp(1rem, 3vw, 2.5rem);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .35s ease;
+  }
+  .gallery-lightbox.active{
+    opacity:1;
+    pointer-events:auto;
+  }
+  .lightbox-card{
+    background:#FFFFFF;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    max-width:960px;
+    width:100%;
+    max-height:90vh;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    box-shadow:0 24px 60px rgba(0,0,0,.4);
+    position:relative;
+    animation:lightboxIn .35s cubic-bezier(.2,.8,.2,1);
+  }
+  @keyframes lightboxIn{
+    from{ transform:scale(.94) translateY(20px); opacity:0; }
+    to{ transform:scale(1) translateY(0); opacity:1; }
+  }
+  .lightbox-media{
+    background:#0A1F24;
+    position:relative;
+    min-height:360px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .lightbox-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .lightbox-info{
+    padding:clamp(1.5rem, 3vw, 2.4rem);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow-y:auto;
+  }
+  .lightbox-header{
+    margin-bottom:1rem;
+  }
+  .lightbox-location{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    font-size:.8rem;
+    font-weight:700;
+    color:var(--brass);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    margin-bottom:.5rem;
+  }
+  .lightbox-info h3{
+    font-size:1.45rem;
+    font-weight:800;
+    margin:0 0 .7rem;
+    color:var(--charcoal);
+  }
+  .lightbox-info p{
+    font-size:.92rem;
+    color:var(--charcoal-soft);
+    line-height:1.65;
+    margin-bottom:1.2rem;
+  }
+  .lightbox-specs{
+    margin-bottom:1.5rem;
+  }
+  .lightbox-specs-title{
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#587276;
+    margin-bottom:.6rem;
+  }
+  .lightbox-specs-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:.4rem;
+    font-size:.88rem;
+    color:#243B3E;
+  }
+  .lightbox-specs-list li{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+  .lightbox-specs-list li::before{
+    content:"";
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--brass);
+    display:inline-block;
+  }
+  .lightbox-close{
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:rgba(10,31,36,.08);
+    border:none;
+    font-size:1.4rem;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--charcoal);
+    transition:all .2s ease;
+    z-index:10;
+  }
+  .lightbox-close:hover{
+    background:var(--brass);
+    color:#FFFFFF;
+  }
+
+  @media (max-width:992px){
+    .gallery-grid{ grid-template-columns:repeat(2, 1fr); }
+    .lightbox-card{ grid-template-columns:1fr; max-height:85vh; }
+    .lightbox-media{ min-height:260px; }
+  }
+  @media (max-width:600px){
+    .gallery-grid{ grid-template-columns:1fr; }
+  }
+
   /* ---------- FAQ ---------- */
   .faq-wrap{ max-width:840px; margin:0 auto; }
   .faq-item{
@@ -1506,6 +1803,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1522,6 +1820,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1828,6 +2127,167 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="m-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="1"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="14" x2="20" y2="14"/><line x1="9" y1="4" x2="9" y2="20"/></svg></span>Textured Panels</li>
           <li><span class="m-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3.5"/><path d="M12 3 V6 M12 18 V21 M3 12 H6 M18 12 H21"/></svg></span>Ambient Lighting</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ===================== PROJECT GALLERY ===================== -->
+  <section id="gallery" class="gallery-section">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Project Showcase</span>
+        <h2>Curated <span class="accent">Interior Gallery</span></h2>
+        <p class="lede">A visual catalogue of crafted living rooms, modular kitchens, private bedroom suites, and bespoke architectural millwork across Bengaluru.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="gallery-filters reveal">
+        <button type="button" class="gallery-filter-btn active" data-filter="all">All Projects</button>
+        <button type="button" class="gallery-filter-btn" data-filter="living">Living &amp; TV Units</button>
+        <button type="button" class="gallery-filter-btn" data-filter="kitchen">Modular Kitchens</button>
+        <button type="button" class="gallery-filter-btn" data-filter="bedroom">Bedrooms &amp; Suites</button>
+        <button type="button" class="gallery-filter-btn" data-filter="bath">Spa Bathrooms</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid reveal-stagger">
+        <!-- Item 1: Living & TV -->
+        <div class="gallery-item reveal" data-category="living" data-photo="hero" data-title="Fluted Oak Media Wall &amp; Lounge" data-location="Indiranagar Villa, Bengaluru" data-desc="Wall-to-wall acoustic fluted wood panelling with a cantilevered floating quartz console, concealed wire raceway, and ambient warm cove illumination." data-specs="Acoustic Fluted Louvers,Concealed Cable Troughs,3000K Perimeter LEDs,Floating Quartz Top">
+          <div class="gallery-thumb-wrapper">
+            <span class="gallery-badge">Living &amp; TV Wall</span>
+            <div class="gallery-zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <img class="gallery-img proj-photo" data-photo="hero" alt="Fluted Oak Media Wall &amp; Lounge in Bengaluru" />
+          </div>
+          <div class="gallery-meta">
+            <h3>Fluted Oak Media Wall &amp; Lounge</h3>
+            <p>Indiranagar Villa &bull; Acoustic fluted panelling &amp; floating quartz console.</p>
+            <div class="gallery-tags">
+              <span class="gallery-tag">Living Room</span>
+              <span class="gallery-tag">TV Unit</span>
+              <span class="gallery-tag">Bespoke Millwork</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Modular Kitchen -->
+        <div class="gallery-item reveal" data-category="kitchen" data-photo="kitchen" data-title="Dual-Tone Architectural Kitchen" data-location="Sadashivanagar Residence" data-desc="Modern parallel modular kitchen with anti-scratch matte shutters, Calacatta quartz countertops, BLUM Aventos lift-ups, and full-height pantry pullouts." data-specs="IS:710 BWP Marine Ply,Calacatta Quartz Counter,BLUM Soft-Close Tandem,Under-Cabinet Task Lights">
+          <div class="gallery-thumb-wrapper">
+            <span class="gallery-badge">Modular Kitchen</span>
+            <div class="gallery-zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <img class="gallery-img proj-photo" data-photo="kitchen" alt="Dual-Tone Architectural Kitchen in Sadashivanagar" />
+          </div>
+          <div class="gallery-meta">
+            <h3>Dual-Tone Architectural Kitchen</h3>
+            <p>Sadashivanagar &bull; BWP marine core with Calacatta quartz countertops.</p>
+            <div class="gallery-tags">
+              <span class="gallery-tag">Modular Kitchen</span>
+              <span class="gallery-tag">Quartz Stone</span>
+              <span class="gallery-tag">BLUM Fittings</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Kids' Bedroom -->
+        <div class="gallery-item reveal" data-category="bedroom" data-photo="kids" data-title="Arched Headboard Children's Suite" data-location="Whitefield Penthouse" data-desc="Playful children's bedroom featuring an arched acoustic headboard, integrated ergonomic study desk, display cubbies, and rounded child-safe edge profiles." data-specs="Custom Fabric Headboard,Ergonomic Study Suite,Modular Toy Storage,Child-Safe Rounded Edges">
+          <div class="gallery-thumb-wrapper">
+            <span class="gallery-badge">Kids' Bedroom</span>
+            <div class="gallery-zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <img class="gallery-img proj-photo" data-photo="kids" alt="Arched Headboard Children's Suite in Whitefield" />
+          </div>
+          <div class="gallery-meta">
+            <h3>Arched Headboard Children's Suite</h3>
+            <p>Whitefield &bull; Custom upholstery with study desk &amp; modular storage.</p>
+            <div class="gallery-tags">
+              <span class="gallery-tag">Bedroom</span>
+              <span class="gallery-tag">Kids' Room</span>
+              <span class="gallery-tag">Study Nook</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Spa Bathroom -->
+        <div class="gallery-item reveal" data-category="bath" data-photo="bath" data-title="Monolithic Stone Spa Bathroom" data-location="RR Nagar Residence" data-desc="Wellness retreat bathroom finished with fluted stone tiles, brushed PVD brass fixtures, concealed warm lighting, and a backlit anti-fog vanity mirror." data-specs="Monolithic Stone Vanity,Brushed PVD Brass,Anti-Fog Backlit Mirror,Frameless Toughened Glass">
+          <div class="gallery-thumb-wrapper">
+            <span class="gallery-badge">Spa Bathroom</span>
+            <div class="gallery-zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <img class="gallery-img proj-photo" data-photo="bath" alt="Monolithic Stone Spa Bathroom in RR Nagar" />
+          </div>
+          <div class="gallery-meta">
+            <h3>Monolithic Stone Spa Bathroom</h3>
+            <p>RR Nagar &bull; Brushed PVD brass fixtures &amp; anti-fog backlit mirror.</p>
+            <div class="gallery-tags">
+              <span class="gallery-tag">Bathroom</span>
+              <span class="gallery-tag">PVD Brass</span>
+              <span class="gallery-tag">Stone Vanity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Dining & Open Kitchen -->
+        <div class="gallery-item reveal" data-category="kitchen living" data-photo="about" data-title="Minimalist Kitchen &amp; Dining Space" data-location="Jayanagar Residence" data-desc="Integrated open-plan kitchen and dining zone balancing warm mauve cabinetry, linear brass detailing, and natural quartz countertops." data-specs="Open-Concept Dining,Tactile Stone Laminate,Concealed Finger Pulls,High-Output Task LEDs">
+          <div class="gallery-thumb-wrapper">
+            <span class="gallery-badge">Kitchen &amp; Dining</span>
+            <div class="gallery-zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <img class="gallery-img proj-photo" data-photo="about" alt="Minimalist Kitchen &amp; Dining Space in Jayanagar" />
+          </div>
+          <div class="gallery-meta">
+            <h3>Minimalist Kitchen &amp; Dining Space</h3>
+            <p>Jayanagar &bull; Warm mauve cabinetry with quartz dining counter.</p>
+            <div class="gallery-tags">
+              <span class="gallery-tag">Dining</span>
+              <span class="gallery-tag">Kitchen</span>
+              <span class="gallery-tag">Open Layout</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: Turnkey Island Kitchen -->
+        <div class="gallery-item reveal" data-category="kitchen" data-photo="turnkey" data-title="Contemporary Waterfall Island Kitchen" data-location="Sarjapur Road Villa" data-desc="Full-scale turnkey residential kitchen featuring a seamless waterfall sintered stone island, built-in wine cooler, and automated lift-up cabinets." data-specs="Waterfall Sintered Slab,Appliance Garage,Integrated Dishwasher,Smart Lift-Up Shutters">
+          <div class="gallery-thumb-wrapper">
+            <span class="gallery-badge">Island Kitchen</span>
+            <div class="gallery-zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <img class="gallery-img proj-photo" data-photo="turnkey" alt="Contemporary Waterfall Island Kitchen on Sarjapur Road" />
+          </div>
+          <div class="gallery-meta">
+            <h3>Contemporary Waterfall Island Kitchen</h3>
+            <p>Sarjapur Road &bull; Sintered stone waterfall island &amp; built-in appliances.</p>
+            <div class="gallery-tags">
+              <span class="gallery-tag">Island Kitchen</span>
+              <span class="gallery-tag">Turnkey</span>
+              <span class="gallery-tag">Sintered Stone</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal Container -->
+      <div id="galleryLightbox" class="gallery-lightbox" aria-hidden="true" role="dialog">
+        <div class="lightbox-card">
+          <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close Preview">&times;</button>
+          <div class="lightbox-media">
+            <img id="lightboxImg" class="lightbox-img" src="" alt="" />
+          </div>
+          <div class="lightbox-info">
+            <div class="lightbox-header">
+              <div class="lightbox-location" id="lightboxLoc"></div>
+              <h3 id="lightboxTitle"></h3>
+              <p id="lightboxDesc"></p>
+              <div class="lightbox-specs">
+                <div class="lightbox-specs-title">Architectural Specifications</div>
+                <ul class="lightbox-specs-list" id="lightboxSpecs"></ul>
+              </div>
+            </div>
+            <div class="lightbox-actions" style="display:flex; gap:.8rem; flex-wrap:wrap;">
+              <a id="lightboxWa" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex:1; justify-content:center;">Inquire on WhatsApp</a>
+              <a href="#contact" class="btn btn-ghost" id="lightboxBookBtn">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-cta" style="margin-top:clamp(2.5rem,4vw,3.5rem); text-align:center;">
+        <a href="#contact" class="btn btn-primary">Schedule a Free Site Consultation</a>
       </div>
     </div>
   </section>
